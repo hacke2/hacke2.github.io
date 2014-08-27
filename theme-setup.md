@@ -36,13 +36,13 @@ General notes and suggestions for customizing **HPSTR**.
 3. Set the following variables in your `config.yml` file:
 
 {% highlight yaml %}
-title:            Site Title
+title:            hacke2 's blog
 description:      Describe your website here.
 disqus_shortname: shortname
 # Your site's domain goes here. When working locally use localhost server leave blank
 # PS. If you set this wrong stylesheets and scripts won't load and most links will break.
 # PPS. If you leave it blank for local testing home links won't work, they'll be fine for live domains though.
-url:              http://localhost:4000
+url:             http://hacke2.github.io
 
 # Owner/author information
 owner:
