@@ -1,10 +1,7 @@
-_site/*
-_theme_packages/*
-
-Thumbs.db
+_site
 .DS_Store
-
-!.gitkeep
-
-.rbenv-version
-.rvmrc
+*.sublime-project
+*.sublime-workspace
+codekit-config.json
+node_modules
+Gemfile.lock
