@@ -46,10 +46,10 @@ url:             http://hacke2.github.io
 
 # Owner/author information
 owner:
-  name:           Your Name
+  name:           王兴龙
   avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  bio:            "Hi 大家好，我是hacke2，感谢您来逛我的空间，也希望你能关注他，前端之路，一起前行."
+  email:          hacke2@qq.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
