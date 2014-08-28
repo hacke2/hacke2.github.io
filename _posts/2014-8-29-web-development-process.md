@@ -22,7 +22,6 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 	resp.getOutputStream().write("{status:'ok',value:'11'}".getBytes("UTF-8"));
 	resp.setContentType("text/json; charset=UTF-8");
 }
-
 若php
 1、使用wamp 环境
 2、后端PHP构造json数据：
@@ -41,13 +40,10 @@ function ajax(url, success, fail){
     } else {
         xhr = new ActiveXObject('Microsoft.XMLHTTP');
     }
-
     // 2. 连接服务器
     xhr.open('get', url, true)
-
     // 3. 发送请求
     xhr.send(null);
-
     // 4. 接受请求
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4){
