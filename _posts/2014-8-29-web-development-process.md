@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Web前端开发流程
+title: 高大上Web前端开发环境
 description: "Sample post with a background image CSS override."
 tags: [总结]
 image:
@@ -26,7 +26,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 
 ### 若php
 
-1.使用wamp 环境
+1.使用wamp 环境   
 2.后端PHP构造json数据
 
        echo "{status:'ok',value:'11'}";
@@ -38,8 +38,9 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 json格式为
 {'status':'ok','value':'11'}
 
-*前台使用AJAX请求
+* 前台使用AJAX请求
 
+{% highlight JavaScript %}
 function ajax(url, success, fail){
     // 1. 创建连接
     var xhr = null;
@@ -68,7 +69,24 @@ var url =  'json.php'...其他地址
 ajax(url, function(data) {
     data.status
 })
+{% endhighlight %}
+
+后来自己又想了一下，其实这道题就看你平时前端开发的环境是怎样的，因为我是JAVA出生，所以一想就想到了启动一个tomcat来启动一个服务器，上面开启一个sevlet来输出json数据。
+总感觉这样太“重量级”了，在网上查了一查，才知道了阿里真实的意图--。
+
+### 先不说阿里意图是什么，先看看现在高大上的前端开发环境：
+
+* 代码编辑工具
+* 断点调试工具
+* 版本管理工具
+* 代码合并和混搅工具
+* 依赖管理工具
+* 单元测试工具
+* 集成测试工具
+
+<strong>你没看错，这不是后端开发环境，这竟然是前端的开发环境!</strong>
+
+下面，我们就来说说<strong>这些工具有哪些，在JAVA里面对应那些工具</strong>
 
 
-
-<strong>end</strong>
+<strong>未完待续...</strong>
