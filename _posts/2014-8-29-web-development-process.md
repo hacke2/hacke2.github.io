@@ -13,7 +13,7 @@ share: true
 前几天做阿里笔试题，最后一个问题是：在前端开发中，经常会遇到调用后端接口的情况，如果我们不想依赖后台的开发环境，比如：本地搭建熟悉的环境，模拟AJAX，说出你的解决方案
 记得我当时是这样答的：
 
-<i>
+ {% raw %}
 若java
 1、使用tomcat环境
 2、使用selvet
@@ -60,7 +60,7 @@ var url =  'json.php'...其他地址
 ajax(url, function(data) {
     data.status
 })
-</i>
+{% endraw %}
 
 
 
