@@ -36,7 +36,7 @@ General notes and suggestions for customizing **HPSTR**.
 3. Set the following variables in your `config.yml` file:
 
 {% highlight yaml %}
-title:            hacke2 's blog
+title:            hacke2's blog
 description:      Describe your website here.
 disqus_shortname: shortname
 # Your site's domain goes here. When working locally use localhost server leave blank
