@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>王兴龙-简历&项目展示</title>
+	<script type="text/javascript" src="../js/angular.js"></script>
+	<script type="text/javascript" src="../js/controllers.js"></script>
+	<script type="text/javascript" src="../js/tool.js"></script>
+	<script type="text/javascript">
+		var hash = window.location.hash;
+		var product = hash.substring (1);
+		var doc = (document.compatMode != "CSS1Compat") ? document.body : document.documentElement;
+		
+		var w = Math.max(doc.scrollWidth, doc.clientWidth) - 80;// 获取浏览器内容宽度
+		var h = Math.max(doc.scrollHeight, doc.clientHeight);// 获取浏览器内容高度
+		window.onload = function() {
+			var images = document.images;
+			if(images) {
+				for (var i = images.length - 1; i >= 0; i--) {
+					AutoResizeImage(w, h, images[i]);
+				};
+			}
+		};
+
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>{{project.name}}</h1>
+		<h3>{{project.introduction}}</h3>
+		<h3>项目地址:<a style="color:#000;text-decoration : none;" target="_blank" href="http://{{project.address}}">{{project.address}}</a></h3>
+	</header>
+	<hr />
+	<section>
+		<article ng-repeat="productDetails in project.details">
+			<img src="{{productDetails.img}}"><br />
+			<i>{{productDetails.description}}</i>
+			<br /><br />
+		</article>
+	</section>
+	<script type="text/javascript">
+		var body = document.getElementsByTagName('body')[0];
+		body.setAttribute('ng-controller', product || 'Kewei');
+	</script>
+</body>
+</html>
