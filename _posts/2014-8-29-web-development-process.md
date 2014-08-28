@@ -18,11 +18,12 @@ share: true
 	1.使用tomcat环境
 	2.使用selvet
 
-protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-		throws ServletException, IOException {
+{% highlight Java %}
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	resp.getOutputStream().write("{status:'ok',value:'11'}".getBytes("UTF-8"));
 	resp.setContentType("text/json; charset=UTF-8");
 }
+{% endhighlight %}
 
 ### 若php
 
