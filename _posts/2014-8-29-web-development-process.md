@@ -29,10 +29,12 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 1.使用wamp 环境   
 2.后端PHP构造json数据
+{% highlight Php %}
+echo "{status:'ok',value:'11'}";
+//或者
+echo json_encode($result);//$result 是数组
+{% endhighlight %}
 
-       echo "{status:'ok',value:'11'}";
-   或者
-       echo json_encode($result);//$result 是数组
 
 ### 若对数据没有动态提取的要求，则直接放大xxx.json里面
 
