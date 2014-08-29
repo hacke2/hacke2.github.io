@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript内存泄漏
-description: "Sample post with a background image CSS override."
+description: "进入WEB 2.0 时代，js人们对Web应用有了高更的要求.一个页面很可能数小时不会发生URL跳转，并同时通过Web服务动态的更新页面内容.复杂的事件关联设计、基于对象的JScript和DHTML技术的广泛采用，使得代码的能力达到了其承受的极限.在这样的情况和改变下，弄清楚内存泄露方式变得非常的急迫。那么，为什么会出现内存溢出呢？"
 tags: [JavaScript, 内存泄漏]
 image:
   background: triangular.png

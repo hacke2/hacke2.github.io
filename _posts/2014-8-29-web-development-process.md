@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 高大上Web前端开发环境
-description: "Sample post with a background image CSS override."
+description: "前几天做阿里笔试题，最后一个问题是：在前端开发中，经常会遇到调用后端接口的情况，如果我们不想依赖后台的开发环境，比如：本地搭建熟悉的环境，模拟AJAX，说出你的解决方案
+记得我当时是这样答的："
 tags: [总结]
 image:
   background: triangular.png
