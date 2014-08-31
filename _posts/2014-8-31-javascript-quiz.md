@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-## 1.考点：arguments的类型
+### 1.考点：arguments的类型
 
 {% highlight JavaScript %}
   (function(){
@@ -32,7 +32,7 @@ share: true
 
 所以结果是 'object'，默认不为undefined
 
-## 2.考点：函数的内部属性name
+### 2.考点：函数的内部属性name
 
 {% highlight JavaScript %}
   var f = function g(){ return 23; };
@@ -41,7 +41,7 @@ share: true
 
 g可选可不选,如果加上，则为函数的内部属性，如调用f.name 输出 g，直接调用会说g未定义
 
-## 3.考点：delete
+### 3.考点：delete
 
 {% highlight JavaScript %}
   (function(x){
@@ -52,7 +52,7 @@ g可选可不选,如果加上，则为函数的内部属性，如调用f.name �
 
 delete 会删除对象的属性，如var a ={ b : 1}; delete a.b;此时打印a为{}，但是不会删除形参,输出为1
 
-## 4.考点：赋值顺序
+### 4.考点：赋值顺序
 
 {% highlight JavaScript %}
   var y = 1, x = y = typeof x;
@@ -61,7 +61,7 @@ delete 会删除对象的属性，如var a ={ b : 1}; delete a.b;此时打印a�
 
 基本所有语言都赋值都是从右向左赋值，typeof x得到结果为'undefined'，最终赋给y和x，打印出来为'undefined'
 
-## 5.考点：typeof
+### 5.考点：typeof
 
 {% highlight JavaScript %}
   (function f(f){
@@ -72,7 +72,7 @@ delete 会删除对象的属性，如var a ={ b : 1}; delete a.b;此时打印a�
 typeof的运算数未定义,返回的就是 "undefined". 运算数为数字 typeof(x) = "number" 字符串 typeof(x) = "string" 布尔值 typeof(x) = "boolean" 对象,数组和null typeof(x) = "object" 函数 typeof(x) = "function" 
 函数返回为1，输出'number'
 
-## 6.考点：typeof
+### 6.考点：typeof
 
 {% highlight JavaScript %}
   var foo = {
@@ -97,31 +97,8 @@ typeof的运算数未定义,返回的就是 "undefined". 运算数为数字 type
   })(foo.bar,foo);
 {% endhighlight %}
 
-## 6.考点：typeof
 
-{% highlight JavaScript %}
-  var foo = {
-    bar: function() { return this.baz; },
-    baz: 1
-  };
-  (function(){
-    return typeof arguments[0]();
-  })(foo.bar);
-{% endhighlight %}
-
-和上一题类似，将bar函数传进去，arguments[0]指向foo.bar函数，函数指向，但此时this是window对象，window对象下午baz，所以是'undefined'
-若将题目改为以下，则返回'number'
-{% highlight JavaScript %}
-  var foo = {
-    bar: function() { return this.baz; },
-    baz: 1
-  };
-  (function(){
-    return typeof arguments[0].call(foo);
-  })(foo.bar,foo);
-{% endhighlight %}
-
-## 7.考点：作用域
+### 7.考点：作用域
 
 {% highlight JavaScript %}
   var foo = {
@@ -133,7 +110,7 @@ typeof的运算数未定义,返回的就是 "undefined". 运算数为数字 type
 
 原因参见上题,输出'undefined'
 
-## 8.考点：逗号表达式
+### 8.考点：逗号表达式
 
 {% highlight JavaScript %}
   var f = (function f(){ return "1"; }, function g(){ return 2; })();
@@ -148,7 +125,7 @@ var f = ('a', 'b');
 console.log(f);
 {% endhighlight %}
 
-## 9.考点：JavaScript加性操作符
+### 9.考点：JavaScript加性操作符
 
 {% highlight JavaScript %}
   var x = 1;
@@ -160,7 +137,7 @@ console.log(f);
 
 参考《javascript 高级程序设计 第三版》 3.5.5章,输出为字符串'1undefined'
 
-## 10.考点：typeof
+### 10.考点：typeof
 
 {% highlight JavaScript %}
   var x = [typeof x, typeof y][1];
@@ -169,7 +146,7 @@ console.log(f);
 
 'string'的typeof 肯定也是'string', 输出为字符串'string'
 
-## 11.考点：不知道考的是啥，文字游戏吧
+### 11.考点：不知道考的是啥，文字游戏吧
 
 {% highlight JavaScript %}
   (function(foo){
@@ -179,7 +156,7 @@ console.log(f);
 
 输出'undefined'，如果return typeof foo.foo.bar;为期望值
 
-## 12.考点：函数提升
+### 12.考点：函数提升
 
 {% highlight JavaScript %}
   (function f(){
@@ -191,7 +168,7 @@ console.log(f);
 
 函数提升了两次，第二次把第一次覆盖了，所以 return 后面的 f 是 return 语句的下一条语句声明的函数 f .
 
-## 13.考点：实例化对象
+### 13.考点：实例化对象
 
 {% highlight JavaScript %}
   function f(){ return f; }
@@ -200,7 +177,7 @@ console.log(f);
 
 如果函数无返回值，则返回一个对象的实例，若果有返回值，则为改返回值,输出为false
 
-## 13.考点：with
+### 14.考点：with
 
 {% highlight JavaScript %}
   with (function(x, undefined){}) length;
