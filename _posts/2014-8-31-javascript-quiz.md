@@ -208,4 +208,4 @@ console.log(f);
 
 whth改变了函数的作用域，其实里面的length为函数function(x, undefined){}.length, 函数length表示给函数真正传的参数的个数，为2
 
-<strong>未完待续...</strong>
+>以上题目来源：http://hacke2.github.io/javascript-quiz/
