@@ -92,5 +92,13 @@ ajax(url, function(data) {
 
 下面，我们就来说说<strong>这些工具有哪些，在JAVA里面对应那些工具</strong>
 
+<!--
+#代码编辑工具：Sublime Text、WebStrom、HBuilder
 
+<figure>
+	<img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
+
+-->
 <strong>未完待续...</strong>
