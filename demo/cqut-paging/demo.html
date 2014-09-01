@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+
+	.page a{
+		text-decoration:none;
+		display:inline-block;
+		line-height:14px;
+		padding:2px 5px;
+		color:#333;
+		border:1px solid #ccc;
+		margin:0 2px
+	}
+	.page a:hover,.page a.on{
+		background:#2A8F87;
+		color:#fff;
+		border:1px solid #333;
+	}
+	.page a.unclick,.page a.unclick:hover{
+		background:none;
+		border:1px solid #eee;
+		color:#999;
+		cursor:default;
+	}
+</style>
+</head>
+<body>
+
+	<h3>页数小于10 iPage(document.getElementsByTagName("div")[0],10,1)</h3>
+	<div class="page"></div>
+	<h3>页数大于10且当前页小于5 iPage(document.getElementsByTagName("div")[1],13,5);</h3>
+	<div class="page"></div>
+	<h3>页数大于10且当前页大于5 iPage(document.getElementsByTagName("div")[1],13,9);</h3>
+	<div class="page"></div>
+</body>
+<script type="text/javascript">
+	//obj 容器，count 总页数 curPage 当前页数
+	function iPage(obj,count,curPage){  
+		var href = 'article.do?page=';
+		var obj=obj;
+		var count=count;
+		var curPage=curPage;
+		var a=[];
+		//总页数少于10 全部显示,大于10 显示前3 后3 中间3 其余....
+	
+		if(curPage == 1) {
+			a.push('<a href="#" class="unclick" >首页</a>');
+			a.push('<a href="#" class="unclick" >上页</a>');
+		}
+		else {
+			a.push('<a href="' + href + 1 + '" >首页</a>');
+			a.push('<a href="' + href + (curPage-1) + '"  >上页</a>');
+		}
+
+		//总页数小于10
+		if(count<=10){
+			for(var i=1;i<=count;i++){
+				createPage(i);
+			}
+		}else {
+			if(curPage <= 4) {//总页数大于10且当前页远离总页数(小于5)
+				for(var i = 1; i <=5; i++) {
+					createPage(i);
+				}
+				a.push('...<a href="' + href + count + '">'+count+'</a>')
+			}else if(curPage>=count-3){//总页数大于10且当前页接近总页数(小于总页数-3)
+				a.push('<a href="' + href + 1 + '">1</a>');
+				for(var i=count-4;i<=count;i++){
+					createPage(i);
+				}
+			}else{ //除开上面两个情况
+				a.push('<a href="' + href + 1 + '">1</a>...');
+				for(var i=curPage-2;i<=curPage+2;i++){
+					createPage(i);
+				}
+				a.push('...<a href="' + href + count + '">'+count+'</a>');
+			}
+		}
+
+		if(curPage==count){
+			a.push('<a href="#" class="unclick">下页</a>');
+			a.push('<a href="#" class="unclick">尾页</a>');
+		}
+		else{
+			a.push('<a href="' + href + (curPage + 1) + '">下页</a>');
+			a.push('<a href="' + href + count + '">尾页</a>');
+		}
+		
+		obj.innerHTML=a.join("");
+
+		//生成页面
+		function createPage(i){
+			if(curPage==i){
+				a.push('<a href="' + href + i + '" class="on">'+i+'</a>');
+			}
+			else{
+				a.push('<a href="' + href + i + '" >'+i+'</a>');
+			}
+		}
+	}
+
+
+	iPage(document.getElementsByTagName("div")[0],10,1);
+	iPage(document.getElementsByTagName("div")[1],13,4);
+	iPage(document.getElementsByTagName("div")[2],13,9);
+</script>
+</html>
