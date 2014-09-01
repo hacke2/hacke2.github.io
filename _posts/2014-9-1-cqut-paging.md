@@ -18,7 +18,7 @@ share: true
 # 分析
 
 邻水分页如下图：
-<img src="images/article/cqut-paging/1.jpg" alt="邻水分页" />
+<img src="/images/article/cqut-paging/1.jpg" alt="邻水分页" />
 现在数据还不是很多，显示了三条，而且有首页、尾页、上页、下页等辅助按钮，当当前页为第一个时，上页和首页成不可点击状。
 当当前页为最后一个时，下页和尾页成不可点击状。
 还有以下规则：
@@ -98,9 +98,9 @@ share: true
 {% endhighlight %}
 
 
-## <a style="color:red" href="demo/cqut-paging/demo.html" >查看完整DEMO</a>
+## <a style="color:red" href="/demo/cqut-paging/demo.html" >查看完整DEMO</a>
 
 
-<img src="images/article/cqut-paging/2.jpg" alt="我的分页" />
+<img src="/images/article/cqut-paging/2.jpg" alt="我的分页" />
 
 <strong>end</strong>
