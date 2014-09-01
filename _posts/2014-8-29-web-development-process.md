@@ -93,12 +93,69 @@ ajax(url, function(data) {
 下面，我们就来说说<strong>这些工具有哪些，在JAVA里面对应那些工具</strong>
 
 <!--
-#代码编辑工具：Sublime Text、WebStrom、HBuilder
+##代码编辑工具：Sublime Text、WebStrom、HBuilder
 
 <figure>
-	<img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt=""></a>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
 	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
 </figure>
 
+<figure>
+	<img src="images/2014-8-29-web-development-process/2.jpg" alt=""></a>
+	<figcaption>HBuilder是国产的一款基于eclipse的IDE，专门编写HTML5/CSS3/JavaScript等</figcaption>
+</figure>
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/3.jpg" alt=""></a>
+	<figcaption>WebStorm，一款非常流行的IDE，可以看这个方法在哪一个浏览器兼容，拥有众多插件</figcaption>
+</figure>
+
+
+## 断点调试工具： FireBug, chrome Debug
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/2.jpg" alt=""></a>
+	<figcaption>HBuilder是国产的一款基于eclipse的IDE，专门编写HTML5/CSS3/JavaScript等</figcaption>
+</figure>
+
+## 版本管理工具：Git
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
+
+## 代码合并和混搅工具：Grunt(基于NodeJS)
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
+
+## 依赖管理工具：bower(基于NodeJS)
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
+
+## 单元测试工具：jasmine(基于NodeJS)
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
+
+## 单元测试工具：jasmine(基于NodeJS)Karma自动化完成单元测试
+
+<figure>
+	<img src="images/2014-8-29-web-development-process/1.jpg" alt=""></a>
+	<figcaption>Sublime Text被称为是最性感的代码编辑器，很多插件，体积也很小</figcaption>
+</figure>
 -->
 <strong>未完待续...</strong>
