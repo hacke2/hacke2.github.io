@@ -46,7 +46,7 @@ share: true
 	
 大家也可以参考下面补充文章:<br/>
 <a href="http://ued.ctrip.com/blog/?p=3287">浏览器是怎样工作的（一）：基础知识</a><br/>
-<a href="http://ued.ctrip.com/blog/?p=3295">浏览器是怎样工作的：渲染引擎，HTML解析（连载二）</a>
+<a href="http://ued.ctrip.com/blog/?p=3295">浏览器是怎样工作的：渲染引擎，HTML解析（连载二）</a><br/>
 <a href="http://tool.oschina.net/commons?type=5">开源中国HTTP状态码常用对照表</a>
 
 <strong>end</strong>
