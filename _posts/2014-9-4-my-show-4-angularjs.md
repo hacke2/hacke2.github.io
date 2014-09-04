@@ -54,6 +54,6 @@ share: true
 
 <a target="_blank"  href="https://github.com/hacke2/myShow4AngularJs">点击进入github: AngularJs+BootStarp+fontAwesome打造个人展示页面</a><br/>
 
-## <a style="color:red" href="/demo/my-show-4-angularjs/" >查看完整DEMO</a>
+## <a target="_blank"  style="color:red" href="/demo/my-show-4-angularjs/" >查看完整DEMO</a>
 
 <strong>end</strong>

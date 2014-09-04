@@ -38,6 +38,6 @@ share: true
 
 <a target="_blank"  href="https://github.com/hacke2/frontcode">JavaScript打造无缝切换</a><br/>
 
-## <a style="color:red" href="/demo/javascript-seamless-handover/" >查看完整DEMO</a>
+## <a target="_blank"  style="color:red" href="/demo/javascript-seamless-handover/slide/bd01.html" >查看完整DEMO</a>
 
 <strong>end</strong>
