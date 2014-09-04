@@ -16,7 +16,9 @@ share: true
 
 
 <figure>
-	<img src="/images/article/my-show-4-angularJs/1.jpg" alt="home">
+	<a href="/images/article/my-show-4-angularJs/1.jpg">
+		<img src="/images/article/my-show-4-angularJs/1.jpg" alt="home" />
+	</a>
 	<figcaption>点击右上角项目名称可切换不同视图</figcaption>
 </figure>
 
