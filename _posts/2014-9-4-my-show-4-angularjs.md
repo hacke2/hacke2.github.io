@@ -15,7 +15,7 @@ share: true
 一个大概的样子出来，大家可以自己放里面加内容
 
 
-<figure class="half">
+<figure>
 	<img src="/images/article/my-show-4-angularJs/1.jpg" alt="home">
 	<figcaption>点击右上角项目名称可切换不同视图</figcaption>
 </figure>
