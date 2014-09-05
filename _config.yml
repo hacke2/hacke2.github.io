@@ -10,7 +10,7 @@ url:              http://hacke2.github.io
 owner:
   name:           王兴龙
   avatar:         wxl-photo.jpg
-  bio:            "小时候总觉得「努力」是没有「天赋」的人做的事情；长大了才明白，原来「努力」才是最珍贵的「天赋」。"
+  bio:            "正是这些平凡的人生，却构成了伟大的历史。"
   email:          hacke2@qq.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
@@ -37,10 +37,10 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: Theme Setup
-    url: /theme-setup
-  - title: External Link
-    url: http://mademistakes.com
+#  - title: Theme Setup
+#    url: /theme-setup
+  - title: GitHub
+    url: https://github.com/hacke2
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones

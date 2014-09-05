@@ -56,4 +56,4 @@ share: true
 
 ## <a target="_blank"  style="color:red" href="/demo/my-show-4-angularjs/" >查看完整DEMO</a>
 
-<strong>end</strong>
+<strong>end from{{ site.url }}</strong>
