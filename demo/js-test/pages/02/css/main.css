@@ -1,0 +1,75 @@
+/* reset */
+*{ margin:0; padding:0;}
+body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+table{border-collapse:collapse;border-spacing:0;}
+li{list-style:none;}
+fieldset,img{border:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+q:before,q:after{content:'';}
+a:focus,input,textarea{outline-style:none;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none}
+address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+legend{color:#000;}
+abbr,acronym{border:0;font-variant:normal;}
+a{color:#0a8cd2;text-decoration:none;}
+a:hover{text-decoration:none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-block;}
+.clearfix{display:block;}
+.clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+.none{display:none}
+/* main */
+.mp-box3{ width:760px;margin: 0 auto;zoom:1}
+.mp-box3 .mp-box3-head{position:relative;margin-top:3px;height:44px;line-height:44px;border-bottom:1px solid #ff7a01;zoom:1}
+.mp-box3 .mp-box3-head .keystone{position:absolute;right:0;bottom:0;width:195px;height:0;border:3px solid transparent;border-bottom-color:#ff7a01;border-right:0;_display:none}
+.mp-box3 .mp-box3-head .mp-box-head-more2{margin-top:12px}
+.mp-box3 .mp-box3-head-icon{position:absolute;top:9px;left:0}
+.mp-box3 .mp-box3-head-title{float:left;display:inline;font-size:18px;color:#000}
+.mp-box3 .mp-box3-head-title a{font-family: '微软雅黑';}
+.mp-box3 .mp-box3-head-title a:hover{color:#ff7a01}
+.mp-card-list{margin-right:-10px}
+.mp-game-card-wrap{position:relative;float:left;width:182px;margin:0 10px 2px 0;padding:7px 0 5px;background:url(../images/card-bottom-176.png) 2px bottom no-repeat;_background:url(../images/card-bottom-176.gif) 2px bottom no-repeat}
+.mp-game{position:relative;height:203px;background:#ffffff;border:1px solid #dcdcdc;z-index:2}
+.mp-game .mp-overlay{position:absolute;top:0;left:0;width:182px;height:203px;background:#000;opacity:0.7;filter:alpha(opacity=70);z-index:-1}
+.mp-game .mp-favorite{position:absolute;top:3px;right:3px;visibility:hidden;z-index:100;cursor:pointer}
+.mp-game .mp-favorite-show{visibility:visible}
+.mp-game .mp-tip-collect{position:absolute;right:-54px;*right:-48px;top:-25px;z-index:300}
+.mp-game-link{cursor:pointer}
+.mp-game-link:hover{ text-decoration:none; color:#f60;}
+.mp-game-content{position:relative;width:180px;height:203px}
+.mp-game-show{padding-top:7px;height:140px}
+.mp-game-show img{display:block;margin:0 auto;border:0 none}
+.mp-game-info{position:relative;border-top:none;height:56px}
+.mp-game-cover,.mp-game-cover-platform{position:absolute;top:0;left:0;z-index:5;width:182px;height:0;color:#fff;overflow:hidden;-webkit-transition-duration:0.3s;-moz-transition-duration:0.3s;-ms-transition-duration:0.3s;-o-transition-duration:0.3s;transition-duration:0.3s}
+.mp-game-content .show{display:block;height:203px}
+.mp-game-cover-name{padding:10px 20px;font-size:16px}
+.mp-game-cover-description{padding:0 20px;line-height:1.2;font-size:14px}
+.mp-game-cover .mp-game-cover-start{position:absolute;bottom:10px;left:22px;width:136px;height:28px;line-height:28px;text-align:center;border:1px solid #d45f00;font-size:14px;color:#ffffff;background:#ff7a01}
+.mp-game-cover .mp-game-cover-start:hover{background-color:#ff5200}
+.mp-game-cover-platform .mp-game-cover-start{position:absolute;bottom:10px;left:6px;width:170px;font-size:14px}
+.mp-game-cover-platform .mp-game-cover-start .start-btn{display:block;height:28px;line-height:28px;width:80px;color:#ffffff;text-align:center;background:#ff7a01;border:1px solid #d45f00}
+.mp-game-cover-platform .mp-game-cover-start .start-btn:hover{background:#ff5200}
+.mp-game-cover-platform .mp-game-cover-start .mp-more{position:absolute;top:0;right:0;width:80px;height:28px;line-height:28px;background:#fff;border:1px solid #dcdcdc;color:#000;text-align:center;cursor:pointer}
+.mp-game-cover-platform .mp-game-cover-start .mp-more-hover{color:#ff5200}
+.mp-game-platform-link{position:absolute;left:93px;bottom:10px;z-index:20;width:70px;height:28px;line-height:28px;text-align:center;background:url(../img/transparent.gif);cursor:pointer}
+.mp-more-platform-panel{z-index:90}
+.mp-more-platform-panel .mp-more-platform-panel-inner{width:117px}
+.mp-more-platform-panel ul li{width:117px;height:22px;margin:7px auto 0;background:#ff7a01;border:1px solid #d45f00;text-align:center;vertical-align:middle}
+.mp-more-platform-panel ul li a{display:block;height:22px;line-height:22px;color:#fff;cursor:pointer;z-index:20;_zoom:1}
+.mp-more-platform-panel ul li a:hover{background:#ff5200}
+.mp-game .mp-more-platform-panel-show{display:block;height:203px}
+.mp-game-info-name{width:103px;padding:12px 0 0 10px;font-size:17px;height:18px;line-height:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.mp-game-info-detail{height:12px;padding:6px 0 0 10px;line-height:1;font-size:0}
+.mp-game-info-type,.mp-game-info-op{font-size:12px}
+.mp-game-info-type{color:#979797;padding-right:5px}
+.mp-game-info-op{padding-left:5px;color:#979797;border-left:1px solid #dcdcdc}
+.mp-game-score-ct{position:absolute;top:5px;right:8px;width:43px;height:43px;border-radius:50%;border:1px solid #d1d1d1;color:#717171;background-image:-webkit-linear-gradient(top,#dcdcdc 0%,#f5f5f5 100%);background-image:-moz-linear-gradient(top,#dcdcdc 0%,#f5f5f5 100%);background-image:-moz-linear-gradient(to bottom,#dcdcdc 0%,#f5f5f5 100%);background-image:-o-linear-gradient(to bottom,#dcdcdc 0%,#f5f5f5 100%);background-image:linear-gradient(to bottom,#dcdcdc 0%,#f5f5f5 100%);background-repeat:repeat}
+.mp-game-score-ct-inner{margin:2px auto;width:37px;height:37px;line-height:37px;text-align:center;border-radius:50%;border:1px solid #dbdbdb;text-shadow:#ffffff 0 -2px;background-image:-webkit-linear-gradient(top,#f7f7f7 0%,#ededed 100%);background-image:-moz-linear-gradient(top,#f7f7f7 0%,#ededed 100%);background-image:-moz-linear-gradient(to bottom,#f7f7f7 0%,#ededed 100%);background-image:-o-linear-gradient(to bottom,#f7f7f7 0%,#ededed 100%);background-image:linear-gradient(to bottom,#f7f7f7 0%,#ededed 100%);background-repeat:repeat}
+.mp-game-score-i{font-size:26px;font-style:italic}
+.mp-game-score-d{font-size:17px;font-style:italic}
+.mp-wangyou-wrap{margin-top:15px}
+
+.sl-hvalign{display:table;overflow:hidden;margin:0 auto;height:100%;*position:relative}
+.sl-hvalign-cnt{display:table-cell;vertical-align:middle;*position:absolute;top:50%}
+.sl-hvalign-cnt-inner{*position:relative;*top:-50%}
