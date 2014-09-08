@@ -16,11 +16,26 @@ projectShowApp.config(function($routeProvider) {
             templateUrl : 'pages/02/',
         });
 });
+
+
 projectShowApp.controller('mainController', function($scope) {
     $scope.message = {
     	name : '这里是我的一些前端小练习',
     	mail :　'hacke2@qq.com',
-    	other : 'github : github.com/hacke2/frontcode'
+    	url : 'http://github.com/hacke2/frontcode'
     };
+    
+    $scope.works = [
+	    {
+	    	name : '图片无缝切换',
+	    	route : '01'
+	    	
+	    },
+	    {
+	    	name : '下拉遮罩',
+	    	route : '02'
+	    	
+	    }
+    ];
 });
  

@@ -19,10 +19,8 @@
                 <a class="navbar-brand" href="/">JavaScript小练习</a>
             </div>
  
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-comment"></i>图片无缝切换</a></li>
-                <li><a href="#roadsideAssistance"><i class="fa fa-shield"></i> 道路救援</a></li>
-                <li><a href="#westom"><i class="fa fa-comment"></i> 维斯顿智能家居</a></li>
+            <ul class="nav navbar-nav navbar-right"  ng-repeat="work in works">
+                <li><a href="#{{work.route}}"><i class="fa fa-comment"></i>{{work.name}}</a></li>
             </ul>
         </div>
         </nav>
