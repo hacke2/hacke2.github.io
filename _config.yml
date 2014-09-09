@@ -40,8 +40,12 @@ links:
 #  - title: Theme Setup
 #    url: /theme-setup
   - title: GitHub
+    url: https://github.com/show
+    external: true
+  - title: GitHub
     url: https://github.com/hacke2
     external: true
+    
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
