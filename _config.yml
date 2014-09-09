@@ -39,7 +39,7 @@ bing_verify:
 links:
 #  - title: Theme Setup
 #    url: /theme-setup
-  - title: GitHub
+  - title: 前端小练习
     url: https://github.com/show
     external: true
   - title: GitHub
