@@ -39,7 +39,7 @@ bing_verify:
 links:
 #  - title: Theme Setup
 #    url: /theme-setup
-  - title: 前端小练习
+  - title: works
     url: http://hacke2.github.io/works
     external: true
   - title: GitHub
