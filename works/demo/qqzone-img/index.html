@@ -67,15 +67,10 @@
 				if(relativeY < compareH) {
 					//d('移动到' + targetH)
 					//移到图框上部
-					if(!this.timer) {
-						startMove(this,{top : targetH}, 500)
-					}
-					
+					startMove(this,{top : targetH}, 500)
 				}else {
 					//移到图框下部	
-					if(!this.timer) {
-						startMove(this,{top : 0}, 500)
-					}
+					startMove(this,{top : 0}, 500)
 				}
 			
 		}
