@@ -57,8 +57,8 @@
 		img.onmousemove = function() {
 			var e = event || window.event,
 				context = this.parentNode,
-				relativeX = e.clientX - this.offsetLeft,
-				relativeY = e.clientY - this.offsetTop,
+				relativeX = e.clientX - context.offsetLeft,
+				relativeY = e.clientY - context.offsetTop,
 				targetH = -this.offsetHeight+context.offsetHeight,
 				compareH =  context.offsetHeight /2;
 				
