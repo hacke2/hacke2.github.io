@@ -21,23 +21,38 @@
 				margin: 50px auto;
 				overflow:hidden;
 				border: 1px solid #000000;
+				position: relative;
 			}
 			.show-img img {
 				position: relative;
 			}
+			.show-img .ico-long-pic {
+				padding: 0 5px;
+				position: absolute;
+				background: #009999;
+				color: #FFF;
+				left: 0;
+				top: 0;
+				z-index: 999;
+			} 
 		</style>
 	</head>
 
 	<body>
 		<div class="container">
 			<div class="show-img">
-				<!--<i>长图</i>-->
+				<i class="ico-long-pic">长图</i>
 				<img id="long-pic" src="1.jpg" alt="" />
 			</div>
 		</div>
 	</body>
 	<script>
 		var img = document.getElementById('long-pic');
+		
+		if(img.offsetHeight > img.parentNode.offsetHeight) {
+			
+		}
+		
 		
 		img.onmousemove = function() {
 			var e = event || window.event,
@@ -58,6 +73,12 @@
 					startMove(this,{top : 0}, 500)
 				}
 			
+		}
+		
+		img.onmouseout = function() {
+			if (this.timer) {
+				clearInterval(this.timer);
+			}			
 		}
 		
 		
