@@ -68,8 +68,8 @@
 			})
 			$('#tests a').bind('mouseout',function(){
 				var $this = $(this);
-				$this.attr('desc',$this.html());
-				$this.html($this.data('name'));
+				$this.attr('desc',$this.text());
+				$this.text($this.data('name'));
 			})
 		</script>
 	</body>

@@ -1,6 +1,0 @@
-用户的FTP登陆用户名是： hacke2 
-　　　 用户的FTP密码是： 124AE38838d08a 
-　　　 您的网址为： http://hacke2.web139.pyhwkj.com 
-　　　 FTP地址是：ftp.web139.yrm168.com 
-　　　 服务器IP是：121.61.118.139 
-　　　 现在的到期时间是: 2013-6-23 12:45:10
