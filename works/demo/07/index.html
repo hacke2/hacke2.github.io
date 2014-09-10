@@ -38,11 +38,10 @@
 	function showCur(i) {
 		for (var j = 0;j < switches.length; j++) {
 			switches[j].className = 'switch-item';
-			startMove(items[j], {opacity : 0},function(){
-				startMove(items[i], {opacity : 100})
-			});
-			switches[i].className +=  ' active-switch-item';
+			startMove(items[j], {opacity : 0});
 		}
+		startMove(items[i], {opacity : 100})
+		switches[i].className +=  ' active-switch-item';
 	}
 	
 	timerChange();
