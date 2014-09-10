@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+		<script type="text/javascript" src="/common/js/startmove.js" ></script>
+	</head>
+
+	<body>
+		<div id="mp-banner" class="mp-banner-slide">
+			<ul class="mp-banner-list">
+				<li class="item banner0">
+					<a target="_blank">
+						<img src="images/1.jpg" alt="发光武器装备，限量免费放送，等你哟！">
+						<span class="mp-line-opacity">发光武器装备，限量免费放送，等你哟！</span>
+					</a>
+				</li>
+				<li class="item banner1">
+					<a target="_blank">
+						<img src="images/2.jpg" alt="暗黑战神-极速3D动作手游">
+						<span class="mp-line-opacity">暗黑战神-极速3D动作手游</span>
+					</a>
+				</li>
+				<li class="item banner2">
+					<a target="_blank">
+						<img src="images/3.jpg" alt="传奇安卓手游，不删档内侧">
+						<span class="mp-line-opacity">传奇安卓手游，不删档内侧</span>
+					</a>
+				</li>
+				<li class="item banner3">
+					<a target="_blank">
+                <img src="images/4.jpg" alt="本年度最热门手机游戏<<放开那三国>>">
+                <span class="mp-line-opacity">本年度最热门手机游戏&lt;&lt;放开那三国&gt;&gt;</span>
+            </a>
+				</li>
+				<li class="item banner4">
+					<a target="_blank">
+                <img src="images/5.jpg" alt="最受欢迎的手机游戏<<时空猎人(街机格斗)>>">
+                <span class="mp-line-opacity">最受欢迎的手机游戏&lt;&lt;时空猎人(街机格斗)&gt;&gt;</span>
+            </a>
+				</li>
+			</ul>
+			<div id="dots" class="mp-banner-dots">
+				<a class="dot"></a>
+				<a class="dot"></a>
+				<a class="dot dot-active"></a>
+				<a class="dot"></a>
+				<a class="dot"></a>
+			</div>
+		</div>
+		<script>
+			(function() {
+				var box = document.getElementById('mp-banner'),
+					li = document.getElementsByTagName('li'),
+					img =  document.getElementsByTagName('img'),
+					dots = document.getElementById('mp-banner'),
+					links = document.getElementsByClassName('dot') || document.querySelectorAll('.dot');
+				
+				//深克隆
+				Object.prototype.clones = function() {
+				    var o = {};
+				    for (var i in this) {
+				        o[i] = this[i];
+				    }
+				    return o;
+				};
+				Array.prototype.clones = function() {
+				    var arr = [];
+				    for (var i = 0; i < this.length; i++)
+				        if (typeof this[i] !== 'object') {
+				        arr.push(this[i]);
+				    } else {
+				        arr.push(this[i].clones());
+				    }
+				    return arr;
+				};
+				
+				//封装一个循环队列
+				function CircularQueue(arr) {
+					this.arr = arr || [];
+				}
+				
+				//移除前一个，追加到最后
+				CircularQueue.prototype.shift = function() {
+					var temp = this.arr.shift();
+					this.arr.push(temp);
+				}
+				//移除最后一个，追加到头部
+				CircularQueue.prototype.unshift = function() {
+					var temp = this.arr.pop();
+					this.arr.unshift(temp);
+				}
+				//添加一个元素
+				CircularQueue.prototype.add = function(obj) {
+					this.arr.push(obj);
+				}
+				var queue = new CircularQueue();
+
+				//初始化ARR数组
+				for (var i = 0; i < li.length; i++) {
+
+					queue.add({
+						top: parseInt(getStyle(li[i], 'top')),
+						left: parseInt(getStyle(li[i], 'left')),
+						width: parseInt(getStyle(li[i], 'width')),
+						height: parseInt(getStyle(li[i], 'height')),
+						zIndex: getStyle(li[i], 'z-index')
+					});
+				}
+
+				//绑定事件
+				for (var j = 0; j < links.length; j++) {
+					links[j].onmouseover = (function(j, len) {
+						return function() {
+							//鼠标一上去小点切换
+							var k = len - 1;
+							for (; k >= 0; k--) {
+								links[k].className = 'dot';
+							}
+							links[j].className += ' dot-active';
+
+							//替换大图片
+							var arr = getMiddleArr(j);
+							updateStyle(arr);
+
+						}
+					})(j, links.length);
+				}
+
+
+				//传递一个数，获取以该数为中心的数组，如原数组01234， 传递0 就为 34012
+				function getMiddleArr(n) {
+					var len = n- 2;
+					var tempArr = new CircularQueue(queue.arr.clones());
+					if(len >= 0) {
+						for(var i = 0;i < len; i++) {
+							tempArr.shift();
+						}		
+					}else {
+						for(var i = 0;i < Math.abs(len); i++) {
+							tempArr.unshift();
+						}
+					}
+					return tempArr.arr;
+				}
+				
+				//调用动作函数绘制
+				function updateStyle(arr) {
+					for (var i = 0; i < li.length; i++) {
+						li[i].style.zIndex = arr[i].zIndex;
+						startMove(li[i], arr[i]);
+						
+					}
+				}
+
+				//获取CSS
+				function getStyle(elem, name) {
+					if (elem.style[name]) {
+						return elem.style[name];
+					} else if (elem.currentStyle) {
+						return elem.currentStyle[name];
+					} else if (document.defaultView && document.defaultView.getComputedStyle) {
+						//W3C中为textAlign样式，转为text-align
+						name = name.replace(/([A-Z])/g, "-$1");
+						name = name.toLowerCase();
+						var s = document.defaultView.getComputedStyle(elem, "");
+						return s && s.getPropertyValue(name);
+					} else {
+						return null;
+					}
+
+				}
+
+
+				
+		})();
+		</script>
+	</body>
+
+</html>
