@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
-		<script type="text/javascript" src="/common/js/startmove.js" ></script>
+		<script type="text/javascript" src="/common/js/startmove.js"></script>
 	</head>
 
 	<body>
@@ -54,45 +54,45 @@
 			(function() {
 				var box = document.getElementById('mp-banner'),
 					li = document.getElementsByTagName('li'),
-					img =  document.getElementsByTagName('img'),
+					img = document.getElementsByTagName('img'),
 					dots = document.getElementById('mp-banner'),
-					links = document.getElementsByClassName('dot') || document.querySelectorAll('.dot');
-				
+					links = getElementsByClass('dot');
+
 				//深克隆
 				Object.prototype.clones = function() {
-				    var o = {};
-				    for (var i in this) {
-				        o[i] = this[i];
-				    }
-				    return o;
+					var o = {};
+					for (var i in this) {
+						o[i] = this[i];
+					}
+					return o;
 				};
 				Array.prototype.clones = function() {
-				    var arr = [];
-				    for (var i = 0; i < this.length; i++)
-				        if (typeof this[i] !== 'object') {
-				        arr.push(this[i]);
-				    } else {
-				        arr.push(this[i].clones());
-				    }
-				    return arr;
+					var arr = [];
+					for (var i = 0; i < this.length; i++)
+						if (typeof this[i] !== 'object') {
+							arr.push(this[i]);
+						} else {
+							arr.push(this[i].clones());
+						}
+					return arr;
 				};
-				
+
 				//封装一个循环队列
 				function CircularQueue(arr) {
 					this.arr = arr || [];
 				}
-				
+
 				//移除前一个，追加到最后
 				CircularQueue.prototype.shift = function() {
-					var temp = this.arr.shift();
-					this.arr.push(temp);
-				}
-				//移除最后一个，追加到头部
+						var temp = this.arr.shift();
+						this.arr.push(temp);
+					}
+					//移除最后一个，追加到头部
 				CircularQueue.prototype.unshift = function() {
-					var temp = this.arr.pop();
-					this.arr.unshift(temp);
-				}
-				//添加一个元素
+						var temp = this.arr.pop();
+						this.arr.unshift(temp);
+					}
+					//添加一个元素
 				CircularQueue.prototype.add = function(obj) {
 					this.arr.push(obj);
 				}
@@ -132,26 +132,26 @@
 
 				//传递一个数，获取以该数为中心的数组，如原数组01234， 传递0 就为 34012
 				function getMiddleArr(n) {
-					var len = n- 2;
+					var len = n - 2;
 					var tempArr = new CircularQueue(queue.arr.clones());
-					if(len >= 0) {
-						for(var i = 0;i < len; i++) {
+					if (len >= 0) {
+						for (var i = 0; i < len; i++) {
 							tempArr.shift();
-						}		
-					}else {
-						for(var i = 0;i < Math.abs(len); i++) {
+						}
+					} else {
+						for (var i = 0; i < Math.abs(len); i++) {
 							tempArr.unshift();
 						}
 					}
 					return tempArr.arr;
 				}
-				
+
 				//调用动作函数绘制
 				function updateStyle(arr) {
 					for (var i = 0; i < li.length; i++) {
 						li[i].style.zIndex = arr[i].zIndex;
 						startMove(li[i], arr[i]);
-						
+
 					}
 				}
 
@@ -173,9 +173,40 @@
 
 				}
 
+				function getElementsByClass(className) {
+					if (typeof document.getElementsByClassName === 'function') {
+						return document.getElementsByClassName(className);
+					}
+					//如果不支持getElementsByClassName函数
+					else {
+						var allDoms = document.getElementsByTagName("*");
+						var result = [];
+						for (var i = 0, len = allDoms.length; i < len; i++) {
+							if (allDoms[i].className.indexOf(className) > -1) {
+								result.push(allDoms[i]);
+							}
+						}
+						return result;
+					}
+				}
 
-				
-		})();
+				function converToArray(nodes) {
+					var array = null;
+					try {
+						array = Array.prototype.slice.call(nodes, 0); //针对非IE浏览器         
+					} catch (ex) {
+						array = new Array();
+						for (var i = 0, len = nodes.length; i < len; i++) {
+							array.push(nodes[i])
+						}
+					}
+					return array;
+				}
+
+
+
+
+			})();
 		</script>
 	</body>
 
