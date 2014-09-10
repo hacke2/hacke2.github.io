@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>百度微购-图片轮换</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+	<script src="/common/js/startmove.js"></script>
+</head>
+<body>
+<div id="box" class="main-promo">
+    <div id="bar" class="switch-items">
+        <div class="switch-item active-switch-item">聚蟹客 中秋好礼</div>
+        <div class="switch-item">赚网 相思惠明月</div>
+        <div class="switch-item">草莓网 彩妆大促</div>
+        <div class="switch-item">中秋送礼 浓情促销</div>
+    </div>
+    <a class="main-item" target="_blank" href="#"><img src="images/1.jpg"></a>
+    <a class="main-item" target="_blank" href="#"><img src="images/2.jpg"></a>
+    <a class="main-item" target="_blank" href="#"><img src="images/3.jpg"></a>
+    <a class="main-item" target="_blank" href="#"><img src="images/4.jpg"></a>
+</div>
+<script>
+	var box = document.getElementById('box');
+	var switches = document.getElementById('bar').getElementsByTagName('div');
+	var items = document.getElementsByTagName('a');
+	var timer = null;
+	var flag = 1;
+	
+	
+	for(var i = 0;i < switches.length;i++) {
+		switches[i].onmouseover =(function(i){
+			return function() {
+				showCur(i)
+			}
+		})(i);
+	}
+	
+	function showCur(i) {
+		for (var j = 0;j < switches.length; j++) {
+			switches[j].className = 'switch-item';
+			startMove(items[j], {opacity : 0},function(){
+				startMove(items[i], {opacity : 100})
+			});
+			switches[i].className +=  ' active-switch-item';
+		}
+	}
+	
+	timerChange();
+	
+	function timerChange() {
+		timer = setInterval(function() {
+			if(flag > switches.length-1) flag = 0;
+			showCur(flag);
+			flag++;
+		},1000);
+	}
+	
+	box.onmouseover = function() {
+		clearInterval(timer);
+	}
+	
+	box.onmouseout= function() {
+		timerChange();
+	}
+</script>
+</body>
+</html>
