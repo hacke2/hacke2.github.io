@@ -65,12 +65,13 @@
 				//d('x ' + relativeX + ' y ' + relativeY);
 				
 				if(relativeY < compareH) {
+					//移到图框下部	
+					startMove(this,{top : 0}, 500)
+				}else {
+					
 					//d('移动到' + targetH)
 					//移到图框上部
 					startMove(this,{top : targetH}, 500)
-				}else {
-					//移到图框下部	
-					startMove(this,{top : 0}, 500)
 				}
 			
 		}
