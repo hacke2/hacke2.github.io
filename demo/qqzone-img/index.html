@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../common/js/startmove.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				
+			}
+			.container {
+				width: 960px;
+				margin: 0 auto;
+			}
+			.show-img {
+				width: 500px;
+				height: 400px;
+				margin: 50px auto;
+				overflow:hidden;
+				border: 1px solid #000000;
+			}
+			.show-img img {
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="show-img">
+				<!--<i>长图</i>-->
+				<img id="long-pic" src="1.jpg" alt="" />
+			</div>
+		</div>
+	</body>
+	<script>
+		var img = document.getElementById('long-pic');
+		
+		img.onmousemove = function() {
+			var e = event || window.event,
+				context = this.parentNode,
+				relativeX = e.clientX - this.offsetLeft,
+				relativeY = e.clientY - this.offsetTop,
+				targetH = -this.offsetHeight+context.offsetHeight,
+				compareH =  context.offsetHeight /2;
+				
+				//d('x ' + relativeX + ' y ' + relativeY);
+				
+				if(relativeY < compareH) {
+					//d('移动到' + targetH)
+					//移到图框上部
+					startMove(this,{top : targetH}, 500)
+				}else {
+					//移到图框下部	
+					startMove(this,{top : 0}, 500)
+				}
+			
+		}
+		
+		
+		function d(msg) {
+			if(console) {
+				console.log(msg);
+			}
+		}
+	</script>
+
+</html>
