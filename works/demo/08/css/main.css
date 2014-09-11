@@ -1,0 +1,124 @@
+*{ margin:0; padding:0;}
+body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+table{border-collapse:collapse;border-spacing:0;}
+li{list-style:none;}
+fieldset,img{border:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+q:before,q:after{content:'';}
+a:focus,input,textarea{outline-style:none;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none}
+address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+legend{color:#000;}
+abbr,acronym{border:0;font-variant:normal;}
+a{color:#0a8cd2;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-block;}
+.clearfix{display:block;}
+.clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+.none{display:none}
+/* main */
+.navigator{background:#d22636;font-size:14px; margin-top:120px;height:40px;min-width:1200px;}
+.navigator-inner{margin:0 auto;width:1200px}
+.navigator-items{font-weight:bold;height:40px}
+.all-cate{background:none repeat scroll 0 0 #c2202f;font-weight:bold;height:40px;position:relative;z-index:121}
+.all-cate .navigator-item{position:absolute}
+.col-15{width:240px;box-sizing:border-box}
+.navigator-items .navigator-item{color:#fff;line-height:40px}
+
+
+.ui-menu{position:absolute;font-size:12px;color:#333;top:40px;left:0px;font-weight:normal;}
+.topic_index .ui-menu{display:block}
+.widget-menu{z-index:2000}
+.ui-menu-main{background-color:#ebebeb;border-radius:0 0 10px 10px}
+.widget-menu .ui-menu-main{background-color:#fff}
+.ui-menu-body{padding:0 1px;line-height:23px}
+.ui-menu-body ul{border:2px solid #bb0f11;border-top:none;border-radius:0 0 10px 10px}
+.widget-menu .ui-menu-body ul{width:236px;margin-left:-1px;background-color:#fff;z-index:10}
+.ui-menu-item{display:block;zoom:1;height:60px;overflow:hidden;position:relative}
+.widget-menu .ui-menu-item{height:30px;padding:2px}
+.last-ui-menu-item{border-radius:0 0 10px 10px}
+.widget-menu .ui-menu-item-expand{height:52px;background-color:#fffdfe;padding:0;border:1px solid #dadada;margin:1px}
+.ui-menu-item-expand-entrance{background:url(http://bs.baidu.com/weigou-baidu-com/8558c5fc64976a754c5015a62527935a.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://bs.baidu.com/weigou-baidu-com/8558c5fc64976a754c5015a62527935a.png',sizingMethod='scale');position:absolute;right:10px;top:13px;height:12px;width:10px;overflow:hidden}
+.widget-menu .ui-menu-item-expand-entrance{background:url('http://bs.baidu.com/weigou-baidu-com/9c1df518a67d4f1d38a3f8beb6cb00b4.gif');width:7px;height:10px}
+.widget-menu .ui-menu-item-expand .ui-menu-item-expand-entrance{background:url('http://bs.baidu.com/weigou-baidu-com/9c9bee73bb3518898ee9ce06609e3faa.gif')}
+.ui-menu-item h3{color:#333;overflow:hidden;height:20px;line-height:20px;font-size:14px;padding-left:10px;margin-top:5px}
+.ui-menu-tinysub{margin:6px 10px 0}
+.widget-menu .ui-menu-tinysub{display:none}
+.widget-menu .ui-menu-item-expand .ui-menu-tinysub{display:block;margin:2px 10px 4px}
+.ui-menu-item b{float:left;width:16px;height:16px;background:#000;margin-top:2px}
+.ui-menu-item h3 span{float:left;line-height:20px;margin-left:10px;font-weight:bold;font-size:12px}
+.ui-menu-header-wrapper{position:relative;float:left}
+.ui-menu-header-text{margin-left:0!important}
+.ui-menu-tiny-a-wrapper{position:relative;margin-right:7px}
+.ui-menu-tiny-a{display:inline-block;color:#989898;line-height:23px}
+.ui-menu-tiny-a-bold{font-weight:bold}
+.ui-menu-header-wrapper a{color:#333}
+.ui-item-hover{background:#d22636;color:#fff;margin-left:-1px;margin-right:-1px;padding-left:1px;padding-right:1px}
+.widget-menu .ui-item-hover{background:inherit;color:#333;border:1px solid #d22636;border-right:0;box-shadow:-1px 2px #e3e3e3;z-index:11}
+.widget-menu .ui-item-hover a{color:#989898}
+.widget-menu .ui-item-hover h3,.widget-menu .ui-item-hover h3 a{color:#333}
+.ui-item-hover h3,.ui-item-hover a{color:#fff}
+.ui-item-hover .ui-menu-item-expand-entrance{display:none}
+.widget-menu .ui-item-hover .ui-menu-item-expand-entrance{display:block}
+.ui-menu-sub{overflow:hidden;width:0;position:absolute;top:0;left:236px;z-index:10;background:#fff}
+.ui-sub-item{display:none;border:1px solid #d22636;zoom:1}
+.sub-item-show{display:block}
+.sub-section{overflow:hidden;border-top:1px solid #eee;margin:0 30px;width:582px}
+.sub-section-first{border-top:0}
+.sub-section-title{float:left;font-weight:bold;width:82px;line-height:20px;margin:20px 0;position:relative;text-align:center}
+.sub-section-title a{color:#d22636}
+.sub-section-body-wrapper{overflow:hidden;float:left;width:500px;padding-top:20px;margin-bottom:15px}
+.sub-section-body{float:left;line-height:20px;margin:4px 0 0 -4px;_margin-top:2px}
+.sub-link-wrapper{margin-bottom:12px;*padding-bottom:12px;*margin-bottom:0;float:left;white-space:nowrap}
+.sub-link-a-wrapper{float:left;position:relative;margin:0 6px}
+.sub-seperator{float:left;width:1px;height:12px;_height:14px;overflow:hidden;background:#ccc}
+.sub-link{color:#000;float:left;height:12px;line-height:12px;*height:14px;*line-height:14px;white-space:nowrap}
+.menu-tag{position:absolute;right:-19px;top:-12px;z-index:2}
+.menu-tag-text{color:#fff;height:12px;line-height:12px;overflow:hidden;padding:0 1px;background:#d22535;font-family:simsun}
+.menu-tag-line{height:1px;overflow:hidden}
+.menu-tag-2px{width:2px;background:#d22535}
+.menu-tag-1px{width:1px;background:#d22535}
+.ui-menu-header b{background:url('http://bs.baidu.com/weigou-baidu-com/210491fd835ab78d626611b0621fbae7.png');width:17px;height:17px}
+.ui-menu-header-0 b{background-position:-1px 0}
+.widget-menu .ui-menu-item-expand .ui-menu-header-0 b{background-position:-20px 0}
+.ui-menu-header-1 b{background-position:-1px -17px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-1 b{background-position:-20px -17px}
+.ui-menu-header-2 b{background-position:-1px -34px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-2 b{background-position:-20px -34px}
+.ui-menu-header-3 b{background-position:-1px -51px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-3 b{background-position:-20px -51px}
+.ui-menu-header-4 b{background-position:-1px -68px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-4 b{background-position:-20px -68px}
+.ui-menu-header-5 b{background-position:-1px -85px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-5 b{background-position:-20px -85px}
+.ui-menu-header-6 b{background-position:-1px -102px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-6 b{background-position:-20px -102px}
+.ui-menu-header-7 b{background-position:-1px -119px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-7 b{background-position:-20px -119px}
+.ui-menu-header-8 b{background-position:-1px -136px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-8 b{background-position:-20px -136px}
+.ui-menu-header-9 b{background-position:-1px -153px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-9 b{background-position:-20px -153px}
+.ui-menu-header-10 b{background-position:-1px -170px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-10 b{background-position:-20px -170px}
+.ui-menu-header-11 b{background-position:-1px -187px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-11 b{background-position:-20px -187px}
+.ui-menu-header-12 b{background-position:-1px -204px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-12 b{background-position:-20px -204px}
+.ui-menu-header-13 b{background-position:-1px -221px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-13 b{background-position:-20px -221px}
+.ui-menu-header-14 b{background-position:-1px -238px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-14 b{background-position:-20px -238px}
+.ui-menu-header-15 b{background-position:-1px -255px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-15 b{background-position:-20px -255px}
+.ui-menu-header-16 b{background-position:-1px -272px}
+.widget-menu .ui-menu-item-expand .ui-menu-header-16 b{background-position:-20px -272px}
+.sub-section-title .menu-tag{top:-8px}
+.menu-tag-NEW .menu-tag-text{background:#71bd63}
+.menu-tag-NEW .menu-tag-2px{background:#71bd63}
+.menu-tag-NEW .menu-tag-1px{background:#71bd63}
+.ui-item-hover .menu-tag-text{background:#FFF;color:#d22636}
+.ui-item-hover .menu-tag-2px{background:#FFF}
+.ui-item-hover .menu-tag-1px{background:#FFF}
