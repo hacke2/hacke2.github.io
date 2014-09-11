@@ -20,6 +20,7 @@ node.js提供了高效的服务端运行环境，但是由于浏览器端对HTML
 于是socket.io诞生。
 
 	简答来说socket.io具体以下特点：
+	
     1.socket.io设计的目标是支持任何的浏览器，任何Mobile设备。目前支持主流的PC浏览器 (IE,Safari,Chrome,Firefox,Opera等)，Mobile浏览器(iphone Safari/ipad Safari/android WebKit/WebOS WebKit等)。socket.io基于node.js并简化了WebSocket API，统一了通信的API。它支持：WebSocket, Flash Socket, AJAX long-polling, AJAX multipart streaming, Forever IFrame, JSONP polling。
     
     2.socket.io解决了实时的通信问题，并统一了服务端与客户端的编程方式。启动了socket以后，就像建立了一条客户端与服务端的管道，两边可以互通有无。
@@ -110,6 +111,16 @@ node app.js
 		<img src="/images/article/1.jpg" alt="home" />
 	</a>
 	<figcaption>运行效果</figcaption>
+</figure>
+
+
+>附上一个实现了很炫聊天DEMO  http://segmentfault.com/a/1190000000479518
+
+<figure>
+	<a href="/images/article/2.jpg">
+		<img src="/images/article/2.jpg" alt="home" />
+	</a>
+	<figcaption>聊天DEMO</figcaption>
 </figure>
 
 <strong>end from {{ site.url }}</strong>
