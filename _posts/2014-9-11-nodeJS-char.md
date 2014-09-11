@@ -117,8 +117,8 @@ node app.js
 >附上一个实现了很炫聊天DEMO  http://segmentfault.com/a/1190000000479518
 
 <figure>
-	<a href="/images/article/2.jpg">
-		<img src="/images/article/2.jpg" alt="home" />
+	<a href="/images/article/2.png">
+		<img src="/images/article/2.png" alt="home" />
 	</a>
 	<figcaption>聊天DEMO</figcaption>
 </figure>
