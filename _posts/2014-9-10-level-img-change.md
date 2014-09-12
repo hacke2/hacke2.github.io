@@ -142,7 +142,7 @@ function updateStyle(arr) {
 全部代码就不贴在博客上了，很简单，没什么可看的，大家可以去我的github上检出
 
 
-<a target="_blank"  href="https://github.com/hacke2/frontcode">点击进入github: AngularJs+BootStarp+fontAwesome打造个人展示页面</a><br/>
+<a target="_blank"  href="https://github.com/hacke2">点击进入我的github</a><br/>
 
 ## <a target="_blank"  style="color:red" href="/works/demo/06/" >查看完整DEMO</a>
 
