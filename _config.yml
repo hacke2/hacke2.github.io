@@ -4,7 +4,7 @@ disqus_shortname: hacke2
 reading_time:     true
 words_per_minute: 200
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://hacke2.github.io
+url:              http://www.hacke2.cn
 
 # Owner/author information
 owner:
