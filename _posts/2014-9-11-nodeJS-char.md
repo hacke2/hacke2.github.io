@@ -123,4 +123,4 @@ node app.js
 	<figcaption>聊天DEMO</figcaption>
 </figure>
 
-<strong>end from {{ site.url }}</strong>
+<strong>end from <a href="{{ site.url }}"> {{ site.url }}</a></strong>
