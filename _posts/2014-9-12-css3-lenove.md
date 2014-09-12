@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript模仿实现联想校招员工信息展示
+title: JavaScript实现联想校招员工信息展示
 description: "使用简单模板+css3+javascript实现CSS3弹窗及切换"
 tags: [JavaScript, 小练习]
 image:
@@ -230,12 +230,9 @@ function closeDialog(func) {
 }
 {% endhighlight %}
 
-# 获取代码
+# <a target="_blank"  href="https://github.com/hacke2/">获取代码</a><br/>
 
 代码就不贴在博客上了，很简单，没什么可看的，大家可以去我的github上检出
-
-
-<a target="_blank"  href="https://github.com/hacke2/">点击进入我的github</a><br/>
 
 ## <a target="_blank"  style="color:red" href="/works/demo/04" >查看完整DEMO</a>
 
