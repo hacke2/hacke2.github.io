@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Ta 在联想</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+	</head>
+
+	<body>
+		<div id="container" class="page page5">
+			<div class="div1200">
+				<span class="link page5span1 current"><img src="images/n8_03.png"></span>
+				<ul class="ullist8" style="margin-top: 30px;">
+					<!-- 在这里插入模板-->
+
+				</ul>
+			</div>
+		</div>
+		<div id="bg" class="box_bg1"></div>
+		<div id="dialog"  class="box_ovo ">
+			<span id="close" class="close"><i></i></span>
+			<span class="prev"><i></i></span>
+			<span class="next"><i></i></span>
+			<div id="div_temp1" data-id="{i}" >
+				<img class="oimg1" src="{bigpic}">
+				<div class="ovotxt">
+					<div class="ovohead">
+						<h1>{name}</h1>
+						<i>{enname}</i>
+						<em>{desc}</em>
+						<span>ECS</span>
+					</div>
+					<p>2013年加入联想，联想游戏中心最霸气的女商务，性格大大咧咧，柔弱的外表下有一颗强大的心。自诩内可安邦定天下，外可御敌千里外。</p>
+					<p>联想游戏中心作为北研最靓丽的风景线，不仅有着最潮、最流行的游戏可以玩，有各种精美的游戏周边随便拿，最关键的是有这样娇(ba)媚(qi)可(shi)人(zu)的女汉子陪聊，陪工作，陪吃饭。总之一句话，联想游戏中心，你值得拥有。</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="temp_li" style="display: none;">
+			<li data-id="{i}" class="transform">
+				<div>
+					<i></i>
+					<span>{name}</span>
+					<p>{desc}</p>
+				</div>
+				<img src="{pic}">
+			</li>
+		</div>
+		<script src="data.js"></script>
+		<script>
+			(function(){
+		
+		
+		        var bg = document.getElementById('bg');
+		        var dialog = document.getElementById('dialog');
+		        var close = document.getElementById('close');
+		        var ul = document.getElementsByTagName('ul')[0];
+		
+		
+				//给每一个li加事件
+				ul.onclick = function(event) {
+					var e = event || window.event;
+					var target = e.target || e.srcElement;
+					target = getLiByChild(target);
+					if(target) {
+						var curIndex = target.getAttribute('data-id');
+		            	openDialog(curIndex);
+					}
+				}
+		     
+		
+				//给弹出层加事件
+		        dialog.onclick = function(){
+		        	var e = event || window.event;
+					var target = e.target || e.srcElement;
+					var curIndex = +dialog.lastElementChild.getAttribute('data-id'); 
+					//点击关闭
+					if(target.nodeName == 'I' && target.parentNode.className == 'close') {
+						closeDialog();
+					}
+					//点击上一个
+					if(target.nodeName == 'I' && target.parentNode.className == 'prev') {
+						var preIndex= curIndex-1;
+						if(preIndex > -1) {
+							closeDialog(function() {
+								openDialog(preIndex);
+							});
+						}else {//否则循环到最后一个
+							closeDialog(function() {
+								openDialog(data.length-1);
+							});
+						}
+						
+					}
+					
+					//点击下一个
+					if(target.nodeName == 'I' && target.parentNode.className == 'next') {
+						var nextIndex= curIndex+1;
+						if(nextIndex < data.length) {
+							closeDialog(function() {
+								openDialog(nextIndex);
+							});
+						}else {//否则循环到最后一个
+							closeDialog(function() {
+								openDialog(0);
+							});
+						}
+					}
+		            
+		        }
+		        
+		        //获取LI模板HTML
+		        var tempLi = document.getElementById('temp_li').innerHTML;
+		        
+		        //HTML + 数据最后放到这个数组里
+		        var liArr = [];
+				for (var i = 0; i < data.length; i++) {
+					//替换模板里{}表达式
+					var itemLi = tempLi.replace(/\{i\}/, i)
+									.replace(/\{name\}/,data[i].name)
+									.replace(/\{desc\}/,data[i].desc)
+									.replace(/\{pic\}/,data[i].pic);
+					liArr.push(itemLi);
+				} 
+		        
+		        //加入到ul里
+		        ul.innerHTML = liArr.join('');
+		        
+		        
+		        //获取详细信息模板
+		        var tempDialog = dialog.innerHTML;
+		        
+		        //打开弹出层
+		        function openDialog(dataIndex) {
+		        	dialog.innerHTML = tempDialog.replace(/\{i\}/,dataIndex)
+		        						.replace(/\{name\}/,data[dataIndex].name)
+		        						.replace(/\{enname\}/,data[dataIndex].enname)
+		        						.replace(/\{desc\}/,data[dataIndex].desc)
+		        						.replace(/\{bigpic\}/,data[dataIndex].bigpic);
+		      		bg.className += ' current';
+		            dialog.className += ' current';
+		        }
+		        
+		        function getLiByChild(element) {
+		        	var li = element;
+		        	while(li.nodeName != 'LI') {
+		        		li = li.parentNode;
+		        	}
+		        	return li;
+		        }
+		        
+		        //关闭Dialog
+		        function closeDialog(func) {
+		        	bg.className = 'box_bg1';
+			        dialog.className = 'box_ovo';
+			        setTimeout(function(){
+			        	if(dialog.className == 'box_ovo') {
+			        		func && func();
+			        	}
+			        },300);
+		        }
+		       
+		    }());
+		</script>
+	</body>
+
+</html>
