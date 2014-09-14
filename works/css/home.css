@@ -1,0 +1,13 @@
+/* sider */
+.sidebar{ position:fixed;top: 0;left: 0;bottom: 0;width: 189px; border-right: 1px solid #ccc;background: #f2f2f2;overflow-y:auto;}
+.main{ position:fixed;top: 0;right: 0;bottom: 0; left:190px;}
+.sider-title{text-align: left;text-indent: 1em;}
+.sider-title h1{font-size: 17px;font-weight: normal;height:60px;line-height:60px;}
+.sider-list li{border-bottom: 1px solid #e5e5e5;}
+.sider-list li a{padding: 0 16px 0 20px;height: 38px;line-height: 38px;display: block;color: #333;background: #fff;}
+.sider-list li a:hover,.sider-list li.on a{background: #1a1;color: #fff;}
+.sider-list li a:hover .icon-font{color: #fff;}
+.sider-list li .icon-font{color:#888;margin-right: 5px;font-size: 14px;}
+.sub-menu{background: #fff;border-top: 1px solid #e5e5e5;}
+.sub-menu li{text-indent: 21px;}
+.border{font-weight: bolder;}

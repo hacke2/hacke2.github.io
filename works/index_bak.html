@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>前端小练习</title>
+		<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+		<style>
+			.row a {
+				display: block;
+				font-family: "微软雅黑";
+				font-size: 18px;
+				background: grey;
+				opacity: 1;
+				height: 100px;
+				text-decoration: none;
+				line-height: 100px;
+				border-radius: 10px;
+				
+				color: #fff;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				margin: 5px 48px;
+				transition:background 1s, color 1s;
+				-moz-transition:background 1s, color 1s; 
+				-webkit-transition:background 1s, color 1s; 
+				-o-transition:background 1s, color 1s;
+			}
+			
+			.row a:hover{
+				color: #000000;
+				background:#eeeeee;
+				border: 2px solid #000000;
+				
+			}
+			
+			
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="jumbotron">
+				<h1>前端小练习</h1>
+				<p>有自己平时做的，也有豪哥给的题目,努力追赶大师的脚步！</p>
+				<p>
+					<a class="btn btn-lg btn-primary" target="_blank" href="https://github.com/hacke2/frontcode" role="button">查看github项目</a>
+				</p>
+			</div>
+			<div id='tests'class="row text-center">
+				<a class="col-md-3" href="/works/demo/04/" desc="模仿联想招聘" target="_blank">CSS3弹窗&切换</p></a>
+				<a class="col-md-3" href="/demo/javascript-seamless-handover/slide/bd01.html" desc="模仿百度爱玩" target="_blank">无缝切换图片 </p></a>
+				<a class="col-md-3" href="/works/demo/03/bd03.html" desc="模仿百度爱玩" target="_blank">榜单tab切换</a>
+				<a class="col-md-3" href="/works/demo/08/" desc="百度微购" target="_blank">电商菜单导航</a>
+				<a class="col-md-3" href="/demo/cqut-paging/demo.html" desc="刷新整个页面，非AJAX" target="_blank">模仿实验室分页组件</a>
+				<a class="col-md-3" href="/works/demo/qqzone-img" desc="模仿QQ空间" target="_blank">查看长图</a>
+				<a class="col-md-3" href="/works/demo/07/" desc="百度微购图片轮播" target="_blank">中秋送好礼</a>
+				<a class="col-md-3" href="/works/demo/06/" desc="模仿百度爱玩" target="_blank">层次图片轮播</a>
+				<a class="col-md-3" href="/demo/my-show-4-angularjs/" desc="BootStarp + AngularJs" target="_blank">项目展示页面</a>
+			</div>
+		</div>
+
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.js"></script>
+		<script>
+			$('#tests a').bind('mouseover',function(){
+				var $this = $(this);
+				$this.data('name',$this.html());
+				$this.html($this.attr('desc'));
+			})
+			$('#tests a').bind('mouseout',function(){
+				var $this = $(this);
+				$this.attr('desc',$this.html());
+				$this.html($this.data('name'));
+			})
+		</script>
+	</body>
+
+</html>
+
+
