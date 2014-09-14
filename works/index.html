@@ -23,10 +23,10 @@
         <div class="sider-content">
             <ul id="siderList" class="sider-list">
                 <li>
-                    <a href="#" class="border">名站</a>
+                    <a href="#" class="root">名站</a>
                     <ul class="sub-menu">
-                        <li><a target="iframe" href="/works/demo/04/" title="模仿联想招聘" desc="模仿联想招聘" target="_blank">CSS3弹窗&切换</p></a></li>
-						<li><a target="iframe" href="/demo/javascript-seamless-handover/slide/bd01.html" title="模仿百度爱玩" desc="模仿百度爱玩" target="_blank">无缝切换图片 </p></a></li>
+                        <li><a target="iframe" href="/works/demo/04/" title="模仿联想招聘" desc="模仿联想招聘" target="_blank">CSS3弹窗&切换</a></li>
+						<li><a target="iframe" href="/demo/javascript-seamless-handover/slide/bd01.html" title="模仿百度爱玩" desc="模仿百度爱玩" target="_blank">无缝切换图片</a></li>
 						<li><a target="iframe" href="/works/demo/03/bd03.html" title="模仿百度爱玩" desc="模仿百度爱玩" target="_blank">榜单tab切换</a></li>
 						<li><a target="iframe" href="/works/demo/08/" title="百度微购" desc="百度微购" target="_blank">电商菜单导航</a></li>
 						<li><a target="iframe" href="/works/demo/qqzone-img" title="模仿QQ空间" desc="模仿QQ空间" target="_blank">查看长图</a></li>
@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="border">前端小作品</a>
+                    <a href="#" class="root">前端小作品</a>
                     <ul class="sub-menu">
                         <li><a target="iframe" href="/demo/my-show-4-angularjs/" title="BootStarp + AngularJs" desc="BootStarp + AngularJs" target="_blank">项目展示页面</a></li>
                         <li><a target="iframe" href="/demo/cqut-paging/demo.html" title="刷新整个页面，非AJAX" desc="刷新整个页面，非AJAX" target="_blank">模仿实验室分页组件</a></li>
@@ -55,16 +55,26 @@
 <!--/container-->
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script>
-	$('.sub-menu a').bind('mouseover',function(){
-		var $this = $(this);
-		$this.data('name',$this.html());
-		$this.html($this.attr('desc'));
-	})
-	$('.sub-menu a').bind('mouseout',function(){
-		var $this = $(this);
-		$this.attr('desc',$this.html());
-		$this.html($this.data('name'));
-	})
+
+	
+	
+	var a = document.getElementsByTagName('a');
+	for(var i = 0; i < a.length; i++) {
+		if(a[i].className != 'root') {
+			var li = a[i].parentNode;
+			a[i].onmouseover = function() {
+				this.setAttribute('data', this.innerHTML);
+				this.innerHTML=this.getAttribute('desc');
+			}
+			
+			a[i].onmouseout = function() {
+				this.setAttribute('desc', this.innerHTML);
+				this.innerHTML=this.getAttribute('data');
+			}
+		}
+		
+	}
+	
 </script>
 </body>
 </html>

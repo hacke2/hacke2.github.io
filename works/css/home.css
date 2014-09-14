@@ -5,9 +5,9 @@
 .sider-title h1{font-size: 17px;font-weight: normal;height:60px;line-height:60px;}
 .sider-list li{border-bottom: 1px solid #e5e5e5;}
 .sider-list li a{padding: 0 16px 0 20px;height: 38px;line-height: 38px;display: block;color: #333;background: #fff;}
-.sider-list li a:hover,.sider-list li.on a{background: #1a1;color: #fff;}
-.sider-list li a:hover .icon-font{color: #fff;}
-.sider-list li .icon-font{color:#888;margin-right: 5px;font-size: 14px;}
 .sub-menu{background: #fff;border-top: 1px solid #e5e5e5;}
-.sub-menu li{text-indent: 21px;}
-.border{font-weight: bolder;}
+.sub-menu li{text-indent: 21px;position: relative;}
+.sub-menu li a{transition:all 0.6s;}
+.sub-menu li a:hover{color: #fff;background-color: gray;}
+.root{font-weight: bolder;}
+
