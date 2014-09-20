@@ -6,7 +6,7 @@ var showApp= angular.module('show', ['ngRoute']);
 showApp.config(function($routeProvider) {
     $routeProvider
 	.when('/', {
-            templateUrl : 'mian.html'
+            templateUrl : 'main.html'
         })
         .when('/hot-site/:index', {
             templateUrl : 'template/show.html',
