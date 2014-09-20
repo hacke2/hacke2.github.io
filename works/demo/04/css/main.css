@@ -69,7 +69,7 @@ transition:all 0.2s linear;
 transform:rotate(180deg);
 }
 
-.box_ovo{width:940px;height:500px;position:fixed;left:50%;top:50%;margin-left:-470px;margin-top:-250px;background:#fff;z-index:100;}
+.box_ovo{width:80%;height:500px;position:fixed;left:50%;top:50%;margin-left:-470px;margin-top:-250px;background:#fff;z-index:100;}
 .box_ovo .prev,.box_ovo .next{width:40px;height:40px;position:absolute;right:-40px;top:40px;cursor:pointer;background:#2a2a2a;}
 .box_ovo .next{top:81px;}
 .box_ovo .prev i{width:40px;height:40px;display:block;background:url(../images/p9_06.png) center center no-repeat;}
