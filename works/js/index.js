@@ -51,7 +51,7 @@ showApp.controller('showController', function($scope, $routeParams) {
     		url : '/works/demo/qqzone-img'
     	},
     	{
-    		name : '中秋送好礼,
+    		name : '中秋送好礼',
     		desc : '百度微购图片轮播',
     		url : '/works/demo/07/'
     	},
