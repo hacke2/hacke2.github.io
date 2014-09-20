@@ -8,6 +8,7 @@ showApp.config(function($routeProvider) {
 	.when('/', {
             templateUrl : 'main.html'
         })
+		.when('/hot-site/', {redirectTo: '/hot-site/1'})
         .when('/hot-site/:index', {
             templateUrl : 'template/show.html',
             controller  : 'showController'
@@ -21,9 +22,7 @@ showApp.controller('showController', function($scope, $routeParams) {
 	
 	var index = $routeParams.index;
 	
-	if(index) {
-		index = 0;
-	}
+	$scope.routeName = 'hot-site';
 	
     $scope.works = [
     	{
@@ -40,9 +39,29 @@ showApp.controller('showController', function($scope, $routeParams) {
     		name : '榜单tab切换',
     		desc : '模仿百度爱玩',
     		url : '/works/demo/03/bd03.html'
+    	},
+    	{
+    		name : '电商菜单导航',
+    		desc : '百度微购',
+    		url : '/works/demo/08/'
+    	},
+    	{
+    		name : '查看长图',
+    		desc : '模仿QQ空间',
+    		url : '/works/demo/qqzone-img'
+    	},
+    	{
+    		name : '中秋送好礼,
+    		desc : '百度微购图片轮播',
+    		url : '/works/demo/07/'
+    	},
+    	{
+    		name : '层次图片轮播',
+    		desc : '模仿百度爱玩',
+    		url : '/works/demo/06/'
     	}
     ];
     
-    document.getElementById('mainIframe').setAttribute('src', $scope.works[i].url);
+    document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
 });
  
