@@ -8,7 +8,7 @@ showApp.config(function($routeProvider) {
 	.when('/', {
             templateUrl : 'mian.html'
         })
-        .when('/hot-site', {
+        .when('/hot-site/:index', {
             templateUrl : 'template/show.html',
             controller  : 'showController'
         })
@@ -17,7 +17,14 @@ showApp.config(function($routeProvider) {
             controller  : 'westomController'
         });
 });
-showApp.controller('showController', function($scope) {
+showApp.controller('showController', function($scope, $routeParams) {
+	
+	var index = $routeParams.index;
+	
+	if(index) {
+		index = 0;
+	}
+	
     $scope.works = [
     	{
     		name : 'CSS3弹窗&切换',
@@ -35,5 +42,7 @@ showApp.controller('showController', function($scope) {
     		url : '/works/demo/03/bd03.html'
     	}
     ];
+    
+    document.getElementById('mainIframe').setAttribute('src', $scope.works[i].url);
 });
  
