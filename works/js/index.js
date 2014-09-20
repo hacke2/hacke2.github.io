@@ -11,14 +11,25 @@ showApp.config(function($routeProvider) {
 		.when('/hot-site/', {redirectTo: '/hot-site/0'})
         .when('/hot-site/:index', {
             templateUrl : 'template/show.html',
-            controller  : 'showController'
+            controller  : 'hotSiteController'
         })
-        .when('/westom', {
-            templateUrl : 'pages/project.html',
-            controller  : 'westomController'
-        });
+        .when('/html5', {redirectTo: '/'})
+        .when('/html5/:index', {
+            templateUrl : 'template/show.html',
+            controller  : 'html5Controller'
+        })
+        .when('/css3/', {redirectTo: '/'})
+        .when('/css3/:index', {
+            templateUrl : 'template/show.html',
+            controller  : 'css3Controller'
+        })
+        .when('/javascript/', {redirectTo: '/'})
+        .when('/javascript/:index', {
+            templateUrl : 'template/show.html',
+            controller  : 'css3Controller'
+        })
 });
-showApp.controller('showController', function($scope, $routeParams) {
+showApp.controller('hotSiteController', function($scope, $routeParams) {
 	
 	var index = $routeParams.index;
 	
