@@ -6,23 +6,10 @@
 <div class="row">
 	<div class="col-md-2">
 		<ul class="list-group">
-			<a ng-repeat="work in works" href="index.html#/{{routeName}}/{{$index}}"  title="{{work.desc}}" desc="{{work.desc}}" class="list-group-item" >{{work.name}}</a>
+			<a ng-repeat="work in works" href="index.html#/{{routeName}}/{{$index}}"  title="{{work.desc}}"  class="list-group-item" >{{work.name}}</a>
 		</ul>
 	</div>
 	<div class="col-md-10 h100">
 		<iframe id="mainIframe" name="iframe" style="width: 100%;height: 100%;"  src="#" frameborder="0"></iframe>
 	</div>
 </div>
-
-<script>
-	$('.list-group-item').live('mouseover',function(){
-		var $this = $(this);
-		$this.data('name',$this.html());
-		$this.html($this.attr('desc'));
-	})
-	$('.list-group-item').live('mouseout',function(){
-		var $this = $(this);
-		$this.attr('desc',$this.html());
-		$this.html($this.data('name'));
-	})
-</script>
