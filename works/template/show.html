@@ -15,12 +15,12 @@
 </div>
 
 <script>
-	$('.list-group').live('mouseover',function(){
+	$('.list-group-item').live('mouseover',function(){
 		var $this = $(this);
 		$this.data('name',$this.html());
 		$this.html($this.attr('desc'));
 	})
-	$('.list-group').live('mouseout',function(){
+	$('.list-group-item').live('mouseout',function(){
 		var $this = $(this);
 		$this.attr('desc',$this.html());
 		$this.html($this.data('name'));
