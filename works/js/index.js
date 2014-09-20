@@ -6,11 +6,10 @@ var showApp= angular.module('show', ['ngRoute']);
 showApp.config(function($routeProvider) {
     $routeProvider
 	.when('/', {
-            templateUrl : 'template/show.html'
+            templateUrl : 'mian.html'
         })
-        .when('/roadsideAssistance', {
-            templateUrl : 'pages/project.html',
-            controller  : 'roadsideAssistanceController'
+        .when('/hot-site', {
+            templateUrl : 'template/show.html'
         })
         .when('/westom', {
             templateUrl : 'pages/project.html',
