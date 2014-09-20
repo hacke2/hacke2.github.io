@@ -5,8 +5,8 @@
 -->
 <div class="row">
 	<div class="col-md-2">
-		<ul class="list-group" ng-repeat="work in works">
-			<a  target="iframe" href="{{work.url}}" title="{{work.desc}}" desc="{{work.desc}}" class="list-group-item" >{{work.name}}</a>
+		<ul class="list-group">
+			<a  ng-repeat="work in works"  target="iframe" href="{{work.url}}" title="{{work.desc}}" desc="{{work.desc}}" class="list-group-item" >{{work.name}}</a>
 		</ul>
 	</div>
 	<div class="col-md-10 h100">
@@ -29,5 +29,10 @@
 			}
 		}
 		
+	}
+	
+	window.onload = function() {
+		var iframe = document.getElementById('mainIframe');
+		document.body.scrollWidth = iframe.offsetHeight + 100 + 'px';
 	}
 </script>
