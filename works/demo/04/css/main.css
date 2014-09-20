@@ -19,7 +19,7 @@ a:hover{text-decoration:underline;}
 .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
 .none{display:none}
 /* main */
-.page{width:100%;height:970px;overflow:hidden;}
+.page{width:100%;height:100%;overflow:hidden;}
 .div1200{width:1200px;height:100%;position:relative;margin:0px auto;}
 .page5{background:#282828;}
 .page5span1{margin:0px auto;cursor:pointer;margin-top:8%;display:block;width:184px;border-bottom:4px #3c3c3c solid;}

@@ -6,7 +6,7 @@
 <div class="row">
 	<div class="col-md-2">
 		<ul class="list-group">
-			<a  ng-repeat="work in works"  target="iframe" href="{{work.url}}" title="{{work.desc}}" desc="{{work.desc}}" class="list-group-item" >{{work.name}}</a>
+			<a ng-repeat="work in works"  target="iframe" href="{{work.url}}" title="{{work.desc}}" desc="{{work.desc}}" class="list-group-item" >{{work.name}}</a>
 		</ul>
 	</div>
 	<div class="col-md-10 h100">
@@ -15,24 +15,14 @@
 </div>
 
 <script>
-	var a = document.getElementsByTagName('a');
-	for(var i = 0; i < a.length; i++) {
-		if(a[i].className == 'list-group-item') {
-			a[i].onmouseover = function() {
-				this.setAttribute('data', this.innerHTML);
-				this.innerHTML=this.getAttribute('desc');
-			}
-			
-			a[i].onmouseout = function() {
-				this.setAttribute('desc', this.innerHTML);
-				this.innerHTML=this.getAttribute('data');
-			}
-		}
-		
-	}
-	
-	window.onload = function() {
-		var iframe = document.getElementById('mainIframe');
-		document.body.scrollWidth = iframe.offsetHeight + 100 + 'px';
-	}
+	$('#list-group a').live('mouseover',function(){
+		var $this = $(this);
+		$this.data('name',$this.html());
+		$this.html($this.attr('desc'));
+	})
+	$('#list-group a').live('mouseout',function(){
+		var $this = $(this);
+		$this.attr('desc',$this.html());
+		$this.html($this.data('name'));
+	})
 </script>
