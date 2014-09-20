@@ -37,6 +37,11 @@ showApp.controller('hotSiteController', function($scope, $routeParams) {
 	
     $scope.works = [
     	{
+    		name : '榜单tab切换',
+    		desc : '模仿百度爱玩',
+    		url : '/works/demo/03/bd03.html'
+    	},
+    	{
     		name : 'CSS3弹窗&切换',
     		desc : '模仿联想招聘',
     		url : '/works/demo/04/'
@@ -45,11 +50,6 @@ showApp.controller('hotSiteController', function($scope, $routeParams) {
     		name : '无缝切换图片',
     		desc : '模仿百度爱玩',
     		url : '/demo/javascript-seamless-handover/slide/bd01.html'
-    	},
-    	{
-    		name : '榜单tab切换',
-    		desc : '模仿百度爱玩',
-    		url : '/works/demo/03/bd03.html'
     	},
     	{
     		name : '电商菜单导航',
