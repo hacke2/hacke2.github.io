@@ -8,7 +8,7 @@ showApp.config(function($routeProvider) {
 	.when('/', {
             templateUrl : 'main.html'
         })
-		.when('/hot-site/', {redirectTo: '/hot-site/1'})
+		.when('/hot-site/', {redirectTo: '/hot-site/0'})
         .when('/hot-site/:index', {
             templateUrl : 'template/show.html',
             controller  : 'showController'
