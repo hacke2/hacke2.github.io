@@ -1,6 +1,6 @@
 
 //将路由注入进来
-var showApp= angular.module('project-show', ['ngRoute']);
+var showApp= angular.module('show', ['ngRoute']);
  
 //配置路由
 showApp.config(function($routeProvider) {
