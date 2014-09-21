@@ -4,7 +4,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<script src="/common/js/startmove.js"></script>
 		<style>
 			body {
 				margin: 0;
@@ -33,7 +32,27 @@
 				color: #FFF;
 				left: 0;
 				top: 0;
-				z-index: 999;
+				z-index: 9;
+			}
+			.up {
+				width: 500px;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				filter: Alpha(opacity=0);
+				z-index: 99;
+			} 
+			.down {
+				width: 500px;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				top: 200px;
+				opacity: 0;
+				filter: Alpha(opacity=0);
+				z-index: 99;
 			} 
 		</style>
 	</head>
@@ -42,46 +61,60 @@
 		<div class="container">
 			<div class="show-img">
 				<i class="ico-long-pic">长图</i>
-				<img id="long-pic" src="/works/demo/qqzone-img/1.jpg" alt="" />
+				<div class="up"></div>
+				<div class="down"></div>
+				<img id="long-pic" src="1.jpg" alt="" />
 			</div>
 		</div>
 	</body>
 	<script>
 		var img = document.getElementById('long-pic');
 		
-		if(img.offsetHeight > img.parentNode.offsetHeight) {
+		var context = img.parentNode;
+	
+		
+		
+		context.onmouseover = function() {
 			
-		}
-		
-		
-		img.onmousemove = function() {
 			var e = event || window.event,
-				context = this.parentNode,
+				target = e.target || e.srcElement;
 				relativeX = e.clientX - context.offsetLeft,
 				relativeY = e.clientY - context.offsetTop,
-				targetH = -this.offsetHeight+context.offsetHeight,
+				targetH = -img.offsetHeight+context.offsetHeight,
 				compareH =  context.offsetHeight /2;
 				
-				//d('x ' + relativeX + ' y ' + relativeY);
-				
-				if(relativeY < compareH) {
-					//移到图框下部	
-					startMove(this,{top : 0}, 500)
-				}else {
+				if(target.className == 'up') {
 					
-					//d('移动到' + targetH)
-					//移到图框上部
-					startMove(this,{top : targetH}, 500)
+					startMove(img,0);
+				}
+				if(target.className == 'down') {
+					startMove(img,targetH);
 				}
 			
 		}
 		
-		img.onmouseout = function() {
-			if (this.timer) {
-				clearInterval(this.timer);
+		context.onmouseout = function() {
+			if (img.timer) {
+				clearInterval(img.timer);
 			}			
 		}
 		
+		function startMove(obj, iTarget) {
+			clearInterval(obj.timer);
+			
+			var speed = obj.offsetTop > iTarget ? -10 : 10;
+			
+
+			obj.timer = setInterval(function(){
+				if (Math.abs(iTarget - obj.offsetTop) <= Math.abs(speed)) {
+					clearInterval(obj.timer);
+					obj.style.top = iTarget + 'px';
+				} else{
+					obj.style.top = obj.offsetTop + speed + 'px';
+				}
+			},30);
+			
+		}
 		
 		function d(msg) {
 			if(console) {
