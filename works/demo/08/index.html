@@ -2548,11 +2548,10 @@
                 this.className += ' ui-item-hover ui-menu-item-expand'
                 items[i].className += '  sub-item-show';
             }
-        })(i)
-    }
-
-    for (var i = 0; i < li.length; i++) {
-        li[i].onmouseout = (function(i) {
+        })(i);
+        
+        
+         li[i].onmouseout = (function(i) {
             return function() {
                 menu.style.cssText = 'height: auto; width: 0px; top: 0px;';
 
@@ -2567,6 +2566,8 @@
             }
         })(i)
     }
+
+
     
 })();
 </script>
