@@ -75,7 +75,6 @@
 										
 										var img = new Image();
 										img.onload = (function(i){
-											console.log(img.height)
 											var li = document.createElement('li');
 											li.innerHTML = '<img  src="'+data.list[i].src+'" /><p>'+data.list[i].title+'</p>';
 											oUL[0].appendChild(li);
@@ -114,11 +113,9 @@
 					var oli = document.getElementsByTagName('li');
 					//列
 					var row = Math.floor(i / 3);
-					console.log(i)
 					//算在那一列
 					oli[i].style.left = 10 * (i%3 +1) + 310*(i%3)+ 'px';
 					itemHeight[type].push(oli[i].offsetHeight);
-					console.log('offsetHeight' + oli[i].offsetHeight)
 					if(!row) {
 						oli[i].style.top = 0 + 'px';
 					}else {

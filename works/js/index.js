@@ -23,10 +23,10 @@ showApp.config(function($routeProvider) {
             templateUrl : 'template/show.html',
             controller  : 'css3Controller'
         })
-        .when('/javascript/', {redirectTo: '/'})
+        .when('/javascript/', {redirectTo: '/javascript/0'})
         .when('/javascript/:index', {
             templateUrl : 'template/show.html',
-            controller  : 'css3Controller'
+            controller  : 'javascriptController'
         })
 });
 showApp.controller('hotSiteController', function($scope, $routeParams) {
@@ -76,3 +76,25 @@ showApp.controller('hotSiteController', function($scope, $routeParams) {
     document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
 });
  
+showApp.controller('javascriptController', function($scope, $routeParams) {
+	
+	var index = $routeParams.index;
+	
+	$scope.routeName = 'javascript';
+	
+    $scope.works = [
+    	{
+    		name : '瀑布流-浮动',
+    		desc : '瀑布流-浮动',
+    		url : '/works/demo/stream/float.html'
+    	},
+    	{
+    		name : '瀑布流-定位',
+    		desc : '瀑布流-定位',
+    		url : '/works/demo/stream/position.html'
+    	}
+    	
+    ];
+    
+    document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
+});
