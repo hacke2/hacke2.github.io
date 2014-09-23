@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding : 0;
+	}
+	li {
+		list-style-type: none;
+	}
+	#page {
+		width: 960px;
+		margin: 0px auto;
+		text-align: center;
+	}
+	header {
+		margin-bottom: 20px;
+		background: #eee;
+		border-top: 3px solid black;
+		border-bottom: 3px solid black;
+	}
+
+	header h1 {
+		padding: 50px 0;
+	}
+	#content ul {
+		float: left;
+		margin-right: 20px;
+	}
+	#content ul li {
+		height: 30px;
+		color: blue;
+	} 
+
+	#content table{
+		float: left;;
+		border-collapse: collapse;
+        border: none;
+        width: 86%;
+	}
+	#content table tr {
+		height: 30px;
+		line-height: 30px;
+	}
+	#content table th{
+		text-align: center;
+        border: 1px solid #000 ;
+
+    }
+ 	#content table td{
+ 		width: 30%;
+        border: 1px solid #000 ;
+        text-align: left;
+    }
+    @media screen and (max-width:600px) {
+	    #page {
+			width: 100%;
+			margin: 0px auto;
+			text-align: center;
+		}
+		#content ul {
+			float: left;
+			width: 100%;
+			
+		}
+
+		#content ul li {
+			color: blue;
+			float: left;
+			width: 33%;
+			height: 150px;
+			line-height: 150px;
+		}
+
+		#content table{
+
+	        width: 100%;
+		}
+    }
+</style>
+<body>
+	<div id="page">
+		<header>
+			<h1>阿里巴巴面试题</h1>
+		</header>
+		<section id="content">
+			<ul>
+				<li>前段工程面试题</li>
+				<li>设计师面试题</li>
+				<li>JAVA面试题</li>
+			</ul>
+			<table>
+				<tbody>
+					<tr><th>我是标题一</th><th>标题二</th><th>标题三</th></tr>
+					<tr><td>内容</td><td>内容</td><td>内容</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</div>
+</body>
+</html>
