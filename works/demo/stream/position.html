@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;padding: 0;
+			}
+			li {
+				list-style-type: none;
+			}
+			#div1 {
+				width: 960px;
+				height: auto;
+				margin: 0 auto;
+				position: relative;
+			}
+			li {
+				margin: 5px 0 0 10px;
+				position: absolute;
+			}
+			
+			img {
+				
+				opacity: 1;
+				filter:Alpha(Opacity=100);
+			}
+		</style>
+		<script src="../../../common/js/ajax.js"></script>
+		<script>
+			window.onload = function() {
+				
+				var oUL = document.getElementsByTagName('ul');
+				var div1 = document.getElementById('div1');
+				
+				//读取数据开关
+				var flag = true;
+				
+				var itemHeight = {
+					left : [],
+					middle : [],
+					right : []
+				};
+				
+				for (var i = 0; i < document.getElementsByTagName('li').length; i++) {
+					console.log('one')
+					position(i);
+				}
+				
+				window.onscroll = function() {
+					
+					var body = document.documentElement || document.body;
+				
+					//可视区大小
+					var viewHeight = body.clientHeight;
+					//滚动条高度
+					var scrollHeight = body.scrollHeight;
+					var oli = document.getElementsByTagName('li');
+					var itemLi = oli[oli.length-1];	
+					if(getTop(itemLi) < viewHeight +scrollHeight && flag) {
+						
+						flag = false;
+						
+						Ajax({
+							url : "data2.js",
+							success : function(_data) {
+								var data = eval('('+_data+')');
+								
+								if(data.code) {
+									flag = true;
+								}
+								if(data) {
+									for (var i = 0; i < data.list.length; i++) {
+										
+										var img = new Image();
+										img.onload = (function(i){
+											console.log(img.height)
+											var li = document.createElement('li');
+											li.innerHTML = '<img  src="'+data.list[i].src+'" /><p>'+data.list[i].title+'</p>';
+											oUL[0].appendChild(li);
+											position(oli.length - 1);
+										})(i)
+										
+										img.src = data.list[i].src;
+										
+										
+									}
+								}
+							}
+						})
+					}
+					
+				}
+				
+				function position(i) {
+					//行
+					var cell = i % 3;
+					
+					switch(cell) {
+						case 0 : 
+							positionItem(i, 'left');
+						break;
+						case 1 : 
+							positionItem(i, 'middle');
+						break;
+						case 2 : 
+							positionItem(i, 'right');
+						break;
+					}
+				}
+				
+				function positionItem(i, type) {
+					var oli = document.getElementsByTagName('li');
+					//列
+					var row = Math.floor(i / 3);
+					console.log(i)
+					//算在那一列
+					oli[i].style.left = 10 * (i%3 +1) + 310*(i%3)+ 'px';
+					itemHeight[type].push(oli[i].offsetHeight);
+					console.log('offsetHeight' + oli[i].offsetHeight)
+					if(!row) {
+						oli[i].style.top = 0 + 'px';
+					}else {
+						var sum = 0;
+						
+						for(var j = 0; j < row; j++) {
+							sum +=itemHeight[type][j] + 5;
+						}
+						//算在哪一行
+						oli[i].style.top = sum + 'px';
+					}
+				}
+				
+				div1.onmouseover = function() {
+					
+					var e = event || window.event;
+					var target = e.target || e.srcElement;
+					
+					
+					if(target.nodeName = 'IMG') {
+						var imgs = document.images;
+						for (var i = 0; i < imgs.length; i++) {
+							startMove(imgs[i], 100);
+						}
+						
+						startMove(target, 40);
+					}
+				}
+				
+				div1.onmouseout = function() {
+					var imgs = document.images;
+					for (var i = 0; i < imgs.length; i++) {
+							startMove(imgs[i], 100);
+					}
+				}
+			}
+			
+			
+			//获取当前元素与页面顶部的距离
+			function getTop(obj) {
+				var top = 0;
+				while(obj) {
+					top += obj.offsetTop;
+					obj = obj.offsetParent;
+				}
+				return top;
+			}
+		
+			
+			//缓冲运动
+			function startMove(obj, iTarget) {
+				clearInterval(obj.timer);
+				
+				obj.timer = setInterval(function(){
+					var curOpacity = parseInt(100 * parseFloat(getStyle(obj, 'opacity')));
+					var speed = (iTarget - curOpacity) / 8;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					if(Math.abs(iTarget - curOpacity) < speed) {
+						clearInterval(obj.timer);
+						obj.style.filter = "alpha(opacity:" + iTarget + ")";
+						obj.style.opacity = iTarget / 100;
+					}
+					
+					obj.style.filter = "alpha(opacity:" + (curOpacity + speed) + ")";
+					obj.style.opacity = (curOpacity + speed) / 100;
+				},30);
+				
+			}
+			
+			//获取样式
+			function getStyle(obj, attr) {
+				return obj.currentStyle? obj.currentStyle(attr) : getComputedStyle(obj, false)[attr];
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<ul>
+				<li>
+					<img src="img/1.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/2.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/3.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/4.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/5.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/6.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/7.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/8.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/9.jpg" />
+					<p>1111111111111111</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

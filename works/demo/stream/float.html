@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;padding: 0;
+			}
+			li {
+				list-style-type: none;
+			}
+			#div1 {
+				width: 960px;
+				height: auto;
+				margin: 0 auto;
+			}
+			#div1 ul {
+				float: left;
+				margin-left: 10px;
+			}
+			
+			img {
+				opacity: 1;
+				filter:Alpha(Opacity=100);
+			}
+		</style>
+		<script src="../../../common/js/ajax.js"></script>
+		<script>
+			window.onload = function() {
+				
+				var oUL = document.getElementsByTagName('ul');
+				var div1 = document.getElementById('div1');
+				//读取数据开关
+				var flag = true;
+				
+				window.onscroll = function() {
+					
+					var body = document.documentElement || document.body;
+				
+					//可视区大小
+					var viewHeight = body.clientHeight;
+					//滚动条高度
+					var scrollHeight = body.scrollHeight;
+					
+					for (var i = 0; i < oUL.length; i++) {
+						var oli = oUL[i].getElementsByTagName('li');
+						var itemLi = oli[oli.length - 1];
+						
+						if(getTop(itemLi) < viewHeight +scrollHeight && flag) {
+							
+							flag = false;
+							
+							Ajax({
+								url : "data.js",
+								success : function(_data) {
+									var data = eval('('+_data+')');
+									
+									if(data.code) {
+										flag = true;
+									}
+									if(data) {
+										for (var i = 0; i < data.list.length; i++) {
+											var liData = data.list[i];
+											for (var j = 0; j < liData.src.length; j++) {
+												var li = document.createElement('li');
+												li.innerHTML = '<img src="'+liData.src[j]+'" /><p>'+liData.title[j]+'</p>';
+												oUL[i].appendChild(li);
+											}
+											
+										}
+									}
+								}
+							})
+						}
+					}
+					
+				}
+				
+				
+				div1.onmouseover = function() {
+					
+					var e = event || window.event;
+					var target = e.target || e.srcElement;
+					
+					
+					if(target.nodeName = 'IMG') {
+						var imgs = document.images;
+						for (var i = 0; i < imgs.length; i++) {
+							startMove(imgs[i], 100);
+						}
+						
+						startMove(target, 40);
+					}
+				}
+				
+				div1.onmouseout = function() {
+					var imgs = document.images;
+					for (var i = 0; i < imgs.length; i++) {
+							startMove(imgs[i], 100);
+					}
+				}
+			}
+			
+			
+			
+			
+			//获取当前元素与页面顶部的距离
+			function getTop(obj) {
+				var top = 0;
+				while(obj) {
+					top += obj.offsetTop;
+					obj = obj.offsetParent;
+				}
+				return top;
+			}
+			
+			
+			//缓冲运动
+			function startMove(obj, iTarget) {
+				clearInterval(obj.timer);
+				
+				obj.timer = setInterval(function(){
+					var curOpacity = parseInt(100 * parseFloat(getStyle(obj, 'opacity')));
+					var speed = (iTarget - curOpacity) / 8;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					if(Math.abs(iTarget - curOpacity) < speed) {
+						clearInterval(obj.timer);
+						obj.style.filter = "alpha(opacity:" + iTarget + ")";
+						obj.style.opacity = iTarget / 100;
+					}
+					
+					obj.style.filter = "alpha(opacity:" + (curOpacity + speed) + ")";
+					obj.style.opacity = (curOpacity + speed) / 100;
+				},30);
+				
+			}
+			
+			//获取样式
+			function getStyle(obj, attr) {
+				return obj.currentStyle? obj.currentStyle(attr) : getComputedStyle(obj, false)[attr];
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<ul>
+				<li>
+					<img src="img/1.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/2.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/3.jpg" />
+					<p>1111111111111111</p>
+				</li>
+	
+			</ul>
+			<ul>
+				<li>
+					<img src="img/4.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/5.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/6.jpg" />
+					<p>1111111111111111</p>
+				</li>
+	
+			</ul>
+			<ul>
+				<li>
+					<img src="img/7.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/8.jpg" />
+					<p>1111111111111111</p>
+				</li>
+				<li>
+					<img src="img/9.jpg" />
+					<p>1111111111111111</p>
+				</li>
+	
+			</ul>
+		</div>
+	</body>
+</html>
