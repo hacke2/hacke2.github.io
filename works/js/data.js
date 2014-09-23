@@ -52,7 +52,7 @@ var data = {
 	   
 	html5 : [
 	    	{
-	    		name : '阿里巴巴响应式笔试题',
+	    		name : '阿里响应式笔试题',
 	    		desc : '响应式DEMO',
 	    		url : '/works/demo/html5/ali.html'
 	    	}
