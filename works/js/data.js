@@ -41,12 +41,12 @@ var data = {
 	    		name : '瀑布流-浮动',
 	    		desc : '瀑布流-浮动',
 	    		url : '/works/demo/stream/float.html'
-	    	},
+	    	}/*,
 	    	{
 	    		name : '瀑布流-定位',
 	    		desc : '瀑布流-定位',
 	    		url : '/works/demo/stream/position.html'
-	    	}
+	    	}*/
 	    	
 	    ],
 	   
