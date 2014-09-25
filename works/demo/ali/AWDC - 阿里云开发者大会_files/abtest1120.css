@@ -1,0 +1,91 @@
+.sogou-recommend {
+    background-color:#ECF7FE;
+    font:15px/40px 'microsoft yahei', serif;
+    height:40px;
+    border-top:1px solid #C2D3E4;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    text-align: left;
+    display:-webkit-box;
+    width:100%;
+}
+.sogou-recommend-logo-box {
+    width:136px;
+    height:32px;
+    cursor:pointer;
+    background: url(/images/abtest1120/hotsearch.gif) no-repeat 107px top;
+    padding:9px 0 0 10px;
+    cursor:pointer;
+    position:absolute;
+    left:0;
+    top:-1px;
+}
+.sogou-recommend-logo {
+    cursor:pointer;
+    display:block;
+    width:88px;
+    height:23px;
+    background:url(http://logo.www.sogou.com/images/logo2014/chajian.png) no-repeat;
+    _background-image:none;
+_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src=http://logo.www.sogou.com/images/logo2014/chajian.png);
+
+}
+.sogou-recommend-list {
+    margin:0;
+    padding:0;
+    list-style:none;
+    border-left:1px solid #C2D3E4;
+    overflow:hidden;
+    height:40px;
+    position: absolute;
+    left:146px;
+    top:0;
+}
+.sogou-recommend-list li {
+    height:40px;
+    border-right:1px solid #C2D3E4;
+    float:left;
+}
+.sogou-recommend-list a {
+    color:#00c;
+    display:block;
+    padding:0 13px;
+    min-width:196px;
+}
+.sogou-recommend-list a:hover, .sogou-recommend-logo-box:hover {
+    background-color:#C8E2F4;
+}
+.sogou-recommend-config, .sogou-recommend-close {
+    width:26px;
+    height:26px;
+    background: #ECF7FE url(/images/abtest1120/btn.gif) no-repeat 8px -34px;
+    cursor:pointer;
+    position:absolute;
+    top:7px;
+    cursor:pointer;
+}
+.sogou-recommend-close {
+    background-position:-18px -34px;
+    right:7px;
+}
+.sogou-recommend-config {
+    right:34px;
+}
+.sogou-recommend-config:hover {
+    background-position:8px 8px;
+    background-color:#C8E2F4;
+}
+.sogou-recommend-close:hover {
+    background-position:-18px 8px;
+    background-color:#C8E2F4;
+}
+.sogou-recommend-jump {
+    height:40px;
+    position:absolute;
+    width:100%;
+    left:0;
+    top:0;
+    outline:none;
+}

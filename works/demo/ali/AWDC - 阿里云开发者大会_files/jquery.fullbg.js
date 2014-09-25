@@ -1,0 +1,1 @@
+!function(a){a.fn.fullBg=function(){function b(){var b=c.width(),d=c.height(),e=a(window).width(),f=a(window).height(),g=e/b,h=f/d,i=h*b,j=g*d;c.css(j>f?{width:e+"px",height:j+"px"}:{width:i+"px",height:f+"px"})}var c=a(this);c.addClass("fullBg"),b(),a(window).resize(function(){b()})}}(jQuery);

@@ -1,0 +1,140 @@
+body {
+	margin:0;
+	padding:0;
+}
+.btmbarbox {
+	position:absolute;
+	bottom:0;
+	left:0;
+	height:38px;
+	width:100%;
+}
+.btmbg, .btmbar {
+	height:35px;
+	width:100%;
+	/*position:fixed;*/
+	position:absolute;
+	bottom:0;
+	left:0;
+	font:16px "microsoft yahei", simsun, Arial, Helvetica, sans-serif;
+	*font:14px simsun, Arial, Helvetica, sans-serif;
+	overflow:hidden;
+}
+.btmbg {
+	background:url(/images/abtest/btmbg.png) repeat-x;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src=/images/abtest/btmbg.png);
+	_background:none;
+}
+.btmbar {
+	background:url(/images/abtest/btmicon.gif) no-repeat 8px 6px;
+	height:30px;
+}
+.newslist {
+	list-style:none;
+	padding:0;
+	margin:0 50px 0 127px;
+	height:30px;
+	overflow:hidden;
+}
+.newslist li {
+	float:left;
+	line-height:30px;
+	margin-right:-2px;
+}
+.newslist a {
+	display:block;
+	color:#00c;
+}
+.newslist a em {
+	color:#c00;
+	font-style:normal;
+	text-decoration:underline;
+}
+.division_l {
+	background:url(/images/abtest/division.gif) no-repeat left 7px;
+	padding-left:13px;
+	display:block;
+	cursor:pointer;
+}
+.division_r {
+	background:url(/images/abtest/division.gif) no-repeat right 7px;
+	padding-right:20px;
+	display:block;
+	cursor:pointer;
+}
+.newsico {
+	background:url(/images/abtest/newsico.gif) no-repeat left 9px;
+	padding-left:18px;
+	display:block;
+}
+.newslist a:hover {
+	zoom:1;
+	filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#FCFCFC,endcolorstr=#EDE9BC,gradientType=0);
+    background:-moz-linear-gradient(top, #FCFCFC, #EDE9BC);
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#FCFCFC), to(#EDE9BC));
+    background:-o-linear-gradient(top, #FCFCFC, #EDE9BC);
+	position:relative;
+	float:left;
+}
+.newslist a:hover .division_l {
+	background:url(/images/abtest/division_hover.gif) no-repeat;
+	float:left;
+}
+.newslist a:hover .division_r {
+	background:url(/images/abtest/division_hover.gif) no-repeat right top;
+	float:left;
+}
+.close, .cfg {
+	width:18px;
+	height:28px;
+	position:absolute;
+	bottom:3px;
+	right:28px;
+	background:url(/images/abtest/btmbtn.gif) no-repeat left -38px;
+	overflow:hidden;
+	line-height:100em;
+}
+.cfg:hover {
+	background-position:left 8px;
+}
+.close {
+	background-position:-22px -37px;
+	right:6px;
+}
+.close:hover {
+	background-position:-22px 9px;
+}
+.optboxbg {
+	background:url(/images/optbox.png) no-repeat;
+	width:144px;
+	height:109px;
+	position:absolute;
+	right:8px;
+	bottom:35px;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/images/optbox.png", sizingMethod="crop");
+}
+.optbox {
+	width:127px;
+	height:75px;
+	position:absolute;
+	right:17px;
+	bottom:57px;
+	line-height:22px;
+	font-size:12px;
+}
+.optbox a {
+	color:#426BBD;
+	display:block;
+	padding-left:9px;
+	_zoom:1;
+	text-decoration:none;
+}
+.optbox a:hover {
+	background-color:#EAF1F5;
+}
+.feedback {
+	border-top:1px solid #ccc;
+	margin-top:4px;
+	padding-top:4px;
+}
