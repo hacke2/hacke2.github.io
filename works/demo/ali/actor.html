@@ -336,8 +336,8 @@
 						startMove(list,{left:-itemW * num},function(){
 							for(var i = 0;i < num; i++) {
 								list.removeChild(items[0]);
+								list.style.left = 0;
 							}
-							list.style.left = 0;
 						});
 				}
 				
