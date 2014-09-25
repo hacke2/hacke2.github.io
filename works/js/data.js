@@ -35,11 +35,10 @@ var data = {
 	    		desc : '模仿百度爱玩',
 	    		url : '/works/demo/06/'
 	    	},
-	    	,
 	    	{
 	    		name : '阿里云开发者大会',
 	    		desc : '拖动图片轮播',
-	    		url : '/works/demo/ali/AWDC - 阿里云开发者大会.htm'
+	    		url : '/works/demo/ali/actor.html'
 	    	}
     	],
     javascript : [
