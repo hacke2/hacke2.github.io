@@ -324,6 +324,8 @@
 		                    moveIndex = Math.ceil((Math.abs(obj.offsetLeft) - itemW / 2) /itemW) - moveIndex;
 		                    if(obj.offsetLeft < 0) {
 		                    	dragMovePre(moveIndex);	    
+		                    }else {
+		                    	startMove(list,{left:0});
 		                    }
 		                	moveItem();            	
 		                }
