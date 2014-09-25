@@ -85,7 +85,7 @@
 					
 					
 					if(target.nodeName = 'IMG') {
-						var imgs = document.images;
+						var imgs = div1.getElementsByTagName('img');
 						for (var i = 0; i < imgs.length; i++) {
 							startMove(imgs[i], 100);
 						}
@@ -95,7 +95,7 @@
 				}
 				
 				div1.onmouseout = function() {
-					var imgs = document.images;
+					var imgs = div1.getElementsByTagName('img');
 					for (var i = 0; i < imgs.length; i++) {
 							startMove(imgs[i], 100);
 					}
