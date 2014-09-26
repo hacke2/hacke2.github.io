@@ -73,9 +73,11 @@ share: true
 如果行内元素文字过多产生多行，则在父级元素设置display: table-cell;vertical-align:middle;
 
 {% highlight CSS %}
-	a{
-	  height: 200px;
-	  line-height:200px;  
+	.container{
+		width: 300px;
+		height: 300px;
+		display: table-cell;
+		vertical-align:middle;
 	}
 {% endhighlight %}
 
