@@ -114,13 +114,13 @@ share: true
 
 {% highlight CSS %}
 	div{
-	  width: 150px;
-	  height: 150px;
-	  position: absolute;
-	  top: 50%;
-      left: 50%;
-      margin-top: -75px;
-      margin-left: -75px;
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -75px;
+		margin-left: -75px;
 	}
 {% endhighlight %}
 
@@ -130,9 +130,9 @@ share: true
 
 {% highlight CSS %}
 	div{
-	    display: flex;
-  		justify-content:center;
-  		align-items: center;
+		display: flex;
+		justify-content:center;
+		align-items: center;
 	}
 {% endhighlight %}
 
