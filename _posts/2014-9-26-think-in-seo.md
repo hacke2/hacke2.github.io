@@ -111,6 +111,6 @@ SEO（Search Engine Optimization）汉译为搜索引擎优化.seo优化是专�
 <a href="http://www.pc6.com/infoview/Article_32813.html">优化HTML代码加快网页速度</a>
 
 
->部分参考百度百科
+>部分参考百度百科、慕课网
 
 <strong>end from {{ site.url }}</strong>
