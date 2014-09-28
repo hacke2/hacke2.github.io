@@ -61,6 +61,13 @@ var data = {
 	    		desc : '响应式DEMO',
 	    		url : '/works/demo/html5/ali.html'
 	    	}
+	    ],
+	project : [
+	    	{
+	    		name : 'gokk',
+	    		desc : '基于Node.js + Mongoose 模仿gokk.tv ',
+	    		url : 'https://github.com/hacke2/gokk'
+	    	}
 	    ]
     
 }

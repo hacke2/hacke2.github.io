@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
-</html>
+<div class="jumbotron" ng-repeat="work in works">
+	<h1>{{work.name}}</h1>
+	<p>{{work.desc}}</p>
+	<p>
+		<a class="btn btn-lg btn-primary" target="_blank" href="{{work.url}}" role="button">查看github项目</a>
+	</p>
+</div>

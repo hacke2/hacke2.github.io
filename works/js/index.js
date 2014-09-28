@@ -18,10 +18,9 @@ showApp.config(function($routeProvider) {
             templateUrl : 'template/show.html',
             controller  : 'html5Controller'
         })
-        .when('/css3/', {redirectTo: '/'})
-        .when('/css3/:index', {
-            templateUrl : 'template/show.html',
-            controller  : 'css3Controller'
+        .when('/project/', {
+            templateUrl : 'template/about.html',
+            controller  : 'projectController'
         })
         .when('/javascript/', {redirectTo: '/javascript/0'})
         .when('/javascript/:index', {
@@ -60,4 +59,8 @@ showApp.controller('html5Controller', function($scope, $routeParams) {
     $scope.works = data.html5;
     
     document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
+});
+
+showApp.controller('projectController', function($scope, $routeParams) {
+	$scope.works = data.project;
 });
