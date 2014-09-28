@@ -65,7 +65,7 @@ var data = {
 	project : [
 	    	{
 	    		name : 'gokk',
-	    		desc : '基于Node.js + Mongoose 模仿gokk.tv ',
+	    		desc : '基于Node.js + jade + Mongoose 模仿gokk.tv ',
 	    		url : 'https://github.com/hacke2/gokk'
 	    	}
 	    ]
