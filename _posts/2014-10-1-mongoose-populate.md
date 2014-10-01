@@ -119,4 +119,10 @@ Student.findClazzNameByStudentId('542b600a683d59a80d4ee632', function (err, stud
 我们在新增hacke2时将classID设为软件2班的，查新hacke2时自动就会把关键的
 Class查询到
 
+{% highlight JavaScript %}
+{ _id: 542b600a683d59a80d4ee632,
+    name: 'hacke2',
+    clazzID: { _id: 542b5fcc49df6e741d8d15f5, clazzName: '软件2班', __v: 0 },
+    __v: 0 }
+{% endhighlight %}
 <strong>end from <a href="{{ site.url }}"> {{ site.url }}</a></strong>
