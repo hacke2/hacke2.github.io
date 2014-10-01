@@ -16,18 +16,4 @@
   
 </script>
 {% endif %}
-<script>
-function limitTextNum(className, num) {
-    var limitNum = num;
-    $("."+className+"").each(function () {
-        var curText = $(this).text();
-        var curLength = $(this).text().length;
-        if (curLength > num) {
-            curText = $(this).text(curText.substring(0, limitNum) + '...');
-        }
-    });
-}
-
-limitTextNum('entry-content', 200);
-</script>
 {% if page.comments %}{% include disqus_comments.html %}{% endif %}
