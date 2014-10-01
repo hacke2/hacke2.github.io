@@ -8,17 +8,3 @@
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc974ee5652cef49d5c272e5cae5a0d20' type='text/javascript'%3E%3C/script%3E"));
 </script>
-<script>
-function limitTextNum(className, num) {
-    var limitNum = num;
-    $("."+className+"").each(function () {
-        var curText = $(this).text();
-        var curLength = $(this).text().length;
-        if (curLength > num) {
-            curText = $(this).text(curText.substring(0, limitNum) + '...');
-        }
-    });
-}
-
-limitTextNum('entry-content', 200);
-</script>
