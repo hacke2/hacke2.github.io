@@ -2,7 +2,7 @@
 layout: post
 title: CSS居中完全解决方案
 description: "各种情景下的CSS水平垂直居中"
-tags: [css]
+tags: [CSS]
 image:
   background: triangular.png
 comments: true

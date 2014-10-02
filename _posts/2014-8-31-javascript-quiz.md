@@ -2,7 +2,7 @@
 layout: post
 title: Javascript Quiz
 description: "Javascript Quiz 练习题解析"
-tags: [笔试题, javascript]
+tags: [JavaScript]
 image:
   background: triangular.png
 comments: true

@@ -2,7 +2,7 @@
 layout: post
 title: Hello World
 description: "Sample post with a background image CSS override."
-tags: [测试]
+tags: [心声]
 image:
   background: triangular.png
 comments: true

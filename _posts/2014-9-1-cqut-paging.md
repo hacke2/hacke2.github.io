@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript模仿实验室分页组件
 description: "实验室分页组件，一个简单的分页，非AJAX局部刷新"
-tags: [小练习, javascript]
+tags: [小练习, JavaScript]
 image:
   background: triangular.png
 comments: true
