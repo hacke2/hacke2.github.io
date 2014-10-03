@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Js模板引擎</title>
+	</head>
+	<body>
+		<div id="tmp">
+			<div>
+				<h1>{title}</h1>
+				<p>{content}</p>
+			</div>
+		</div>
+	</body>
+	<script>
+		var tmp = document.getElementById('tmp').innerHTML;
+		
+		
+//		var reg = /{(\w+)}/g;
+//		while(match = reg.exec('{ss}{dd}')) {
+//		    console.log(match);
+//		}
+//		["{ss}", "ss", index: 0, input: "{ss}{dd}"]
+//		["{dd}", "dd", index: 4, input: "{ss}{dd}"] 
+		
+		function templateEng(template, data) {
+			var match,
+			pattens = /{(\w+)}/g,
+			reExp = /(^( )?(if|for|else|switch|case|break|{|}))(.*)?/g, 
+			
+			code = 'console.log(arguments);' + 'var r=[];\n', 
+			cursor = 0;
+			while(match = pattens.exec(template)) {
+
+			    insertJsCode(match[1]);
+			    cursor = match.index + match[0].length;
+			}
+			insertHtml(template.substr(cursor, template.length - cursor))
+			code += 'return r.join("");';
+			function insertHtml(line) {
+				code += line != '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '';
+				return insertHtml;
+			}
+			
+			function insertJsCode(line) {
+				code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n';
+				return insertJsCode;
+			}
+			console.log(code);
+			return new Function(code.replace(/[\r\t\n]/g, '')).apply(data);
+		}
+		
+		document.getElementById('tmp').innerHTML = templateEng(tmp, [{title:'这是标题', content : '这是内容'}])
+		
+	</script>
+</html>
