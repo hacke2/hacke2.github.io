@@ -129,7 +129,7 @@ function sendMsg(msg, myClient) {
 console.log('listening....');
 {% endhighlight %}
 
-我们来测试一下，利用telnet，使用约定好的协议进行登录，<i>cqut|123456|1</i>,<i>cqut|123456|0</i>,<i>cqut2|123456|1</i>，可以看到，cqut只是给cqut的机顶盒发送，而cqut2的接受不到。
+我们来测试一下，利用telnet，使用约定好的协议进行登录，cqut 123456 1,cqut 123456 0,cqut2 123456 1，(这里不是空格，而是I符号，在文章内显示有问题，具体看代码分割就明白了)可以看到，cqut只是给cqut的机顶盒发送，而cqut2的接受不到。
 
 <figure>
 	<a href="/images/article/16.jpg">
