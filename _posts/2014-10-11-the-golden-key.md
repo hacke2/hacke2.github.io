@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 金钥匙?
+title: 金钥匙
 description: "记这两周的起起伏伏"
 tags: [心情]
 image:
