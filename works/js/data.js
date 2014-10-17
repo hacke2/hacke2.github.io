@@ -60,6 +60,11 @@ var data = {
 	    		name : '阿里响应式笔试题',
 	    		desc : '响应式DEMO',
 	    		url : '/works/demo/html5/ali.html'
+	    	},
+	    	{
+	    		name : '创新实验室宣传网站',
+	    		desc : '重理工软件工程',
+	    		url : '/works/demo/ee/index.htm'
 	    	}
 	    ],
 	project : [
