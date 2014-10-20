@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-之前[Demon](http://Demon.com)写了一个JS类库，最近我打算学一下。
+之前[Demon](http://Demon.com)写了一个JS类库[Ghosejs](https://github.com/DemonCloud/GhostJS)，最近我打算学一下。
 
 先贴一下整理的整体结构，前面的为行数。
 
