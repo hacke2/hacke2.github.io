@@ -13,7 +13,8 @@ share: true
 
 先贴一下整理的整体结构，前面的为行数。
 
-{% highlight %}
+{% highlight JavaScript %}
+/**
 名称 Ghostjs
 版本 0.0.3
 
@@ -54,6 +55,7 @@ share: true
 2141 事件
 2256 其他内部方法
 2411 Tween动画算法
+**/
 {% endhighlight %}
 
 大致的结构如此，今天和作者聊了一下午，他打算吧动画那一块还要做一些事情，加入点高级动画的特效
@@ -111,4 +113,4 @@ G.AryFilter = function(ary, func) {
 
 DEMON一个乐于分享自己的一些经验的同学，知识只从外国网站获取，是一位很有潜力的牛人，以后混的好可别忘了我啊：D
 
-**end from [{{site.url}}]({{ site.url }})**
+**end from [{{ site.url }}]({{ site.url }})**
