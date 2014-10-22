@@ -71,7 +71,7 @@ share: true
  * 在客户端生成HTML降低了服务器的负载
  * [使用HTML5 + Node.js的例子，比前身快2~10倍](http://venturebeat.com/2011/08/16/linkedin-node)
 
- ### 客户端优势
+### 客户端优势
 
  * 更好的用户体验
  * 网络带宽减少（降低成本）
