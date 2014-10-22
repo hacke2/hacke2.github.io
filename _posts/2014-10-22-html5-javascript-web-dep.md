@@ -174,7 +174,7 @@ share: true
  * 实例：用户跟踪，反向地址匹配
  * [Geolocation API跨浏览器支持](http://bit.ly/Geolocation-API-Polyfill)
 
- ## 框架
+## 框架
 
  * [geo-loaction-javascript](code.google.com/p/geo-location-javascript)
  * [Webshims lib](https://github.com/aFarkas/webshim)
