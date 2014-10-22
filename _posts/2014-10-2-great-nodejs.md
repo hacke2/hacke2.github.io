@@ -9,6 +9,13 @@ comments: true
 share: true
 ---
 
+<figure>
+	<a href="http://img11.360buyimg.com/n0/g15/M07/17/03/rBEhWVKMZ1AIAAAAAAVG8mJwrncAAFuKwEuVBwABUcK039.jpg">
+		<img src="http://img11.360buyimg.com/n0/g15/M07/17/03/rBEhWVKMZ1AIAAAAAAVG8mJwrncAAFuKwEuVBwABUcK039.jpg" alt="home" />
+	</a>
+	<figcaption>了不起的Node.js</figcaption>
+</figure>
+
 # 第二章 Js概览
 
 ## 基于GoogleV8引擎
