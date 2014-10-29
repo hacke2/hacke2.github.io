@@ -34,7 +34,7 @@ share: true
  * Webkit、Mobile Firefox、OperaMobile
  * [浏览器的市场份额](http://www.netmarketshare.com/browser-market-share.aspx?qprid=0&qpcustomd=1),[最新浏览器HTML5支持](http://caniuse.com)
  * 优雅降级
- * 移动设备模拟器列表(http://www.mobilexweb.com/emulators)
+ * [移动设备模拟器列表](http://www.mobilexweb.com/emulators)
 
 # 第三章 为移动WEB构造程序
 
