@@ -9,6 +9,8 @@ comments: true
 share: true
 ---
 
+>http://es6rocks.com/2014/10/es6-modules-today-with-6to5/?utm_source=javascriptweekly&utm_medium=email 原文链接
+
 我之前在Twitter上发过一个照片，表达出我有多快乐，这像是一个时光机让我们可以穿梭到未来-ES6的时代！下面让我来展示如何使用6to5让今天就可以练手ES6的模块化。
 
 <figure>
@@ -33,16 +35,16 @@ share: true
 我们的应用除了输出日志不会做其他事情，其主要的目的就是让你了解模块化如何工作和如何让你现有的环境使用ES6的模块化开发。
 基本的目录结构：
 
-├── Gruntfile.js
-├── package.json
-└── src
-    ├── app.js
-    ├── modules
-    │   ├── bar.js
-    │   ├── baz.js
-    │   └── foo.js
-    └── sample
-        └── index.html
+	├── Gruntfile.js
+	├── package.json
+	└── src
+	    ├── app.js
+	    ├── modules
+	    │   ├── bar.js
+	    │   ├── baz.js
+	    │   └── foo.js
+	    └── sample
+	        └── index.html
 
 app.js是主程序，包含了我们将要存储的模块化的目录
 下面是app.js的代码：
@@ -149,7 +151,7 @@ node dist/app.js
 	<figcaption>Node.js上的运行效果</figcaption>
 </figure>
 
-如果你使用AMD规范的，请在浏览器访问index.html ** 吐槽一下，老外竟然不知道中国的[sea.js](https://github.com/seajs/seajs) **
+如果你使用AMD规范的，请在浏览器访问index.html(**吐槽一下，老外竟然不知道中国的[sea.js](https://github.com/seajs/seajs)**)
 
 <figure>
 	<a href="http://es6rocks.com/img/amd-es6.png">
