@@ -137,7 +137,7 @@ The HTML file looks like this:
 
 # 运行
 
-万事俱备之前东风，我们的代码已经放在[es6-modules-today-with-6to5](https://github.com/es6rocks/es6-modules-today-with-6to5)，你可以克隆下来自己玩玩。使用npm install安装6to5
+万事俱备东风只欠，我们的代码已经放在[es6-modules-today-with-6to5](https://github.com/es6rocks/es6-modules-today-with-6to5)，你可以克隆下来自己玩玩。使用npm install安装6to5
 
 记住一点，Grunt任务会生成一个目标文件夹来存放转化后的代码
 所以，如果你想测试使用CommonJS规范的转化后的ES6的代码，你可以执行一下命令
@@ -163,8 +163,6 @@ node dist/app.js
 # 结论
 
 
-Go ahead and fork the repo es6-modules-today-with-6to5, submit issues, questions or pull-requests.
-Comments are welcome :)
 通过这个简单的实例你学会了如果简单的使用ES6模块化风格来编写代码。6to5是胃肠棒的工具让你穿越到未来提前体验ES6模块化带来的快感。资源下载[es6-modules-today-with-6to5](https://github.com/es6rocks/es6-modules-today-with-6to5)，欢迎提交一些问题的反馈
 
 
