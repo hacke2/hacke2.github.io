@@ -47,7 +47,7 @@ share: true
 app.js是主程序，包含了我们将要存储的模块化的目录
 下面是app.js的代码：
 
-{% highlight %}
+{% highlight JavaScript%}
 import foo from "./modules/foo";
 import bar from "./modules/bar";
 
@@ -57,7 +57,7 @@ console.log('From module bar >>> ', bar);
 
 以上代码非常简单，我们导入了foo模块和bar模块，然后分别打印出他们
 
-{% highlight %}
+{% highlight JavaScript%}
 // foo.js
 let foo = 'foo';
 
@@ -80,7 +80,7 @@ export default bar;
 正如我之前提到的那个，我使用6to5，他可以精确的达到我们想要的效果。
 这个任务是运行在Grunt上的,我们使用 @sindresorhus的 [grunt-6to5](https://github.com/sindresorhus/grunt-6to5)
 
-{% highlight %}
+{% highlight JavaScript%}
 npm install grunt-cli -g
 npm install grunt --save-dev
 npm install grunt-6to5 --save-dev
@@ -88,7 +88,7 @@ npm install grunt-6to5 --save-dev
 
 我们的Gruntfile类似于一下：
 
-{% highlight %}
+{% highlight JavaScript%}
 grunt.initConfig({
     '6to5': {
         options: {
@@ -115,7 +115,7 @@ The HTML file looks like this:
 'common'选项的目的在于告诉6to5我们将输出ES5CommonJS模块化风格。
 当然，6to5也支持AMD，我写了sample/index.html，让他在浏览器环境下测试一下，这个HTML的代码如下：
 
-{% highlight %}
+{% highlight HTML%}
 <!doctype html>
 <html lang="en">
 <head>
