@@ -39,6 +39,11 @@ var data = {
 	    		name : '阿里云开发者大会',
 	    		desc : '拖动图片轮播',
 	    		url : '/works/demo/ali/actor.html'
+	    	},
+	    	{
+	    		name : '神马搜索（移动访问）',
+	    		desc : '美团信息轮播',
+	    		url : '/works/demo/sm-meituan'
 	    	}
     	],
     javascript : [
