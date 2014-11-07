@@ -314,30 +314,28 @@
             var endHandler = function(evt) {
 
                 timer = setInterval(function() {
-                    move(-1);
+                    move('right');
                 },
                 2000);
 
                 evt.preventDefault();
 
                 if (this.direction < 0) {
-                    move(1);
+                    move('right');
                 } else {
-                    move(-1);
+                    move('left');
                 }
             }
 
-            for (var i = 0; i < len; i++) {
-                oli[i].addEventListener('touchstart', startHandler, false);
-                oli[i].addEventListener('touchmove', moveHandler, false);
-                oli[i].addEventListener('touchend', endHandler, false);
-            };
+            oul.addEventListener('touchstart', startHandler, false);
+            oul.addEventListener('touchmove', moveHandler, false);
+            oul.addEventListener('touchend', endHandler, false);
 
             function move(flag) {
                 for (var i = oli.length - 1; i >= 0; i--) {
                     oli[i].style.webkitTransition = "";
                 };
-                if (flag < 0) {
+                if (flag == 'left') {
                     oli.unshift(oli.pop());
                     oli[len - 1].style.webkitTransform = 'translate3d(-' + scaleW + 'px, 0, 0)';
 
@@ -359,7 +357,7 @@
             }
 
             timer = setInterval(function() {
-                move(-1)
+                move('right')
             },
             2000);
 
