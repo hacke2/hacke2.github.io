@@ -9,6 +9,8 @@ comments: true
 share: true
 ---
 
+>http://es6rocks.com/2014/10/arrow-functions-and-their-scope/ 原文链接 译：[@liningone](https://github.com/liningone) 摇滚ES6中国站快要上线了，大家期待吧，也可以联系[我](https://github.com/hacke2)或者[ES6组织](https://github.com/es6rocks)为这个活动做出点贡献！
+
 在ES6很多很棒的新特性中, 箭头函数 (或者大箭头函数)就是其中值得关注的一个! 它不仅仅是很棒很酷, 它很好的利用了作用域, 快捷方便的在现在使用以前我们用的技术, 减少了很多代码......但是如果你不了解箭头函数原理的话可能就有点难以理解. 所以,让我们来看下箭头函数, 就是现在!
 
 ## 执行环境
