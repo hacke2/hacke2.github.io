@@ -24,3 +24,5 @@ share: true
   "workAt": "shenma Inc."
 }
 {% endhighlight %}
+
+{% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}	
