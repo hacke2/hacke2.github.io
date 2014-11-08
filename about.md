@@ -1,12 +1,11 @@
 ---
-layout: page
+layout: post
 permalink: /about/
 title: About Me
 tags: [about]
 image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: abstract-12.jpg
+comments: true
 share: true
 ---
 
@@ -24,5 +23,3 @@ share: true
   "workAt": "shenma Inc."
 }
 {% endhighlight %}
-
-{% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}	
