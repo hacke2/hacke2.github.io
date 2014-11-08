@@ -10,4 +10,17 @@ image:
 share: true
 ---
 
-
+{% highlight JavaScript %}
+{
+  "name": "hacke2",
+  "description": "",
+  "version": "0.0.9",
+  "keywords": ["Web APP", "JS", "Frontend Developer"],
+  "contact": {
+    "weibo": "@_hacke2",
+    "github": "@hacke2"
+  },
+  "location": "重庆",
+  "workAt": "shenma Inc."
+}
+{% endhighlight %}
