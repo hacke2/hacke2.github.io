@@ -16,7 +16,7 @@ share: true
   "version": "0.0.9",
   "keywords": ["Web APP", "JS", "Frontend Developer"],
   "contact": {
-    "weibo": "@_hacke2",
+    "weibo": "@hacke2",
     "github": "@hacke2"
   },
   "location": "重庆",
