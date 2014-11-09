@@ -31,7 +31,7 @@ image:
   <div class="entry-content">
     {% if post.content contains '<!--more-->' %}
       {{ post.content | split:'<!--more-->' | first %}}
-      <p><a class="btn btn-info" href="{{ post.url }}">Read more</a></p>
+      <p><a class="btn btn-info" style="float:right;" href="{{ post.url }}">Read more</a></p>
     {% else %}
       {{ post.content }}
     {% endif %}
