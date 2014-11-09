@@ -18,6 +18,8 @@ share: true
 
 先来将Schema定义好
 
+<!--more-->
+
 ClazzSchema ： 
 
 {% highlight JavaScript %}

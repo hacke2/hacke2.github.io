@@ -32,6 +32,8 @@ share: true
 
 所以结果是 'object'，默认不为undefined
 
+<!--more-->
+
 ### 2.考点：函数的内部属性name
 
 {% highlight JavaScript %}

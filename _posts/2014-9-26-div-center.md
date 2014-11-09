@@ -38,6 +38,8 @@ share: true
 
 多个块级元素，我们将其display设置为inline-block；然后将父级元素设置一下属性
 
+<!--more-->
+
 {% highlight CSS %}
 	div{
 		text-align: center;

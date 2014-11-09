@@ -17,6 +17,8 @@ share: true
 
 <script src="https://gist.github.com/hacke2/5434a4346a1169f8b97b.js"></script>
 
+<!--more-->
+
 这几天一个前端qq群主分享了一个东西说平时可以练练手，我没有做，可是看到他说，<strong>群里面有些人小东西不屑做，稍微大点有不会做</strong>
 我当时就感觉说我。。刚才写了一下，与大家分享
 

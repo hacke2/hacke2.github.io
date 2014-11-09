@@ -20,6 +20,8 @@ share: true
 	<figcaption>使用6to5让今天就可以练手ES6的模块化</figcaption>
 </figure>
 
+<!--more-->
+
 # 第一步
 
 如果你现在还不了解ES6的模块化开发，请在[JSModules.io](http://JSModules.io)上了解一下。我也推荐大家读一下@jcemer的文章[A new syntax for modules in ES6](http://es6rocks.com/2014/07/a-new-syntax-for-modules-in-es6/)，它涉及到了很多非常酷的关于JS模块化的东西。他可以指导我们使用6to5。总的来说，6to5能在支持ES5d的环境下提前尝试ES6 模块化开发的快感。

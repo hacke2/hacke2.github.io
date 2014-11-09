@@ -16,6 +16,8 @@ share: true
 	<figcaption>了不起的Node.js</figcaption>
 </figure>
 
+<!--more-->
+
 # 第二章 Js概览
 
 ## 基于GoogleV8引擎

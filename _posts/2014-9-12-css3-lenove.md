@@ -29,6 +29,7 @@ share: true
 	<figcaption>点击弹出详细信息</figcaption>
 </figure>
 
+<!--more-->
 
 # 过程
 

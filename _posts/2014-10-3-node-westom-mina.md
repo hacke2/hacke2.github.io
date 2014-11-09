@@ -19,6 +19,8 @@ share: true
 
 让我们来着手重构一下，利用Node.js的先天优势，高并发，非阻塞式
 
+<!--more-->
+
 首先对连接封装一下
 {% highlight JavaScript %}
 

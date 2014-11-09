@@ -33,6 +33,8 @@ SEO（Search Engine Optimization）汉译为搜索引擎优化.seo优化是专�
 	<figcaption>百度搜索hacke2</figcaption>
 </figure>
 
+<!--more-->
+
 ### 白帽SEO
 
 采用SEO的思维，合理优化网站，提高用户体验，合理与其他网站互联。从而使站点在搜索引擎排名提升。

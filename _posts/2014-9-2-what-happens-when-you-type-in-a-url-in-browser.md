@@ -25,7 +25,9 @@ share: true
 	10.browser determines what to do with response 
 		(e.g. is it a HTML page, is it an image, is it a sound clip?)
 	11.browser renders response, or offers a download dialog for unrecognized types
-<hr />	
+
+<!--more-->
+
 	1.检查浏览器缓存，如果你请求的对象依据缓存下来了，则跳到第9步
 	2.浏览器会询问操作系统你请求的服务器的IP
 	3.操作系统先查询本地Host文件；如果hosts里没有这个域名的映射，则查找本地DNS解析器缓存；

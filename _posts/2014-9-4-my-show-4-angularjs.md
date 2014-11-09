@@ -22,7 +22,7 @@ share: true
 	<figcaption>点击右上角项目名称可切换不同视图</figcaption>
 </figure>
 
-
+<!--more-->
 
 # 所含的技术
 

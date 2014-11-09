@@ -16,6 +16,8 @@ share: true
 	<figcaption>HTML5和JavaScript Web应用开发</figcaption>
 </figure>
 
+<!--more-->
+
 # 第一章 客户端架构
 
  * 过去前端开发人员不用关心用户界面后的框架，从未先现在一样关注浏览器的性能

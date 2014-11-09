@@ -21,7 +21,7 @@ share: true
 	<figcaption>图片可以很有层次感的切换</figcaption>
 </figure>
 
-
+<!--more-->
 
 # 思路
 
