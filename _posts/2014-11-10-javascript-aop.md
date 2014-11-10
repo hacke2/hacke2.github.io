@@ -36,6 +36,8 @@ function sleep(maxtime) {
 
 现在我们向在这个`complexFunc`函数中做执行时间的记录。动手改一下上面的代码。
 
+<!--more-->
+
 {% highlight JavaScript %}
 function complexFunc() {
 	var now = +new Date();
