@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-## 需求的变更
+## 现存的方式
 
 我们写了一段计算比较密集的代码：
 
@@ -98,7 +98,7 @@ AOP这个概念是来源于后台开发，指面向切面编程。在我们的�
 我们知道，我们可以给JavaScript原生对象扩展其属性、方法。JavaScript对于`功能的封装`就是在函数里，我们在函数里面扩展一个before方法。
 
 {% highlight JavaScript %}
-//在函数调用之前调用的函数func
+//前置通知
 Function.prototype.before = function(func) {
 	var that = this;
 		args = [].slice.call(arguments,1);
@@ -111,7 +111,7 @@ Function.prototype.before = function(func) {
 	}
 }
 
-//在函数调用之后调用的函数func
+//后置通知
 Function.prototype.after = function(func) {
 	var that = this;
 		args = [].slice.call(arguments,1);
@@ -123,9 +123,39 @@ Function.prototype.after = function(func) {
 		func.apply(this, args);
 		return ret;
 	}
+}
+
+//环绕型
+Function.prototype.around = function(beforeFunc, afterFunc) {
+	var that = this;
+	return function() {
+		return that.before(beforeFunc).after(afterFunc).apply(this, args);
+	}
+}
+
+//捕获异常
+Function.prototype.throwing = function(throwingFunc) {
+	var that = this;
+		args = [].slice.call(arguments,1);
+	return function() {
+		try {
+			return that.apply(this, arguments);
+		} catch(e) {
+			throwingFunc && throwingFunc.call(this, args);
+		}
+	}
+}
+
 {% endhighlight %}
 
-这里有一个闭包，引用了上一层传来`this`和`arugments`的返回一个加工后的函数。在这里我们并不是简简单单的只是将功能函数在业务函数之前执行，而是判断了一下功能函数的返回值，如果是`false`。则不执行已有函数，类似于一个`拦截器`或者`过滤器`的功能，在NOde.js叫中间件。
+这里先只提供四个API：
+
+* 前置通知before:在函数调用之前调用的函数func
+* 后置通知after:在函数调用之后调用的函数func
+* 环绕通知around:传递前置、后置函数，将其包裹
+* 抛出异常后通知throwing:异常的控制
+
+只说说第一个函数，这里有一个闭包，引用了上一层传来`this`和`arugments`的返回一个加工后的函数。在这里我们并不是简简单单的只是将功能函数在业务函数之前执行，而是判断了一下功能函数的返回值，如果是`false`。则不执行已有函数，类似于一个`拦截器`或者`过滤器`的功能，在NOde.js叫中间件。
 
 因为是直接扩展在`Function`上的，可以进行`链式操作`。如：
 
@@ -142,9 +172,9 @@ func.before(func1).before(func2).after(func2)(arg1)
 function logTime (func) {
 	return func = (function() {
 		var d;
-		return func.before(function() {
+		return func.around(function() {
 			d = +new Date();
-		}).after(function() {
+		},function() {
 			console.log(+new Date() - d, func.name);
 		});
 	})()
@@ -177,6 +207,17 @@ logTime(otherComplexFunc)();
 * 如本例日志的记录。
 * 数据的验证，如果不通过不会执行业务代码，一般为`submit`,并且将逻辑进行了分离。
 * 无限的想象力...
+* 异常的控制
+
+## 一些展望
+
+在Spring提供的AOP，我们有一个非常强大的功能：`切入点表达式`,比如一下代码：
+
+{% highlight JavaScript %}
+execution(* com.spring.service.*.*(String,..)) and args(msg,..)
+{% endhighlight %}
+
+我们可以写一个表达式来动态的给函数来绑定一些前置通知，后置通知等。在JavaScript中，我们可以使用正则来完成定义表达式的策略。扫描当前JS的函数后包装函数，要修改功能只需动态的修改配置就可以实现功能的插拔，真正意义上实现JavaScript的AOP！
 
 ## 总结
 
