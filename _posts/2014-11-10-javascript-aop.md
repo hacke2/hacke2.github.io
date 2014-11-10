@@ -141,7 +141,7 @@ Function.prototype.throwing = function(throwingFunc) {
 		try {
 			return that.apply(this, arguments);
 		} catch(e) {
-			throwingFunc && throwingFunc.call(this, args);
+			throwingFunc && throwingFunc.call(this, e, args);
 		}
 	}
 }
