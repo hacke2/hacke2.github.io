@@ -22,6 +22,8 @@ share: true
 
 点击Fork
 
+<!--more-->
+
 <figure>
 	<a href="/images/article/2014-11-11/1.jpg">
 		<img src="/images/article/2014-11-11/1.jpg" alt="home" />
@@ -29,12 +31,6 @@ share: true
 	<figcaption>单击Fork</figcaption>
 </figure>
 
-<figure>
-	<a href="/images/article/2014-11-11/1.jpg">
-		<img src="/images/article/2014-11-11/1.jpg" alt="home" />
-	</a>
-	<figcaption>Fork成功，点击settinng</figcaption>
-</figure>
 
 ## 第二步 修改
 
@@ -63,6 +59,14 @@ share: true
 </figure>
 
 ### 完了吗？完成了！数一下到底有没有30秒？！
+
+<figure>
+	<a href="/images/article/2014-11-11/8.jpg">
+		<img src="/images/article/2014-11-11/8.jpg" alt="home" />
+	</a>
+	<figcaption>将名字改为和你自己名字对应的</figcaption>
+</figure>
+
 
 等待几分钟，访问以下
 
