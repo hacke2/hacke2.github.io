@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta content="yes"name="apple-mobile-web-app-capable"/>
+  <meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+  <meta name="format-detection"content="telphone=no"/>
+  <title>绝对定位布局</title>
+  <link rel="stylesheet" href="reset.css" media="all">
+  <style>
+.header,.footer,.wrap-page{
+  position:absolute;
+  left:0;
+  right:0;
+}
+.header,.footer{
+  height:44px;
+  background-color: #fff;
+  text-align: center;
+  z-index:900;
+  line-height:44px;
+}
+.header{
+  top: 0;
+  border-bottom: 1px solid #f00;
+}
+.footer{
+  bottom: 0;
+  border-top: 1px solid #f00;
+}
+.wrap-page{
+  top: 44px;
+  bottom: 44px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.page{
+  padding: 10px;
+}
+.page p{
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">header</header>
+  
+  <div class="wrap-page">
+    <div class="page">
+      <p>君子曰：学不可以已。</p>
+				<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+				<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+				<p>吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，不如登高之博见也。登高而招，臂非加长也，而见者远；顺风而呼，声非加疾也，而闻者彰。假舆马者，非利足也，而致千里；假舟楫者，非能水也，而绝江河。君子生非异也，善假于物也。</p>
+				<p>君子曰：学不可以已。</p>
+				<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+				<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+				<p>吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，不如登高之博见也。登高而招，臂非加长也，而见者远；顺风而呼，声非加疾也，而闻者彰。假舆马者，非利足也，而致千里；假舟楫者，非能水也，而绝江河。君子生非异也，善假于物也。</p>
+				<p>君子曰：学不可以已。</p>
+				<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+				<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+				<p>吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，不如登高之博见也。登高而招，臂非加长也，而见者远；顺风而呼，声非加疾也，而闻者彰。假舆马者，非利足也，而致千里；假舟楫者，非能水也，而绝江河。君子生非异也，善假于物也。</p>
+    </div>
+  </div>
+  <footer class="footer">footer</footer>
+</body>
+</html>
