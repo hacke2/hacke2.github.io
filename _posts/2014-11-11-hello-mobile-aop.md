@@ -23,6 +23,8 @@ share: true
 
 我们来看看移动端最常见的布局：
 
+<!--more-->
+
 <figure>
 	<a href="/images/article/2014-11-10/2.jpg">
 		<img src="/images/article/2014-11-10/2.jpg" alt="home" />
