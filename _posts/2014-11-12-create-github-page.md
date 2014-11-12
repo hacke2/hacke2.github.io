@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 30秒创建Github Page
+title: 30秒搭建Github Page
 description: "30秒创建和我一样的Github博客"
 tags: [分享]
 image:
