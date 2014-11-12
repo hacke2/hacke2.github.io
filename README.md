@@ -12,5 +12,9 @@
 
 <p style="color:red">如果您感觉以上功能对您有帮助，请您下载并点个赞~</p>
 
+若您对如何搭建博客有疑虑，请参阅：
+
+[30秒创建Github Page](http://www.hacke2.cn/create-github-page/)
+
 
 
