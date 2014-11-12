@@ -16,9 +16,11 @@ share: true
 ## 第一步 fork
 
 
-进入我的Github Page 地址
+我的博客使用的`hpstr-jekyll-theme`,基于`jekyll`的，我们都知道，`Github`是支持`jekyll`的是进入`hpstr-jekyll-theme` 的。
 
-[https://github.com/hacke2/hacke2.github.io](https://github.com/hacke2/hacke2.github.io)
+Github 地址：
+
+[https://github.com/mmistakes/hpstr-jekyll-theme](https://github.com/mmistakes/hpstr-jekyll-theme)
 
 点击Fork
 
@@ -39,23 +41,15 @@ share: true
 	<a href="/images/article/2014-11-11/4.jpg">
 		<img src="/images/article/2014-11-11/4.jpg" alt="home" />
 	</a>
-	<figcaption>找到这个文件</figcaption>
+	<figcaption>点击设置</figcaption>
 </figure>
 
-<figure>
-	<a href="/images/article/2014-11-11/5.jpg">
-		<img src="/images/article/2014-11-11/5.jpg" alt="home" />
-	</a>
-	<figcaption>一定要把这个文件删除掉，因为不能和我的域名想冲突，不然编译不过</figcaption>
-</figure>
-
-点击第一步的设置
 
 <figure>
 	<a href="/images/article/2014-11-11/3.jpg">
 		<img src="/images/article/2014-11-11/3.jpg" alt="home" />
 	</a>
-	<figcaption>将名字改为和你自己名字对应的</figcaption>
+	<figcaption>将名字改为`你的Github名字.github.io`</figcaption>
 </figure>
 
 ### 完了吗？完成了！数一下到底有没有30秒？！
@@ -74,10 +68,19 @@ share: true
 
 ## 一些后续设置
 
-现在你已经有了自己的博客了，基于 Jekyll 的，现在你只需做一下几件事情：
+现在你已经有了自己的博客了，当你还可能做以下事情：
 
-1.修改_config.md配置文件，将博客改为你自己的。
-2.将我以前的博文、图片、DEMO给删了，放上你自己的。
+1.将google cdn换成 baidu cdn 原因你懂的
+
+2.去掉分享到twitter、facebook等国外社区，加入百度分享
+
+3.加入百度站长助手，方便您的统计
+
+4.配置disqus评论
+
+5.加入Read More功能，不想像以前一样文章全显示出来
+
+上述功能其实我已经给我自己做了配置，你也可以[Fork我的博客](https://github.com/hacke2/hacke2.github.io)。
 
 期待您的文章！
 
