@@ -195,7 +195,7 @@ p : {font-size:18px；font-size:1.8rem}/*(1.8 x 10=18)*/
 
 一些公司也有自己的框架
 
-- \- [腾讯Pro](http://jquerymobile.com/)https://github.com/AlloyTeam/Pro)
+- \- [腾讯Pro](https://github.com/AlloyTeam/Pro)
 - \- [百度BlendUI](https://github.com/Clouda-team/BlendUI)
 
 但更多公司选择使用一些基础的类库自己封装一些常见的交互，毕竟在移动端上流量真的是寸土必争。比如神马搜索用的是[zepto.js](http://zeptojs.com/)。通过gzip压缩后只有几k，而且风格与JQ一模一样，无学习成本。
