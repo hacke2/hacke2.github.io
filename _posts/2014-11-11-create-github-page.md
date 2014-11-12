@@ -64,7 +64,7 @@ share: true
 	<a href="/images/article/2014-11-11/8.jpg">
 		<img src="/images/article/2014-11-11/8.jpg" alt="home" />
 	</a>
-	<figcaption>将名字改为和你自己名字对应的</figcaption>
+	<figcaption>成功访问</figcaption>
 </figure>
 
 
