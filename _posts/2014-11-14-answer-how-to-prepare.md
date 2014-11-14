@@ -17,6 +17,8 @@ share: true
 
 `重庆-球霸天：`
 
+<!--more-->
+
 我其实也是运气好，没什么经验可谈，只是有几个建议：
 
 1.多写DEMO,将你的作品挂到网上去。可以放在github上，[像我一样](http://www.hacke2.cn/works/)，也可以[像豪哥一样](http://1.gitapp.sinaapp.com/pro/) 放在sae上，有免费的云豆可拿
