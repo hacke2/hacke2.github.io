@@ -28,13 +28,13 @@
 </div><!-- /.entry-header -->
 <script type="text/javascript">
   var picData = [{
+    src : 'images/fuzhou-min.jpg',
+    desc : '2012.10.4 福州·平潭 第一次看见大海'
+  },{
     src : 'images/shiyanshi.jpg',
     desc : '2013.10.26 从实验室的角度看整个校园'
-  }, {
-    src : 'images/fuzhou-min.jpg',
-    desc : '2013.10.26 福州·平潭 第一次看见大海'
   }],
-  picIndex = (new Date()).getDate() % picData.length,
+  picIndex = ((new Date).getMonth() +1) % picData.length,
   curDate = picData[picIndex],
   headerPic = document.getElementById('headerPic'),
   headerPicDesc = document.getElementById('headerPicDesc');
