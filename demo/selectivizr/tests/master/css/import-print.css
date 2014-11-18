@@ -1,6 +1,0 @@
-/* if @media type filtering doesn't work we want this test to fail */
-
-tr#import-print { 
-	background: #c00; 
-}
-
