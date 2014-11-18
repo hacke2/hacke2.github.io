@@ -19,7 +19,7 @@ a:hover{text-decoration:underline;}
 .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
 .none{display:none}
 /* main */
-.page{width:100%;height:100%;overflow:hidden;}
+.page{width:100%;height:970px;overflow:hidden;}
 .div1200{width:1200px;height:100%;position:relative;margin:0px auto;}
 .page5{background:#282828;}
 .page5span1{margin:0px auto;cursor:pointer;margin-top:8%;display:block;width:184px;border-bottom:4px #3c3c3c solid;}
@@ -69,13 +69,13 @@ transition:all 0.2s linear;
 transform:rotate(180deg);
 }
 
-.box_ovo{width:96%;height:500px;position:fixed;left:50%;top:50%;margin-left:-470px;margin-top:-250px;background:#fff;z-index:100;}
+.box_ovo{width:940px;height:500px;position:fixed;left:50%;top:50%;margin-left:-470px;margin-top:-250px;background:#fff;z-index:100;}
 .box_ovo .prev,.box_ovo .next{width:40px;height:40px;position:absolute;right:-40px;top:40px;cursor:pointer;background:#2a2a2a;}
 .box_ovo .next{top:81px;}
 .box_ovo .prev i{width:40px;height:40px;display:block;background:url(../images/p9_06.png) center center no-repeat;}
 .box_ovo .next i{width:40px;height:40px;display:block;background:url(../images/p9_09.png) center center no-repeat;}
 .oimg1{float:left;margin-right:44px;}
-.ovotxt{width:400px;;float:left;overflow:auto;overflow-x:hidden;}
+.ovotxt{width:460px;float:left;overflow:auto;overflow-x:hidden;}
 .ovohead{width:100%;height:70px;position:relative;border-bottom:1px #ccc dashed;margin-top:30px;margin-bottom:30px;}
 .ovohead h1{position:absolute;left:0px;top:0px;font-size:220%;}
 .ovohead i{font-size:14px;color:#b4b4b4;position:absolute;left:0px;top:43px;font-style:normal;}
