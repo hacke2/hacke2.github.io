@@ -13,9 +13,9 @@ share: true
 
 当你乘坐各种交通工具(公交、地铁、轻轨、火车)时你会发现，人们都个个低下头在玩自己的手机、平板、Kindle，没错，你正在处于一个多终端设备的时代！手机用户连年上升，前几天我们在感叹以前玩沙包、陀螺，现在小孩的娱乐就是玩手机--。另外，微软的Xbox和任天堂的Wii等游戏设备也有自己的浏览器。设备真的来了。。
 
-现在网站主流跨终端的有以下方式：
-
 <!--more-->
+
+现在网站主流跨终端的有以下方式：
 
 ### 单域
 
@@ -24,15 +24,15 @@ share: true
 单域还有一种情况，就是多个模板，你用移动设备可能访问一个网站，最底下会有访问桌面版，访问触屏版等，他会重新加载模板。
 
 <figure>
-	<a href="/images/article/2014-11-18/git.png">
-		<img src="/images/article/2014-11-18/git.png" alt="home" />
+	<a href="/images/article/2014-11/git.png">
+		<img src="/images/article/2014-11/git.png" alt="home" />
 	</a>
 	<figcaption>提示访问移动版</figcaption>
 </figure>
 
 <figure>
-	<a href="/images/article/2014-11-18/git2.jpg">
-		<img src="/images/article/2014-11-18/git2.jpg" alt="home" />
+	<a href="/images/article/2014-11/git2.jpg">
+		<img src="/images/article/2014-11/git2.jpg" alt="home" />
 	</a>
 	<figcaption>随之进入移动版，HTML结构也会发生变化</figcaption>
 </figure>
@@ -122,7 +122,7 @@ share: true
 
 解释一下：
 
-* [not|only]：逻辑关键字
+* not|only：逻辑关键字
 * expr：媒体表达式
 * type：媒体类型
 * rules：CSS样式
@@ -175,8 +175,8 @@ share: true
 依赖这些断点会有一个问题，今天流行的明天未必流行，而且在断点过渡的时候会显得很突兀，所以，确定断点的一个原则是**追随内容**。让设计稿，内容来确定你的断点。
 
 <figure>
-	<a href="/images/article/2014-11-18/luandun.jpg">
-		<img src="/images/article/2014-11-18/luandun.jpg" alt="home" />
+	<a href="/images/article/2014-11/luandun.jpg">
+		<img src="/images/article/2014-11/luandun.jpg" alt="home" />
 	</a>
 	<figcaption>前端乱炖的断点</figcaption>
 </figure>
@@ -197,10 +197,17 @@ share: true
 
 ## 扩展阅读
 
+[CSS3媒体查询](http://www.w3.org/html/ig/zh/wiki/CSS3%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2)
+
 [媒体查询简介——第1部分：什么是媒体查询？](http://www.infoq.com/cn/news/2011/12/introducing-media-queries)
+
 [什么是响应式Web设计？怎样进行？](http://www.chinaz.com/manage/2011/1121/221607_2.shtml)
+
 [通过CSS3 Media Query实现响应式Web设计](http://developer.51cto.com/art/201201/312206.htm)
+
 [移动优先的跨终端 Web](http://www.imooc.com/learn/43)
+
 [手机淘宝的flexible设计与实现](http://www.html-js.com/article/Like-the-winter-flexible-design-and-implementation-of-the-mobile-phone-Taobao-cold)
+
 
 **文章来自 [{{ site.url }}]({{ site.url }})**
