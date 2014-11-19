@@ -98,7 +98,7 @@ share: true
 
 ### 弹性布局
 
-这次度量单位又变了，通常情况以em为单位，但是em太依赖于父级，好在CSS3提供了更好的`rem方式`。
+这次度量单位又变了，通常情况以em为单位，但是em太依赖于父级，好在CSS3提供了更好的`rem方式`(这个demo找的不好，因为table表格本来就有流动的属性`display:table;display:table-cell;`)。
 
 [点击戳DEMO](/demo/2014-11/ali-rem.html)
 
