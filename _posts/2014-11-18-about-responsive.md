@@ -191,9 +191,62 @@ share: true
 <![endif]-->
 {% endhighlight %}
 
-## 响应式的多媒体
+## 图片和视频
 
-此处还会聊很多，打算再开一章：）
+### 图片
+
+对于背景图片来说，CSS3有个属性为`background-size`，设置为100%就可以自适应，但是在小屏幕的移动设备加载大图片有点`杀鸡焉用宰牛刀`，一般为了加快速度，我们的策略是：`有选择性的加载图片`，一般会有以下四种方法：
+
+1.万能的媒体查询
+
+只加载与当前屏幕相匹配的图片
+
+2.JS做判断
+
+JS提供了一个方法：`window.matchMedia`，可以把CSS媒体查询作为参数传入，返回相关媒体查询是否匹配的信息。
+
+使用方法：
+
+{% highlight JavaScript %}
+if(window.matchMedia('(min-width:320px)').matches) {
+	//其他代码
+}
+{% endhighlight %}
+
+我们可以利用他来加载合适的图片。
+
+3.使用src.sencha.io 
+
+`src.sencha.io`可以传入需要的尺寸和图片地址，自动来压缩图片，使用了CDN+缓存策略技术。当然，我们的服务端也可以自己来实现
+
+<figure>
+	<a href="/images/article/2014-11/sencha.jpg">
+		<img src="/images/article/2014-11/sencha.jpg" alt="home" />
+	</a>
+	<figcaption>图片已经被压缩到320px</figcaption>
+</figure>
+
+[点击戳图片](http://src.sencha.io/320/http://www.hacke2.cn/images/shiyanshi.jpg)
+
+4.SVG
+
+对于图片伸缩的问题，也可以采用可伸缩矢量图(SGG)来解决。
+
+有关SVG的资料请戳大漠的[w3cplusSVG标签](http://www.w3cplus.com/blog/tags/411.html?u=undefined%26t=%26msgfrom=%26area=msgtext%26clickfrom=3%26clickscene=)。
+
+### 视频
+
+视频的方式与上面类似，可以使用`媒体查询`和`js matchMedia`，当然，用设备看视频的一般是WIFI下，所以直接使用`max-width:100%;height:auto;`也是可以的。如果是连接站外资源，如`优酷`难么，一般解决方法是放到一个iframe里面，详情请看[站外引用的优酷视频，怎样让视频高度自适应？](http://bbs.csdn.net/topics/390600207)
+
+{% highlight JavaScript %}
+<div style="width:320px;height:180px" >
+     <iframe height="100%" width="100%" src="http://player.youku.com/embed/XNjA3NjQ0MzE2" frameborder=0 allowfullscreen></iframe>
+</div>
+{% endhighlight %}
+
+## 总结
+
+写到这边，算是对响应式的一个初级入门吧，但个人觉得，做起来原理简单，但**如果设计一个响应式的网站？怎样保证他的高质量？怎么不会影响到速度？已有网站怎么改为相应式的？**这些才是真正值得我们研究的东西。
 
 ## 扩展阅读
 
