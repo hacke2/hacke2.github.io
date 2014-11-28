@@ -19,7 +19,7 @@ share: true
     "weibo": "@hacke2",
     "github": "@hacke2"
   },
-  "location": "重庆",
+  "location": "北京",
   "workAt": "shenma Inc."
 }
 {% endhighlight %}
