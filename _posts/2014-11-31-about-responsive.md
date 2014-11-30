@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 响应式Web初级入门
-description: "关于响应式编程的一些思考"
-tags: [移动Web]
+title: 故宫&国家博物馆之行
+description: "北京第一站游记"
+tags: [游记]
 image:
   background: triangular.png
 comments: true
