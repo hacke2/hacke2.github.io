@@ -13,19 +13,19 @@ showApp.config(function($routeProvider) {
             templateUrl : 'template/show.html',
             controller  : 'hotSiteController'
         })
-        .when('/html5', {redirectTo: '/html5/0'})
-        .when('/html5/:index', {
+        .when('/mobile', {redirectTo: '/mobile/0'})
+        .when('/mobile/:index', {
             templateUrl : 'template/show-m.html',
-            controller  : 'html5Controller'
+            controller  : 'mobileController'
         })
         .when('/project/', {
             templateUrl : 'template/about.html',
             controller  : 'projectController'
         })
-        .when('/javascript/', {redirectTo: '/javascript/0'})
-        .when('/javascript/:index', {
+        .when('/base/', {redirectTo: '/base/0'})
+        .when('/base/:index', {
             templateUrl : 'template/show.html',
-            controller  : 'javascriptController'
+            controller  : 'baseController'
         })
 });
 showApp.controller('hotSiteController', function($scope, $routeParams) {
@@ -39,24 +39,24 @@ showApp.controller('hotSiteController', function($scope, $routeParams) {
     document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
 });
  
-showApp.controller('javascriptController', function($scope, $routeParams) {
+showApp.controller('baseController', function($scope, $routeParams) {
 	
 	var index = $routeParams.index;
 	
-	$scope.routeName = 'javascript';
+	$scope.routeName = 'base';
 	
-    $scope.works = data.javascript;
+    $scope.works = data.base;
     
     document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
 });
 
-showApp.controller('html5Controller', function($scope, $routeParams) {
+showApp.controller('mobileController', function($scope, $routeParams) {
 	
 	var index = $routeParams.index;
 	
-	$scope.routeName = 'html5';
+	$scope.routeName = 'mobile';
 	
-    $scope.works = data.html5;
+    $scope.works = data.mobile;
     
     document.getElementById('mainIframe').setAttribute('src', $scope.works[index].url);
 });

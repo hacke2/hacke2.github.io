@@ -41,7 +41,7 @@ var data = {
 	    		url : '/works/demo/ali/actor.html'
 	    	}
     	],
-    javascript : [
+    base : [
 	    	{
 	    		name : '瀑布流-浮动',
 	    		desc : '瀑布流-浮动',
@@ -59,7 +59,7 @@ var data = {
 	    	
 	    ],
 	   
-	html5 : [
+	mobile : [
 	    	{
 	    		name : '信息轮播',
 	    		desc : '神马搜索美团信息轮播',
