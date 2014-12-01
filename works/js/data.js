@@ -39,11 +39,6 @@ var data = {
 	    		name : '阿里云开发者大会',
 	    		desc : '拖动图片轮播',
 	    		url : '/works/demo/ali/actor.html'
-	    	},
-	    	{
-	    		name : '神马搜索（移动访问）',
-	    		desc : '美团信息轮播',
-	    		url : '/works/demo/sm-meituan'
 	    	}
     	],
     javascript : [
@@ -51,17 +46,7 @@ var data = {
 	    		name : '瀑布流-浮动',
 	    		desc : '瀑布流-浮动',
 	    		url : '/works/demo/stream/float.html'
-	    	}/*,
-	    	{
-	    		name : '瀑布流-定位',
-	    		desc : '瀑布流-定位',
-	    		url : '/works/demo/stream/position.html'
-	    	}*/
-	    	
-	    ],
-	   
-	html5 : [
-	    	{
+	    	},{
 	    		name : '阿里响应式笔试题',
 	    		desc : '响应式DEMO',
 	    		url : '/works/demo/html5/ali.html'
@@ -70,6 +55,15 @@ var data = {
 	    		name : '创新实验室宣传网站',
 	    		desc : '重理工软件工程',
 	    		url : '/works/demo/ee/index.htm'
+	    	}
+	    	
+	    ],
+	   
+	html5 : [
+	    	{
+	    		name : '信息轮播',
+	    		desc : '神马搜索美团信息轮播',
+	    		url : '/works/demo/sm-meituan'
 	    	}
 	    ],
 	project : [

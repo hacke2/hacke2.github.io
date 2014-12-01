@@ -15,7 +15,7 @@ showApp.config(function($routeProvider) {
         })
         .when('/html5', {redirectTo: '/html5/0'})
         .when('/html5/:index', {
-            templateUrl : 'template/show.html',
+            templateUrl : 'template/show-m.html',
             controller  : 'html5Controller'
         })
         .when('/project/', {
