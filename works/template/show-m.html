@@ -9,7 +9,11 @@
 			<a ng-repeat="work in works" href="index.html#/{{routeName}}/{{$index}}"  title="{{work.desc}}"  class="list-group-item" >{{work.name}}</a>
 		</ul>
 	</div>
-	<div style="margin-left:250px;border:solid 1px #666;width: 320px;height: 500px;overflow-x : hidden;"class="col-md-4">
-		<iframe id="mainIframe" name="iframe" style="margin:0;padding:0;" scrolling="auto" src="#" frameborder="0"></iframe>
+	<div class="col-md-10">
+		<div style="position:relative;margin: 0 auto;border:solid 15px #666;border-bottom:solid 50px #666;border-radius:5px;width: 320px;height: 480px;overflow-x : hidden;">
+			<div style="height: 480px;">
+				<iframe id="mainIframe" name="iframe" src="#" frameborder="0"></iframe>
+			</div>
+		</div>
 	</div>
 </div>
