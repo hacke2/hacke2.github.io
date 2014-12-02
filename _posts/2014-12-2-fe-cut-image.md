@@ -90,6 +90,8 @@ share: true
 	<figcaption>保存我们的小图标</figcaption>
 </figure>
 
+关于选择图片格式阿里UED有个不错的文章：[图片格式与设计那点事儿](http://ued.taobao.org/blog/2010/12/jpg_png/)
+
 这样就完成了切图工作。
 
 如何切多个图呢？在选择图层的时候按住`shift`就可以了。
