@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>d3</title>
+	<style>
+		#contianer {
+			width: 500px;
+			height: 250px;
+			background: #ccc;
+		}
+	</style>
+	<script src="d3.v3.js"></script>
+</head>
+<body>
+	<div id="contianer"></div>
+	<script>
+		var data = [1,3,5,7,8,3,1],
+			width = 500,
+			height = 250,
+			position = {
+				top : 30,
+				right : 20,
+				bottom : 20,
+				left : 50
+			}
+			;
+		var svg = d3.select('#contianer').append('svg:svg')
+			.attr({'width':width,'height':height}),
+			g = svg.append('g').attr('transform', 'translate('+position.left+','+position.top+')');
+
+		var g_width = width - position.left - position.right,g_height = height - position.top - position.bottom;
+
+		var scaleX = d3.scale.linear().domain([0, data.length-1]).range([0, g_width]),
+			scaleY = d3.scale.linear().domain(d3.max(data)).range([0, g_height]);
+
+		var  line_generator = d3.svg.line()
+		.x(function(d, i) {
+			return scaleX(i);
+		})
+		.y(function(d) {
+			return scaleY(d);
+		})
+
+		g.append('path').attr('d', line_generator(data));
+		
+		
+	</script>
+</body>
+</html>
