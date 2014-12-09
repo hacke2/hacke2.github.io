@@ -1,0 +1,481 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 0.9.8-3
+    site: https://github.com/ksky521/nodePPT
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>node.js+generator+koa.js - By hacke2</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt2.0.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    <link rel="stylesheet" media="print" href="./css/pdf.css">
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>node.js+generator+koa.js 初级入门</h1>
+<p><small>by 王兴龙</small></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>现存问题</h1>
+
+</hgroup><article>
+
+<ul>
+<li>前后端模板不统一,前端仍然确认后端写的HTML，违背公司<code>快</code> <code>极致</code>原则</li>
+<li>后端php需要套模板，若前后端协商定义JSON协议又会带来沟通的成本</li>
+<li>线上代码与php耦合紧密，调试线上代码需要后端支持,无法正确且快速的响应变化</li>
+<li>某些相同逻辑不能复用，比如输入校验</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<p><img src="img/node.jpg" alt="Node.js"></p>
+<h1>Node.js</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>可以让我们</h2>
+
+</hgroup><article>
+
+<ul>
+<li>让前端变为全栈成为可能</li>
+<li>更好的职责分离</li>
+<li>享受高并发带来的快感</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>关键字</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<ul>
+<li>V8虚拟机</li>
+<li>单线程</li>
+<li>异步编程</li>
+<li>事件驱动</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>基于GoogleV8引擎</h1>
+<ul>
+<li>完全支持ES5，部分支持ES6</li>
+<li>极速</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Java &amp; php</h1>
+
+</hgroup><article>
+
+<ul>
+<li>每个请求必须开一个进程</li>
+<li>处理IO时也要开一个进程</li>
+<li>线程切换的开销</li>
+<li>8 GB RAM / 2 MB == 4,000</li>
+<li>并发变成带来的复杂度</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Node.js是如何做的？</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<ul>
+<li>处理完请求1才能去处理请求2</li>
+<li>类似于排队策略</li>
+<li>高密集CPU运算</li>
+<li>非阻塞IO</li>
+<li>事件轮询</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>模块</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<ul>
+<li>cmd规范</li>
+<li>npm install sm</li>
+<li>国内一般用淘宝的cnpm</li>
+<li>npm.taobao.org</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>安装</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>第一个Node.js服务器</h1>
+<pre><code class="javascript">var http = require(&#39;http&#39;);
+http.createServer(function (req, res) {
+    res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+    res.end(&#39;Hello World\n&#39;);
+}).listen(80);
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>一些常见模块</h1>
+<ul>
+<li>Stream</li>
+<li>fs</li>
+<li>process</li>
+<li>TCP</li>
+<li>Telnet</li>
+<li>net</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>web开发</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<ul>
+<li>http</li>
+<li>connect</li>
+<li>express</li>
+<li><code>koa</code></li>
+<li>webSocket</li>
+<li>mongoDB</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>一个案例</h1>
+<h2>gokk</h2>
+<blockquote>
+<p>github:<a href="https://github.com/hacke2/gokk" target="_blank">https://github.com/hacke2/gokk</a></p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>可怕的软肋--深层回调</h1>
+<pre><code class="javascript">doAsync1(function () {
+    doAsync2(function () {
+        doAsync3(function () {
+              doAsync4(function () {
+                  doAsync5(function () {
+
+                  }
+              }
+        })
+      })
+})
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>解决方案</h1>
+<ul>
+<li>Async</li>
+<li>Promise</li>
+<li><code>Generator</code></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Generator</h1>
+<h2>生成器</h2>
+<pre><code class="java">interface Generator {
+  next()
+  throw(e)
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>程序员还是代码最直观</h1>
+
+</hgroup><article>
+
+<pre><code class="javascript">function* helloWorldGenerator() {
+    yield &#39;hello&#39;;
+    yield &#39;world&#39;;
+    return &#39;ending&#39;;
+}
+
+var hw = helloWorldGenerator();
+hw.next() // { value: &#39;hello&#39;, done: false }
+hw.next() // { value: &#39;world&#39;, done: false }
+hw.next() // { value: &#39;ending&#39;, done: true }
+hw.next() // { value: undefined, done: true }
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>yield返回值</h1>
+<pre><code class="javascript">function* f() {
+  for(var i=0; true; i++) {
+    var reset = yield i;
+    console.log(reset)
+  }
+}
+
+var g = f();
+
+console.log(g.next()); // { value: 0, done: false }
+console.log(g.next(2)); // { value: 1, done: false }
+console.log(g.next(true)); // { value: 0, done: false }
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>斐波那契数列</h1>
+<pre><code class="javascript">function fibonacci(num) {
+  num = +num;
+  if (num === 1) {
+    return [0];
+  }
+  if (num === 2) {
+    return [0, 1];
+  }
+  if (num &gt; 2) {
+    var arr = fibonacci(num - 1);
+    arr[num - 1] = arr[num - 2] + arr[num - 3];
+    return arr;
+  }
+  return [];
+}
+
+console.log(fibonacci(9)); // [0, 1, 1, 2, 3, 5, 8, 13, 21]
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>使用Generator改造</h1>
+<pre><code class="javascript">function* fib(max) {
+    var count = 0, last = 0, current = 1;
+
+    while(count++ &lt; max) {
+        yield current;
+        var tmp = current;
+        current += last;
+        last = tmp;
+    }
+}
+
+for(var i of fab(9)) {
+  console.log(i) // [0, 1, 1, 2, 3, 5, 8, 13, 21]
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>对异步的控制</h1>
+<pre><code class="javascript">function* main() {
+  var result = yield request(&quot;http://some.url&quot;);
+  var resp = JSON.parse(result);
+    console.log(resp.value);
+}
+
+function request(url) {
+  ajax(url, function(response){
+    it.next(response);
+  });
+}
+
+var it = main();
+it.next();
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>co</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>理解</h1>
+
+</hgroup><article>
+
+<ul>
+<li>官方点就是一个内部状态的遍历器</li>
+<li>通俗点就是一个函数的暂停器</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>koa.js</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>什么是koa.js</h1>
+
+</hgroup><article>
+
+<ul>
+<li>web框架</li>
+<li>和express 共享大部分的底层模块</li>
+<li>通过 generator 提供更优的异步控制和异常处理</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>生产环境</h1>
+
+</hgroup><article>
+
+<ul>
+<li>天猫H5页面首页</li>
+<li>我的支付宝</li>
+<li>天猫首页</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>hello world</h1>
+
+</hgroup><article>
+
+<pre><code class="javascript">var koa = require(&#39;koa&#39;);
+
+var app = koa();
+app.use(function *() {
+  this.body = &#39;Hello World!&#39;;
+});
+
+app.listen(8888);
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>回形针式的中间件</h1>
+
+</hgroup><article>
+
+<pre><code class="javascript">var koa = require(&#39;koa&#39;);
+var app = koa();
+
+// x-response-time
+
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  this.set(&#39;X-Response-Time&#39;, ms + &#39;ms&#39;);
+});
+
+// logger
+
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  console.log(&#39;%s %s - %s&#39;, this.method, this.url, ms);
+});
+
+// response
+
+app.use(function *(){
+  this.body = &#39;Hello World&#39;;
+});
+
+app.listen(3000);
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>我们想做的</h1>
+
+</hgroup><article>
+
+<ul>
+<li>渲染等业务逻辑移交给前端</li>
+<li>php提供restful api，更加注重数据的产出</li>
+</ul>
+<blockquote>
+<p>sm-koa</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p><strong>即便可能会失败，但至少是一次探索</strong></p>
+
+</article></section></slide>
+        <slide class="slide thank-you-slide segue nobackground">
+            <article class="flexbox vleft auto-fadein">
+                <h2>Q &amp; A</h2>
+                <h3>&lt;Thank You!&gt;</h3>
+            </article>
+        </slide>
+        <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+              <h2 style="color: white;">Powered By nodePPT v0.9.8-3</h2>
+            </article>
+          </slide>
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = location.pathname.split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'move',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/hljs-0.8.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+</body>
+</html>
