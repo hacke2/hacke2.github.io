@@ -4,7 +4,7 @@ title: 了不起的Node.js读书笔记
 description: "一般结构和思路特别清晰的Node.js入门书籍"
 tags: [读书笔记, Node.js]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

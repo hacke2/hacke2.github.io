@@ -4,7 +4,7 @@ title: 基于Node.js + socket.io实现WebSocket的聊天DEMO
 description: "WebSocket Node.js实现版"
 tags: [JavaScript, Node.js]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

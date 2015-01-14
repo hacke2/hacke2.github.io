@@ -4,7 +4,7 @@ title: 响应式Web初级入门
 description: "关于响应式编程的一些思考"
 tags: [移动Web]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

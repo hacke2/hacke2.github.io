@@ -4,7 +4,7 @@ title: 金钥匙
 description: "记这两周的起起伏伏"
 tags: [心情]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

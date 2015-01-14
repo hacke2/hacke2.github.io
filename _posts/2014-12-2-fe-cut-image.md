@@ -4,7 +4,7 @@ title: 实习初体验之前端切图
 description: "前端切图的一些小技巧"
 tags: [PS]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

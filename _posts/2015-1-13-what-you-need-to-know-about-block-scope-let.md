@@ -4,7 +4,7 @@ title: 译-你需要知道的块级作用域 - let
 description: "JavaScript 未来声明变量的方式"
 tags: [翻译]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

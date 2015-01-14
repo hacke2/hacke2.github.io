@@ -4,7 +4,7 @@ title: 移动Web初级入门
 description: "入门移动Web的一些思考"
 tags: [移动Web]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

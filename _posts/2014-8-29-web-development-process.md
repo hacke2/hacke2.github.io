@@ -5,7 +5,7 @@ description: "前几天做阿里笔试题，最后一个问题是：在前端开
 记得我当时是这样答的："
 tags: [JavaScript]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

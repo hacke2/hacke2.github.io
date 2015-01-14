@@ -4,7 +4,7 @@ title: 开源中国的 AngularJS 优秀文章汇总
 description: "在开源中国看到的，每一篇都是精华"
 tags: [小练习, JavaScript]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

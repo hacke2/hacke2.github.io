@@ -4,7 +4,7 @@ title: JavaScript打造无缝切换
 description: "用JavaScrip写的无缝切换，弥补一年前的遗憾"
 tags: [JavaScript, 小练习]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

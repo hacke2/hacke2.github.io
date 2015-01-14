@@ -4,7 +4,7 @@ title: Javascript Quiz
 description: "Javascript Quiz 练习题解析"
 tags: [JavaScript]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

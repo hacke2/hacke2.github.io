@@ -4,7 +4,7 @@ title: JavaScript实现联想校招员工信息展示
 description: "使用简单模板+css3+javascript实现CSS3弹窗及切换"
 tags: [JavaScript, 小练习]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

@@ -4,7 +4,7 @@ title: 还有一年时间，该如何准备？
 description: "回答群友问题"
 tags: [问答]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

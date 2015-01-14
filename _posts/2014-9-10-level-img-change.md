@@ -4,7 +4,7 @@ title: 带层次感的图片轮播
 description: "带层次感的图片轮播,JavaScript小练习"
 tags: [JavaScript, 小练习]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

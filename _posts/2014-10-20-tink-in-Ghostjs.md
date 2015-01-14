@@ -4,7 +4,7 @@ title: GhostJs源码目录
 description: "GhostJs源码的学习"
 tags: [JavaScript]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

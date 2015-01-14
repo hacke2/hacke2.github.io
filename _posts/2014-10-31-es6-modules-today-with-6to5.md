@@ -4,7 +4,7 @@ title: 译-使用6to5，让今天就来写ES6的模块化开发！
 description: "ES6 modules today with 6to5"
 tags: [翻译]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

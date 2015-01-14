@@ -4,7 +4,7 @@ title: 在Sublime Text3 开发Node.js遇到的一个小问题
 description: "主要解决了重新运行端口占用的情况"
 tags: [Node.js]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

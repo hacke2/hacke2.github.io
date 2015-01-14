@@ -4,7 +4,7 @@ title: 译-ES6箭头函数和它的作用域
 description: "关于ES6里箭头函数及其作用域的使用"
 tags: [翻译]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

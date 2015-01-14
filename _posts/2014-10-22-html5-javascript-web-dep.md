@@ -4,7 +4,7 @@ title: HTML5和JavaScript Web应用开发读书笔记
 description: "《HTML5和JavaScript Web应用开发》主要介绍如何使用HTML5、JavaScript和最新的W3C规范构建可用于所有浏览器和设备的Web应用"
 tags: [读书笔记]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

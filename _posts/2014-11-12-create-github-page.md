@@ -4,7 +4,7 @@ title: 30秒搭建Github Page
 description: "30秒创建和我一样的Github博客"
 tags: [分享]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

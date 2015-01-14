@@ -4,7 +4,7 @@ title: 利用Node.js对某智能家居服务器重构
 description: "利用Node.js天生NIO特性"
 tags: [Mongoose]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

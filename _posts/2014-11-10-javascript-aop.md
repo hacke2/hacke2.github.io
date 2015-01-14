@@ -4,7 +4,7 @@ title: 简单几行代码，实现JavaScript中的AOP
 description: "JavaScript中的AOP的模拟与实现"
 tags: [JavaScript]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

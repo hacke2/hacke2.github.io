@@ -4,7 +4,7 @@ title: Mongoose简单的连表查询
 description: "使用populate属性"
 tags: [Mongoose]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

@@ -4,7 +4,7 @@ title: 从输入 URL 到页面加载完成的过程中都发生了什么事情�
 description: "what happens when you type in a url in browser，对stackoverflow回答的扩展"
 tags: [浏览器, 计算机网络]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

@@ -4,7 +4,7 @@ title: 给学弟学妹说的话
 description: "我的大学经历"
 tags: [感悟]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

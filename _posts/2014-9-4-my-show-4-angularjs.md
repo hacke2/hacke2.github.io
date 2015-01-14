@@ -4,7 +4,7 @@ title: AngularJs+BootStarp+fontAwesome打造个人展示页面
 description: "简单的个人展示的界面"
 tags: [JavaScript, AngularJs, BootStarp]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---

@@ -4,7 +4,7 @@ title: 和我一起来了解SEO
 description: "前端工程师必备的SEO知识"
 tags: [SEO]
 image:
-  background: triangular.png
+  background: witewall_3.png
 comments: true
 share: true
 ---
