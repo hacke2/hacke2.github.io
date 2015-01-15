@@ -23,3 +23,14 @@ share: true
   "workAt": "shenma Inc."
 }
 {% endhighlight %}
+
+
+
+`任性的`扫一下吧~ ^_^
+
+<figure>
+  <a href="/images/alipay.png">
+    <img src="/images/alipay.png" alt="home" />
+  </a>
+  <figcaption>我的支付宝</figcaption>
+</figure>
