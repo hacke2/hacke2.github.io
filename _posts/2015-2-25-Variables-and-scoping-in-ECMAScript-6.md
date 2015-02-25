@@ -28,6 +28,8 @@ function func() {
 
 相比之下，用var申明的变量在函数级作用域
 
+<!--more-->
+
 {% highlight JavaScript %}
 function func() {
     if (true) {
