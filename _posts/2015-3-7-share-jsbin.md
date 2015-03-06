@@ -27,6 +27,8 @@ share: true
 
 ![](/images/article/jsbin-share/2.png)
 
+<!--more-->
+
 3.富文本编辑器
 
 火狐开发者网站的，代码不多，使用`document.execCommand`文本样式操作。
@@ -81,13 +83,6 @@ share: true
 
 ![](/images/article/jsbin-share/8.png)
 
-9.loading 动画
-
-之前我见过的这个loading动画使用了很多div标签，但是这个缺只使用一个标签，果断收藏了
-
-[http://jsbin.com/yalepo/1/edit?html,css,output](http://jsbin.com/yalepo/1/edit?html,css,output)
-
-![](/images/article/jsbin-share/8.png)
 
 10.canvas笑脸
 
