@@ -17,6 +17,8 @@ curAnim.css({
 })
 {% endhighlight %}
 
+<!--more-->
+
 在Chrome 模拟器下没任何问题，但是在iphone6下会出现一闪一闪的问题，百思不得其解，后来用JS原生方法解决了。
 
 {% highlight JavaScript %}
