@@ -52,7 +52,7 @@ JS就是调用定时器，这边有一个小技巧：直接改变一个经测试
             requestAnimationFrame = (function(){
                 if(option.time) {
                     return  function( callback ){
-                            window.setInterval(option.time);
+                            window.setTimeout(option.time);
                         };
                 }
                 return  window.requestAnimationFrame       ||
