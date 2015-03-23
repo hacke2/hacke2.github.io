@@ -2,7 +2,7 @@
 layout: post
 title: 小tip:CSS3控制多行溢出
 description: "打破CSS只能控制单行溢出的历史观点"
-tags: [心声]
+tags: [CSS3]
 image:
   background: witewall_3.png
 comments: true
