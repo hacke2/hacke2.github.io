@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [译]我是怎么在项目中使用ES6模块化的
+title: 译-我是怎么在项目中使用ES6模块化的
 description: "如何让ES6 module 和 AMD module一起工作"
 tags: [ES6]
 image:
