@@ -70,15 +70,15 @@ const config = {     _static: {         name,         version,         state,   
 
 这是项目的源码结构：
 
-
-  src/
-  ├── _js
-  │   ├── config.js
-  │   ├── environment.js
-  │   ├── factory.js
-  │   ├── helpers.js
-  │   ├── methods.js
-  │   └── mod-stalker.js
+	└── src
+	    ├── _js
+	        ├── config.js
+	        ├── environment.js
+          ├── helpers.js
+          ├── factory.js
+          ├── methods.js
+	        └── mod-stalker.js
+	        └── mod-stalker.js
 
 
 我把一些AMD模块的逻辑放进了微小的ES6模块里。
