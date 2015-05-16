@@ -76,7 +76,7 @@ const config = {
   tests: `${staticServer}/fe/${testsPath}`,         
   dependencies: ['mod.wilson']     
   }
- }; 
+}; 
 export default config;
 {% endhighlight %}
 
