@@ -65,7 +65,18 @@ const version = "0.0.1";
 const state = "ok";
 const description = "JavaScript API to deal with user data";
 let globalpkg = null; // default export 
-const config = {     _static: {         name,         version,         state,         description,         docs: `${githubURL}/pages/terra/zaz-${type}-${name}`,         source: `${githubURL}/Terra/zaz-${type}-${name}`,         tests: `${staticServer}/fe/${testsPath}`,         dependencies: ['mod.wilson']     }}; export default config;
+const config = {     
+  _static: {         
+  name,         
+  version,         
+  state,         
+  description,         
+  docs: `${githubURL}/pages/terra/zaz-${type}-${name}`,         
+  source: `${githubURL}/Terra/zaz-${type}-${name}`,         
+  tests: `${staticServer}/fe/${testsPath}`,         
+  dependencies: ['mod.wilson']     
+  }}; 
+export default config;
 {% endhighlight %}
 
 这是项目的源码结构：
