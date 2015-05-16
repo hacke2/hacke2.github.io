@@ -75,7 +75,8 @@ const config = {
   source: `${githubURL}/Terra/zaz-${type}-${name}`,         
   tests: `${staticServer}/fe/${testsPath}`,         
   dependencies: ['mod.wilson']     
-  }}; 
+  }
+ }; 
 export default config;
 {% endhighlight %}
 
