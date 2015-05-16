@@ -36,7 +36,7 @@ Babel完美支持模块化，你可以自己决定你代码的风格，你可以
 微模块并不会被应用的每个模块都用到，但是利用它能帮助我们组织代码。
 以下代码演示了我们怎么使用微模块：
 
-```javascript
+{% highlight JavaScript %}
 import config from './config';//导入ES6模块
 import { globalpkg } from './config';//动态注入ES6模块参数
 import factory from './factory';
@@ -49,13 +49,13 @@ import factory from './factory';
     }); 
  });
 
-```
+{% endhighlight %}
 
 我们在代码的顶部导入了一些模块，并且在我们的AMD模块里还使用了这些导入的模块。在其他的应用中并不会用到这些ES6模块，但是使用了这些微模块后，编译后产生的最终源码有更高的可读性。
 
 这是config模块的代码：
 
-```javascript
+{% highlight JavaScript %}
 const githubURL = "OUR GITHUB URL HERE";
 const staticServer = "http://s1.trrsf.com";
 const testsPath = `zaz-${type}-${name}/tests/index.htm?zaz[env]=tests`;
@@ -66,8 +66,7 @@ const state = "ok";
 const description = "JavaScript API to deal with user data";
 let globalpkg = null; // default export 
 const config = {     _static: {         name,         version,         state,         description,         docs: `${githubURL}/pages/terra/zaz-${type}-${name}`,         source: `${githubURL}/Terra/zaz-${type}-${name}`,         tests: `${staticServer}/fe/${testsPath}`,         dependencies: ['mod.wilson']     }}; export default config;
-
-```
+{% endhighlight %}
 
 这是项目的源码结构：
 
