@@ -70,16 +70,16 @@ const config = {     _static: {         name,         version,         state,   
 
 这是项目的源码结构：
 
-```
-src/
-├── _js
-│   ├── config.js
-│   ├── environment.js
-│   ├── factory.js
-│   ├── helpers.js
-│   ├── methods.js
-│   └── mod-stalker.js
-```
+
+  src/
+  ├── _js
+  │   ├── config.js
+  │   ├── environment.js
+  │   ├── factory.js
+  │   ├── helpers.js
+  │   ├── methods.js
+  │   └── mod-stalker.js
+
 
 我把一些AMD模块的逻辑放进了微小的ES6模块里。
 这对于构建处理是很简单的：Babel转译ES6的Javascript代码为ES5的代码；使用导入CommonJS模块的方式来导入微模块。最后用[Browserify](http://browserify.org/) 打包代码。
