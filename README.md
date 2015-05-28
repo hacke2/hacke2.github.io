@@ -11,7 +11,7 @@
 * disqus评论
 * Read More功能，不想像以前一样文章全显示出来
 
-如果你想快速搭建和我一样属于自己的博客系统，请参阅：
+如果您想快速搭建和我一样属于自己的博客系统，请参阅：
 
 [30秒创建Github Page](http://www.hacke2.cn/create-github-page/)
 
