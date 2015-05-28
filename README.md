@@ -1,8 +1,9 @@
-# 个人前端博客 http://hacke2.github.io/
+个人前端博客 http://hacke2.github.io/
+----------
+[![release](https://img.shields.io/badge/release-v0.3.1-orange.svg)](https://github.com/hacke2/hacke2.github.io/releases) [![issues](https://img.shields.io/github/issues/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/issues) [![forks](https://img.shields.io/github/forks/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/network) [![stars](https://img.shields.io/github/stars/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/stargazers) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hacke2/hacke2.github.io/blob/master/LICENSE)
 
-<a href="https://github.com/hacke2/hpstr-jekyll-theme" >套用hpstr jekyll模板</a>
 
-##在以上基础上，做了如下修改：
+本博客是基于[hpstr jekyll]("https://github.com/hacke2/hpstr-jekyll-theme)而搭建的个人博客，在原有强大的功能上，做了如下修改：
 
 * 将google cdn换成 baidu cdn 原因你懂的
 * 去掉分享到twitter、facebook等国外社区，加入百度分享
@@ -10,9 +11,7 @@
 * disqus评论
 * Read More功能，不想像以前一样文章全显示出来
 
-<p style="color:red">如果您感觉以上功能对您有帮助，请您下载并点个赞~</p>
-
-若您对如何搭建博客有疑虑，请参阅：
+如果你想快速搭建和我一样属于自己的博客系统，请参阅：
 
 [30秒创建Github Page](http://www.hacke2.cn/create-github-page/)
 
