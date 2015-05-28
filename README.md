@@ -1,6 +1,6 @@
 个人前端博客 http://hacke2.github.io/
 ----------
-[![release](https://img.shields.io/badge/release-v0.3.1-orange.svg)](https://github.com/hacke2/hacke2.github.io/releases) [![issues](https://img.shields.io/github/issues/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/issues) [![forks](https://img.shields.io/github/forks/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/network) [![stars](https://img.shields.io/github/stars/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/stargazers) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hacke2/hacke2.github.io/blob/master/LICENSE)
+[![release](https://img.shields.io/badge/release-v1.2.0-orange.svg)](https://github.com/hacke2/hacke2.github.io/releases) [![issues](https://img.shields.io/github/issues/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/issues) [![forks](https://img.shields.io/github/forks/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/network) [![stars](https://img.shields.io/github/stars/hacke2/hacke2.github.io.svg)](https://github.com/hacke2/hacke2.github.io/stargazers) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/hacke2/hacke2.github.io/blob/master/LICENSE)
 
 
 本博客是基于[hpstr jekyll]("https://github.com/hacke2/hpstr-jekyll-theme)而搭建的个人博客，在原有强大的功能上，做了如下修改：
@@ -14,6 +14,10 @@
 如果你想快速搭建和我一样属于自己的博客系统，请参阅：
 
 [30秒创建Github Page](http://www.hacke2.cn/create-github-page/)
+
+目前待优化事项：
+
+* 合并资源（JS,CSS）
 
 
 
