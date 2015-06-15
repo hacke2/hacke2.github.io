@@ -105,6 +105,8 @@ share: true
 	div{
 	  position: absolute;
 	  top: 50%;
+	  -webkit-transform:translateY(-50%);
+	  -moz-transform:translateY(-50%);
 	  transform: translateY(-50%);
 	  padding:0; 
 	}
