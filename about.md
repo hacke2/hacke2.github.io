@@ -20,7 +20,7 @@ share: true
     "github": "@hacke2"
   },
   "location": "北京",
-  "workAt": "shenma Inc."
+  "workAt": "Alibaba Inc."
 }
 {% endhighlight %}
 
