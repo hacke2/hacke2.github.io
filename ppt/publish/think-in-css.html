@@ -1,0 +1,518 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.2.3
+    site: https://github.com/ksky521/nodePPT
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>你需要知道的CSS实用技巧 - By 兴龙</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    <link rel="stylesheet" media="print" href="./css/pdf.css">
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>你需要知道的CSS实用技巧</h1>
+<p><small>2015年08月18日 王兴龙</small></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Topic</h1>
+<ul class="rollIn">
+<li>单位</li>
+<li>BFC</li>
+<li>字体</li>
+<li>Blur</li>
+<li>动画</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>单位</h1>
+<h2><code>px</code>, <code>em</code>, <code>vw</code>, <code>vh</code>, <code>rem</code></h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>问题</h1>
+<h2>一张banner图片，当你面对不同的屏幕时你希望它的行为是怎样的？</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p><img src="http://ww1.sinaimg.cn/large/8ae515a4jw1ev4hagrectj20jp0gowf9.jpg" alt="sm"></p>
+<blockquote>
+<p>我们希望在屏幕扩大时，让其内容的高度也等比放大</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>目前的方法</h1>
+<ul class="rollIn">
+<li>使用img自己的特性，只设置宽度让其自己下载</li>
+<li>作为背景图使用padding-butttom撑开</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>另一种方法：rem</h1>
+<ul class="rollIn">
+<li>基于HTML根元素字体</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>兼容性</h1>
+<p><img src="http://ww3.sinaimg.cn/large/8ae515a4gw1ev4hmg0ss1j21kw0stdoz.jpg" alt="rem"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>使用rem</h1>
+<pre><code class="css">html{font-size:62.5%;}      /* font-size 62.5% = 10px =1rem */
+body{font-size:100%;}       /* font-size 100% = 10px = 1rem */
+.rem-1{font-size:1.2rem;}
+.rem-2{font-size:1.4rem;}
+.rem-3{font-size:1.6rem;}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>什么是BFC</h1>
+<ul class="rollIn">
+<li>Block formatting context</li>
+<li>block-level box</li>
+<li>BFC就是页面上的一个隔离的独立容器</li>
+<li>它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>触发BFC的方法</h1>
+<ul class="rollIn">
+<li>根元素</li>
+<li>float属性不为none</li>
+<li>position为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow不为visible</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>BFC有哪些特性呢？</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>1.BFC的区域不会与float box重叠。</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>实例：两栏布局</h1>
+<p><a class="jsbin-embed" href="http://jsbin.com/qutufu/embed?html,css,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.34.2"></script></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>2.计算BFC的高度时，浮动元素也参与计算</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>实例：清除浮动</h1>
+<p><a class="jsbin-embed" href="http://jsbin.com/poveva/embed?html,css,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.34.2"></script></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>3.Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>实例：清除浮动</h1>
+<p><a class="jsbin-embed" href="http://jsbin.com/juzena/embed?html,css,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.34.2"></script></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>字体</h1>
+<ul class="rollIn">
+<li>CSS3 之前，web 设计师必须使用已在用户计算机上安装好的字体。</li>
+<li>通过 CSS3，web 设计师可以使用他们喜欢的任意字体。</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>瓶颈</h1>
+<h1>体积太大！！！</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>实例：情人节运营活动</h1>
+<p><img src="http://ww3.sinaimg.cn/large/8ae515a4jw1ev4k43j533j20xs0wqtf4.jpg" alt="情人节"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>解决方案：字蛛</h1>
+<p><a href="http://font-spider.org/" target="_blank">http://font-spider.org/</a></p>
+<ul class="rollIn">
+<li>扫描HTML和CSS文件中的文字</li>
+<li>剔出字体并压缩</li>
+<li>生成跨浏览器使用的格式</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>在CSS设置字体</h1>
+<pre><code class="css">/*声明 WebFont*/
+@font-face {
+  font-family: &#39;pinghei&#39;;
+  src: url(&#39;../font/pinghei.eot&#39;);
+  src:
+    url(&#39;../font/pinghei.eot?#font-spider&#39;) format(&#39;embedded-opentype&#39;),
+    url(&#39;../font/pinghei.woff&#39;) format(&#39;woff&#39;),
+    url(&#39;../font/pinghei.ttf&#39;) format(&#39;truetype&#39;),
+    url(&#39;../font/pinghei.svg&#39;) format(&#39;svg&#39;);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*使用选择器指定字体*/
+.home h1, .demo &gt; .test {
+    font-family: &#39;pinghei&#39;;
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>运行</h1>
+<p><img src="http://ww2.sinaimg.cn/large/8ae515a4gw1ev4kmsdzxvj20ku096juq.jpg" alt="zizhu"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>效果</h1>
+<iframe src="http://localhost:8080/demo/font/font.html"></iframe>
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>使用非阻塞 CSS 加载字体</h1>
+<p>利用media属性</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>一个 base64 编码的 WOFF 版本的字体</h1>
+<pre><code class="css">@font-face {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 400;
+  src: local(&#39;Merriweather&#39;), url(&#39;data:application/x-font-woff;charset=utf-8;base64,...&#39;)
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>懒加载CSS</h1>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;font.css&quot; media=&quot;none&quot; onload=&quot;if(media!=&#39;all&#39;)media=&#39;all&#39;&quot;&gt;
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Blur</h1>
+<p>图片毛玻璃效果已经广泛用于蓝光项目，出了用JS高斯模糊，使用CSS3和SVG也能实现</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>CSS3</h1>
+<pre><code class="css">.blur {    
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+       -moz-filter: blur(10px);
+        -ms-filter: blur(10px);    
+            filter: blur(10px);
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>SVG</h1>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
+&lt;svg version=&quot;1.1&quot; 
+     xmlns=&quot;http://www.w3.org/2000/svg&quot;
+     xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+     xmlns:ev=&quot;http://www.w3.org/2001/xml-events&quot;     
+     baseProfile=&quot;full&quot;&gt;     
+    &lt;defs&gt;
+        &lt;filter id=&quot;blur&quot;&gt;
+            &lt;feGaussianBlur stdDeviation=&quot;10&quot; /&gt;
+        &lt;/filter&gt;
+    &lt;/defs&gt;
+    &lt;image xlink:href=&quot;sm.jpg&quot; x=&quot;0&quot; y=&quot;0&quot; height=&quot;191&quot; width=&quot;265&quot; filter=&quot;url(#blur)&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<pre><code class="css">.blur {
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>效果</h1>
+<iframe src="http://localhost:8080/demo/demo-1.html"></iframe>
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>不足</h1>
+<h2>安卓下严重缺乏支持，弃用！</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>动画</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>逐帧动画</h1>
+<ul>
+<li>由于使用gif，我们不能将其控制（播放、暂停、播放次数），所以逐帧动画一般使用代码实现</li>
+<li>原理就是时时刻刻改变他的position</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>常见的两种逐帧写法：</h1>
+<ul class="rollIn">
+<li>JS</li>
+<li>CSS</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>JS实现方式</h1>
+<p><a class="jsbin-embed" href="http://jsbin.com/milopu/1/embed?html,css,js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>JS实现方式的封装</h1>
+<pre><code class="javascript">;(function($) {
+    &#39;use strict&#39;;
+    $.extend($.fn, {
+        requestAnimFrame: function(opt){
+            var defined = {
+                top:0,
+                left:0,
+                position:&#39;absolute&#39;
+            },
+            option = $.extend(defined, opt),
+            i = 0,
+            flag = false,
+            curAnim = null,
+            self = this,
+            width = 0,
+            isRunning = false,
+            maybeAddPx = function (value) {
+                return (typeof value == &quot;number&quot;) ? value + &quot;px&quot; : value;
+            },
+            /**
+             * 标准化requestAnimFrame
+             * @param  {[type]} ){                         return  window.requestAnimationFrame       ||                    window.webkitRequestAnimationFrame ||                    window.mozRequestAnimationFrame    ||                    function( callback ){                    window.setTimeout(callback, 1000 / 60);                    };        })( [description]
+             * @return {[type]}     [description]
+             */
+            requestAnimationFrame = (function(){
+                if(option.time) {
+                    return  function( callback ){
+                            window.setTimeout(option.time);
+                        };
+                }
+                return  window.requestAnimationFrame       ||
+                        window.webkitRequestAnimationFrame ||
+                        window.mozRequestAnimationFrame    ||
+                        function( callback ){
+                            window.setTimeout(callback, 1000 / 60);
+                        };
+            })(),
+            //添加两张图，解决一轮动画结束闪屏问题
+            anim_1 = $(&#39;&lt;div&gt;&#39;, {
+                css :  {
+                     background : &#39;url(&#39; + option.url + &#39;) no-repeat scroll 0px 0px transparent&#39;
+
+                }
+
+            }),
+            anim_2 = anim_1.clone(),
+            init = function() {
+                self.append(anim_1).append(anim_2).css(&#39;position&#39;, &#39;relative&#39;);
+            },
+            width = option.length / option.step,
+            go = function() {
+                    if (i &gt; step) { i = 0; }
+                    flag ? (curAnim = anim_1) : (curAnim = anim_2);
+
+                    flag = !flag;
+                    curAnim[0].style.backgroundPosition = &quot;-&quot; + i * width + &quot;px 0px&quot;;
+                    //使用Zepto方法会闪动，具体看博文：http://www.hacke2.cn/anmi-strange-problem/
+                    //curAnim.css(&#39;background-position&#39; , &#39;-&#39; + i * 75 + &#39;px 0px&#39;)
+                    self.append(curAnim);
+
+                    i++;
+                    console.log(isRunning)
+                    isRunning &amp;&amp; requestAnimationFrame(go)      
+            };
+
+            init();
+
+            return {
+                run : function() {
+                    isRunning = true;
+
+                    requestAnimationFrame(go);
+
+                },
+                stop : function() {
+                    isRunning = false;
+                },
+                isRunning : function() {
+                    return isRunning;
+                }
+            };
+        }
+    })
+
+
+})(Zepto);
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>调用</h1>
+<pre><code class="javascript">var ra = scope.find(&#39;#divParent&#39;).requestAnimFrame({
+        step : 80,
+        url : &#39;img/1-slow.png&#39;,
+        length : 6000,
+        time : 12
+    });
+ra.run();
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>CSS3逐帧动画</h1>
+<p>CSS3方式实现当时比用JS效率高很多，许多优化在浏览器底层完成。之前为什么不用有两点考虑：</p>
+<p>1.兼容性</p>
+<p>2.每一帧都要手动去写</p>
+<p>而现在可以使用CSS3的阶跃函数</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>CSS3逐帧动画 DEMO</h1>
+<p><a class="jsbin-embed" href="http://jsbin.com/qejavi/4/embed?html,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>CSS3 timing-function: steps() 详解</h1>
+<p><a href="https://idiotwu.me/understanding-css3-timing-function-steps/" target="_blank">https://idiotwu.me/understanding-css3-timing-function-steps/</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>动画的调试</h1>
+<h2>chrome canary（金丝雀）</h2>
+<p><img src="http://ico.ooopic.com/iconset01/NewChrome-icons/gif/109215.gif" alt="金丝雀"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>调试演示</h1>
+<p><a href="http://tympanus.net/Development/3DEffectMobileShowcase/index2.html" target="_blank">http://tympanus.net/Development/3DEffectMobileShowcase/index2.html</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>动画性能</h1>
+<p><a href="http://dwz.cn/1iOqE3" target="_blank">http://dwz.cn/1iOqE3</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h2>送大家一句话</h2>
+<h1>你不能决定生命的长度，但是你能决定生命的宽度</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="rollIn">
+<h2>上句话的意思是</h2>
+<h1>你现在不能长高但可以长胖:)</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>The End</h1>
+<h1>Thanks</h1>
+
+</article></section></slide>
+        <!--slide class="slide thank-you-slide segue nobackground">
+            <article class="flexbox vleft auto-fadein">
+                <h2>Q &amp; A</h2>
+                <h3>&lt;Thank You!&gt;</h3>
+            </article>
+        </slide-->
+        <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+              <h2 style="color: white;">Powered By nodePPT v1.2.3</h2>
+            </article>
+          </slide>
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = location.pathname.split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'move',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/hljs-0.8.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+<script src="./js/zoom.js"></script>
+<link rel="stylesheet" href="./css/theme.moon.css">
+<!--placeholder-->
+</body>
+</html>
