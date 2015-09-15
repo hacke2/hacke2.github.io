@@ -1,0 +1,560 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.2.3
+    site: https://github.com/ksky521/nodePPT
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>express介绍及实战 - By 王兴龙</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    <link rel="stylesheet" media="print" href="./css/pdf.css">
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<style type="text/css">
+    .flex {
+        display:box;
+        display: -webkit-box;
+    }
+
+    .auto-flex {
+        box-flex:1;
+        flex:1;
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .last-fixed {
+        margin-right: 0px;
+    }
+
+</style><h1>express介绍及实战</h1>
+<p><small>2015年09月11日 王兴龙</small></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Express介绍</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>TJ Holowaychuk</li>
+<li>Connect与Express</li>
+<li>SSH与MEAN.js</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Express的安装</h1>
+
+</hgroup><article>
+
+<blockquote>
+<p>$ npm install express</p>
+<p>$ npm install -g express-generator</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Express的入口</h1>
+
+</hgroup><article>
+
+<div class="flex">
+    <div class="auto-flex">
+    <pre><code class="javascript">
+var express = require('express')
+var app = express()
+app.get('/', function (req, res) {
+      res.send('Hello World')
+})
+app.listen(3000)
+    </code></pre>
+    </div>    <div  class="auto-flex last-fixed">
+    <pre><code class="javascript">
+var http = require(&#39;http&#39;);
+http.createServer(function(req, res) {
+     res.write(&#39;hello world&#39;);
+     res.end();
+}).listen(8000);
+    </code></pre>
+    </div>
+</div>
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>理解app</h1>
+
+</hgroup><article>
+
+<p><a href="https://github.com/strongloop/express/blob/master/lib/application.js" target="_blank">https://github.com/strongloop/express/blob/master/lib/application.js</a></p>
+<pre><code class="javascript">var app = function(req, res, next) {
+  app.handle(req, res, next);
+};
+
+app.listen = function(){
+  var server = http.createServer(this);
+  return server.listen.apply(server, arguments);
+};
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Express模板引擎</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>Jade</li>
+<li>Handlebars</li>
+<li>EJS(与UTC一致)</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>中间件</h1>
+<pre><code class="javascript">app.use(&#39;/public&#39;,express.static(__dirname + &#39;/public&#39;));
+app.use(logger());
+app.use(function(req, res, next){
+    console.log(&#39;hello middleware&#39;);
+    next();
+});
+app.get(&#39;/&#39;, function(req, res){
+res.send(&#39;Hello World&#39;);
+});
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p><img src="http://images.cnitblog.com/blog/304265/201312/22104418-e0efc8bc5ffb46e4bc92843a2b3ae3d5.png" alt=""></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>URL组成部分</h1>
+
+</hgroup><article>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">http://</th>
+<th style="text-align:center">m.sm.cn</th>
+<th style="text-align:center">/s</th>
+<th style="text-align:center">?q=周杰伦</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">协议</td>
+<td style="text-align:center">主机名</td>
+<td  class="highlight" style="text-align:center;">路径</td>
+<td  class="highlight" style="text-align:center;">查询字符串</td>
+</tr>
+</tbody>
+</table>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>路由</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>将请求路由到处理他们的代码去得一种机制</li>
+<li>路由处理器是中间件</li>
+<li>支持正则表达式</li>
+<li>路由参数</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>一个例子</h1>
+
+</hgroup><article>
+
+<pre><code class="javascript">app.get(&#39;staff/:city/:name&#39;, function(req, res){
+    //req.params.city
+})
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>路由组织</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>给路由处理器用命令函数</li>
+<li>按逻辑分组</li>
+<li>路由的命名</li>
+<li>路由参数</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>路由组织例子</h1>
+
+</hgroup><article>
+
+<pre><code class="javascript">//route.js
+module.exports = function(app) {
+    app.get(&#39;/&#39;, function(req, res){
+
+    })
+}
+
+//index.js
+requrie(&#39;./route.js&#39;)(app)
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>自动化渲染视图</h1>
+
+</hgroup><article>
+
+<p>添加一个foo.ejs就可以通过/foo来访问
+场景：适合不需要首屏的静态模板</p>
+<pre><code class="javascript">var autoViews = {};
+var fs = require(&#39;fs&#39;);
+
+app.use(function(req, res, next) {
+    var path = req.path.toLowerCase();
+    //检查缓存
+    if(autoView[path]) return res.render(autoViews[path])；
+    //不在缓存
+    if(fs.exitsSync(__dirname + &#39;/views&#39; + path + &#39;.ejs&#39;)) {
+        autoViews[path] = path.repalce(/^\//, &#39;&#39;);
+        reuturn res.render(autoViews[path]);
+    }
+    //没发现到404
+    next();
+})
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>持久化</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>文件持久化</li>
+<li>云持久化</li>
+<li>数据库持久化</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>数据库持久化</h2>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>结构化数据库<ul>
+<li>Oracle、MySQL、SQL Server、</li>
+</ul>
+</li>
+<li>NoSQL<ul>
+<li>MongoDB</li>
+<li><a href="https://cnodejs.org/topic/504b4924e2b84515770103dd" target="_blank">https://cnodejs.org/topic/504b4924e2b84515770103dd</a></li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>一些框架</h2>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>mongoose<ul>
+<li><a href="https://github.com/Automattic/mongoose" target="_blank">https://github.com/Automattic/mongoose</a></li>
+</ul>
+</li>
+<li>orm2 <ul>
+<li><a href="https://github.com/dresende/node-orm2" target="_blank">https://github.com/dresende/node-orm2</a></li>
+</ul>
+</li>
+<li>AWS<ul>
+<li><a href="https://aws.amazon.com/sdkfornodejs" target="_blank">https://aws.amazon.com/sdkfornodejs</a></li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>进程管理:PM2</h1>
+<blockquote>
+<p><a href="https://github.com/Unitech/pm2" target="_blank">https://github.com/Unitech/pm2</a></p>
+</blockquote>
+<p><img src="https://github.com/unitech/pm2/raw/master/pres/pm2-list.png" alt="pm2"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>实战：动效平台</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>架构图</h1>
+<p><img src="http://ww1.sinaimg.cn/large/8ae515a4jw1evwkb97qvjj20sg0lcdi6.jpg" alt="jiagoutu"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>路由</h1>
+<pre><code class="javascript">// 新建组件页面
+app.get(&#39;/component/create&#39;, ComponentController.renderCreationPage);
+
+// 组件类的路由
+app.post(&#39;/component/create&#39;, multipartMiddleware, ComponentController.create);
+
+app.put(&#39;...&#39;, ...);
+app.delete(&#39;...&#39;, ...);
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>控制器</h1>
+<pre><code class="javascript">create: function(req, res) {
+    var data = req.body,
+        files = req.files;
+    //当组件存储完成、文件上传完成，才响应
+    createComponent(data, files).then(function(data) {
+        //渲染页面
+        //res.render(&#39;index&#39;, data.componentHistory.componentHistoryID);
+        res.send(JSON.stringify(data));
+    }).catch(function(e) {
+        console.error(e);
+        res.redirect(&#39;error&#39;);
+    });
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<pre><code class="javascript">//创建组件、组件项
+function createComponent(data, files) {
+    //组件
+    var component = new Component(data.name, data.categoryID, &#39;userid&#39;, data.remarks); //用户ID后期通过session给值
+    //历史版本
+    var componentHistory = new ComponentHistory(component.componentID, data.html, data.js, data.css, &#39;userid&#39;, data.updata); //用户ID后期通过session给值
+
+    //首先保存到数据然，然后再保存到文件中
+    return Promise.all([
+            ComponentDAL.createComponent(component),
+            ComponentHistoryDAL.createComponentHistory(componentHistory),
+            saveFile({
+                files : files,
+                component : component.componentID
+            })
+        ]);
+
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>DAL层</h1>
+<pre><code class="javascript">//创建组件
+function createComponent(component) {
+    return new Promise(function(resolve, reject) {
+        ComponentTable.create([component],function(err, data) {
+            if(err) {
+                console.error(err);
+                reject(err);
+            }else {
+                console.debug(&#39;上传组件成功&#39;, JSON.stringify(data));
+                resolve(JSON.stringify(data));
+            }
+        });
+
+    });
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>复杂SQL</h1>
+<pre><code class="javascript">var getComponentHistoryByComponentIDSQL = &#39;SELECT componentHistory.componentHistoryID, componentHistory.html, componentHistory.js, componentHistory.css, component.componentID , component.name, component.remarks FROM (SELECT componentID, name, remarks FROM component WHERE component.componentID = ?) component inner join componentHistory ON componentHistory.componentID = component.componentID ORDER BY componentHistory.createTime DESC LIMIT 1&#39;;
+//找到某一个组件下最新版本的组件历史
+function getComponentHistoryByComponentID(componentID) {
+    return new Promise(function(resolve, reject) {
+        db.driver.execQuery(getComponentHistoryByComponentIDSQL,  [componentID], function(err, data) {
+            if(err) {
+                console.error(err);
+                throw err;
+            }else {
+                resolve(data);
+            }
+        });
+    });
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>日志处理:Log4Js</h1>
+<pre><code class="javascript">var log4js = require(&#39;log4js&#39;);
+
+log4js.configure({
+    appenders: [
+        //控制台输出
+        {
+            type: &#39;console&#39;,
+            category: &quot;console&quot;
+        }
+        ////线上打开，否则没有这个软件会报错
+        //{
+        //    type: &quot;dateFile&quot;,
+        //    filename: &#39;logs/log.log&#39;,
+        //    pattern: &quot;_yyyy-MM-dd&quot;,
+        //    alwaysIncludePattern: false,
+        //    category: &#39;dateFileLog&#39;
+        //}//日期文件格式
+    ],
+    replaceConsole: true,   //替换console.log
+    levels:{
+        dateFileLog: &#39;ERROR&#39;,
+        console : &#39;DEBUG&#39;
+    }
+});
+
+var dateFileLog = log4js.getLogger(&#39;dateFileLog&#39;);
+
+module.exports = function(app) {
+    //页面请求日志,用auto的话,默认级别是WARN
+    app.use(log4js.connectLogger(dateFileLog, {level:dateFileLog.level.ERROR, format:&#39;:method :url&#39;}));
+};
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>效果展示</h1>
+<p><img src="http://ww2.sinaimg.cn/large/8ae515a4jw1evwl2nx52bj21kw0x7437.jpg" alt=""></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>下一步要做的</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>脚手架</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>拥抱ES6(2015), ES7(2016)</h1>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>Class, Generator ,async</h2>
+<pre><code class="javascript">class Component extend BaseClass {
+    constructor(name) {
+        this.name = name;
+    }
+    getComponentName() {
+    }
+}
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>回顾</h1>
+<p>想实现一个基于mvc的web系统</p>
+<ul class="rollIn">
+<li>templet</li>
+<li>route</li>
+<li>controller</li>
+<li>dal</li>
+<li>model</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Q&amp;A</h1>
+
+</hgroup><article>
+
+
+</article></section></slide>
+        <!--slide class="slide thank-you-slide segue nobackground">
+            <article class="flexbox vleft auto-fadein">
+                <h2>Q &amp; A</h2>
+                <h3>&lt;Thank You!&gt;</h3>
+            </article>
+        </slide-->
+        <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+              <h2 style="color: white;">Powered By nodePPT v1.2.3</h2>
+            </article>
+          </slide>
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = location.pathname.split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'move',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/hljs-0.8.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+<script src="./js/zoom.js"></script>
+<link rel="stylesheet" href="./css/theme.moon.css">
+<!--placeholder-->
+</body>
+</html>
