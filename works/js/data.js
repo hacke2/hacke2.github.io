@@ -71,6 +71,11 @@ var data = {
 	    		name : 'gokk',
 	    		desc : '基于Node.js + jade + Mongoose 模仿gokk.tv ',
 	    		url : 'https://github.com/hacke2/gokk'
+	    	},
+	    	{
+	    		name : '动效平台',
+	    		desc : '基于Node.js + Angular + fis3 + orm2的可视化代码编辑页面',
+	    		url : 'https://github.com/hacke2/inspiration'
 	    	}
 	    ]
     
