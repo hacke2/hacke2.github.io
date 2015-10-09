@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [译]Javascript中的Iterables和Iterators
+title: 译-Javascript中的Iterables和Iterators
 description: "ES6迭代器介绍"
 tags: [Javascript, ES6]
 image:
@@ -14,6 +14,8 @@ share: true
 
 ECMAScript 2015 (ES6) 介绍了两个新的概念，它们密切相关: **iterables** and **iterators**.<br>
 希望你在阅读了这篇文章后，会了解到这两个概念的重要性，并且能在日常开发中使用它们。
+
+<!--more-->
 
 ## Iterables
 
