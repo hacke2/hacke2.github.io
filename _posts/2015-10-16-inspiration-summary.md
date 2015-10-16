@@ -149,15 +149,7 @@ ComponentTable.sync();
 
 操作数据库的方法我就不一一写出了，我写了个[orm的Demo](https://github.com/hacke2/node-orm2-mysql-demo)便于参考，官网上也很详细。
 
-对于复杂sql我们只能手写。以下是一个比较复杂的SQL：
-
-{% highlight sql %}
-
-SELECT componentHistory.componentHistoryID, componentHistory.html, componentHistory.js, componentHistory.css, component.componentID, component.categoryID, component.name, component.remarks FROM (SELECT componentHistoryID, componentID, html, js, css FROM componentHistory WHERE componentHistory.componentHistoryID = ?) componentHistory inner join component ON componentHistory.componentID = component.componentID AND  component.status=1
-
-{% endhighlight %}
-
-框架也是支持直接调用，但这样使用Mysql驱动来写，也是不能跨数据库，这也是一个弱点。
+对于复杂sql我们只能手写。比较复杂的SQL,框架也是支持直接调用，但这样使用Mysql驱动来写，也是不能跨数据库，这也是一个弱点。
 
 {% highlight JavaScript %}
 
@@ -174,56 +166,16 @@ db.driver.execQuery(getComponentHistoryByComponentHistoryIDSQL,  [componentHisto
 
 查询出得数据库是一维数据，还需要我们组装才能给前端，我们减少了一层业务逻辑层，组装还是写在了数据处理层中。
 
-下面有一个例子：
-
-{% highlight JavaScript %}
-
-function formatCategories(arr) {
-    var resultObj = {};
-    
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i]['categoryID'] in resultObj) {
-            resultObj[arr[i]['categoryID']]['example'].push({
-                'componentID' : arr[i]['componentID'],
-                'componentName' : arr[i]['componentName']
-            });
-
-        }else {
-            resultObj[arr[i]['categoryID']] = {
-                'id' : arr[i]['categoryID'],
-                'category' : arr[i]['categoryName'],
-                'example' : [ {
-                    'componentID' : arr[i]['componentID'],
-                    'componentName' : arr[i]['componentName']
-                }]
-            };
-        }
-    }
-    var result = [];
-    for(var key in resultObj) {
-        result.push(resultObj[key]);
-    }
-    return result;
-}
-
-{% endhighlight %}
-
-
 ## 模型层
 
 模型层为类的定义，因为orm建表需要知道每一个类的类型，所以还需为其提供：
 
 {% highlight JavaScript %}
 
-var uuid = require('node-uuid'),
-    ModelBase = require('./ModelBase'),
-    util = require('util');
-
 var Component = function(name, categoryID, userID, remarks, productLineID) {
     var now = new Date();
     this.componentID = uuid.v4();
-    //...
-    ModelBase.call(this);
+	//...
 };
 
 Component.getType = function() {
@@ -238,10 +190,6 @@ Component.getType = function() {
     }
 };
 
-//继承原型方法
-util.inherits(Component, ModelBase);
-
-module.exports = Component;
 
 {% endhighlight %}
 
