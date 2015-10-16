@@ -66,17 +66,14 @@ module.exports = function(app) {
         next();
     });
 
-    app.use('/public', express.static(path.join(path.dirname(require.main.filename), '/public')));
-
     // 首页
     app.get('/', PageController.redirectWelcome, ComponentController.renderIndexPage);
     // 编辑组件页面
-    app.get('/component/edit/:componentID', PageController.redirectWelcome, ComponentController.renderEditPage);
 	//...
 	
 {% endhighlight %}
 
-我们将文件上传到静态目录`public`下的`upload`里，所以响应的时候得价格头部内容：以文件的方式下载而非在浏览器直接打开。
+我们将文件上传到静态目录`public`下的`upload`里，测试的时候发现打开图片、txt文件浏览器直接想解析了，后来解决方案是响应的时候得加个头部内容，告诉浏览器访问这个路由以文件的方式下载而非在浏览器直接打开。
 
 一些依赖产品线路由我们加了个中间件验证，若无产品线则跳到欢迎页让其选择产品线。
 
@@ -91,17 +88,12 @@ module.exports = function(app) {
 //创建组件、组件项
 function createComponent(data, files) {
     //组件
-    var component = new Component(data.name, data.categoryID, data.userid, data.remarks, data.productLineID);
+    var component = new Component(...);
     //历史版本
-    var componentHistory = new ComponentHistory(component.componentID, data.html, data.js, data.css, data.userid, data.updateContent); 
+    var componentHistory = new ComponentHistory(...); 
     //首先保存到数据然，然后再保存到文件中
     return Promise.all([
-            ComponentDAL.createComponent(component),
-            ComponentHistoryDAL.createComponentHistory(componentHistory),
-            saveFile({
-                files : files,
-                componentID : component.componentID
-            })
+            //存入数据库的方法
         ]);
 
 }
@@ -116,19 +108,18 @@ function createComponent(data, files) {
 
 {% highlight JavaScript %}
 
-create: function(req, res) {
-        var data = req.body,
-            files = req.files;
-        data.productLineID = req.cookies.productLineID;
-        //当组件存储完成、文件上传完成，才响应
-        createComponent(data, files).then(function(result) {
-            //渲染页面
-            res.redirect('/component/edit/' + result[2]);
-        }).catch(function(e) {
-            console.error(e);
-            res.redirect('error');
+ renderCreationPage: function(req, res) {
+    var productLineID = req.cookies.productLineID;
+    Promise.all([
+        //查询数据库
+    ]).then(function(result) {
+        res.render(AppUtils.getViewPath('component/create.ejs'), {
+            //传入数据
         });
-    },
+    }).catch(function(e) {
+        res.redirect('error');
+    });
+},
 
 {% endhighlight %}
 
