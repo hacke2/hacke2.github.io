@@ -222,7 +222,6 @@ var uuid = require('node-uuid'),
 var Component = function(name, categoryID, userID, remarks, productLineID) {
     var now = new Date();
     this.componentID = uuid.v4();
-    this.categoryID = categoryID;
     //...
     ModelBase.call(this);
 };
