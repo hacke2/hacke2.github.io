@@ -40,7 +40,8 @@ white-space: nowrap;
 
 具体参考代码如下：
 
-```javascript
+
+{% highlight JavaScript %}
 var preventUCDefault = (function() {
     var ua = window.navigator.userAgent,
         startX = 0,
@@ -85,7 +86,8 @@ var preventUCDefault = (function() {
 
 
 preventUCDefault.init(scope.find('.slide-image ul'));
-```
+
+{% endhighlight %}
 
 
 经过QA测试，低版本UC下滑动效果也很不错呢！
@@ -95,9 +97,9 @@ preventUCDefault.init(scope.find('.slide-image ul'));
 
 当然，想开启gpu加速可以加上下句话：
 
-```css
+{% highlight CSS %}
 -webkit-transform:translateZ(0);
-```
+{% endhighlight %}
 
 另外，使用原生滑动会出现滚动条，如果想达到极致体验的话，@靳磊给了两个思路：
 
@@ -106,7 +108,7 @@ preventUCDefault.init(scope.find('.slide-image ul'));
 
 使用伪元素代码如下
 
-```css
+{% highlight CSS %}
  ul::after {
     display: block;
     content: "";
@@ -117,7 +119,7 @@ preventUCDefault.init(scope.find('.slide-image ul'));
     height: 10px;
     margin-top : -11px;
 }
-```
+{% endhighlight %}
 
 ## 总结
 
