@@ -30,6 +30,7 @@ program
 在定义其他命令
 
 {% highlight JavaScript %}
+
 program
 	.command('create [dir]')
 	.description('create empty project')
@@ -47,6 +48,7 @@ program
 	.action(require('../lib/build'));
 
 program.parse(process.argv);
+
 {% endhighlight %}
 
 我们定义了三条命令:
@@ -60,6 +62,7 @@ program.parse(process.argv);
 在创建的时候会把之前的一些模板文章生成到用户文件下，因为本模块是安装在全局的，运行该命名会把一些静态资源文件、模板、配置文件等输出出来供用户修改。
 
 {% highlight JavaScript %}
+
 try {
 	  	//create template dir
 		fse.mkdirsSync(path.resolve(dir, '_layout'));
@@ -76,6 +79,7 @@ try {
 		console.log('create faild!');
 		console.error(e);
 	}
+	
 {% endhighlight %}
 
 ## 预览
@@ -83,6 +87,7 @@ try {
 预览就是用express启动一个web项目。开启一个Node.js web项目最简单无异于是用express框架了。我是用jade当做模板引擎，因为其提供的block和include实在是太强大了。
 
 {% highlight JavaScript %}
+
 	let app = express();
 
 
@@ -92,6 +97,7 @@ try {
 
 	app.set('views', path.join(__dirname, '../_layout/pages'));
 	app.set('view engine','jade')
+	
 {% endhighlight %}
 
 我们设置好静态目录和模板引擎，就可以编写重要的路由了。在一个简单的博客系统，无外乎有两个重要的路由：
@@ -147,11 +153,11 @@ let md = new MarkdownIt({
 
 我在markdown下有如下设置：
 
-```
+{% highlight HTML %}
 ---
 title : 我是标题
 ---
-```
+{% endhighlight %}
 
 然后需要有一个[函数来解析](https://github.com/hacke2/wooden/blob/master/lib%2Futils.js#L55)
 
@@ -235,7 +241,7 @@ let getArticle = name => {
 
 jade提供个强大的include 和 block。我们创建一个框架，其他页面继承它。
 
-```
+{% highlight HTML %}
 doctype
 html
 	head
@@ -249,17 +255,17 @@ html
 		block content
 		include ./includes/js
 		block page_js
-```
+{% endhighlight %}
 
 它包含css模板和js模板，页面放在content里
 
-```
+{% highlight HTML %}
 block content
-``
+{% endhighlight %}
 
 首页来继承它
 
-```
+{% highlight HTML %}
 extends ../layout
 
 block page_css
@@ -274,7 +280,7 @@ block content
 				li(class="article")
 					a(href="#{article.href}#{isBuild ? '.html' : ''}", class="article-title") #{article.title}
 					div.abstract #{article.abstract}
-```
+{% endhighlight %}
 
 文章列表也也是如此，在此不展开了。
 
@@ -311,9 +317,9 @@ utils.getIndexData().then(data => {
 
 想让这个命令不是用Node xxx.js来运行，直接是用xxx来运行，需要在bin目录下创建一个文件，将commande这个入口js拷进去，然后在开头输入
 
-```
-#!/usr/bin/env node --harmony
-```
+
+>#!/usr/bin/env node --harmony
+
 
 因为此项目运用了es6的一些特性，需要使用`--harmony`来开启支持。
 
