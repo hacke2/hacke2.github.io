@@ -334,5 +334,6 @@ utils.getIndexData().then(data => {
 
 本文就此完毕，是不是和我现有博客的架构挺像？
 
+项目地址：[https://github.com/hacke2/wooden](https://github.com/hacke2/wooden)
 
 **文章来自 [{{ site.url }}]({{ site.url }})**
