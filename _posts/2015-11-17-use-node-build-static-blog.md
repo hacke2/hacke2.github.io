@@ -2,7 +2,7 @@
 layout: post
 title: 使用Node.js生成一个静态博客
 description: "静态博客wooden编写记录"
-tags: [Node.js ,Javascript, ES6]
+tags: [Node,Javascript, ES6]
 image:
   background: witewall_3.png
 comments: true
@@ -235,7 +235,7 @@ let getArticle = name => {
 
 jade提供个强大的include 和 block。我们创建一个框架，其他页面继承它。
 
-{% highlight Jade %}
+```
 doctype
 html
 	head
@@ -249,17 +249,17 @@ html
 		block content
 		include ./includes/js
 		block page_js
-{% endhighlight %}
+```
 
 它包含css模板和js模板，页面放在content里
 
-{% highlight Jade %}
+```
 block content
-{% endhighlight %}
+``
 
 首页来继承它
 
-{% highlight Jade %}
+```
 extends ../layout
 
 block page_css
@@ -274,7 +274,7 @@ block content
 				li(class="article")
 					a(href="#{article.href}#{isBuild ? '.html' : ''}", class="article-title") #{article.title}
 					div.abstract #{article.abstract}
-{% endhighlight %}
+```
 
 文章列表也也是如此，在此不展开了。
 
@@ -311,9 +311,9 @@ utils.getIndexData().then(data => {
 
 想让这个命令不是用Node xxx.js来运行，直接是用xxx来运行，需要在bin目录下创建一个文件，将commande这个入口js拷进去，然后在开头输入
 
-{% highlight shell %}
+```
 #!/usr/bin/env node --harmony
-{% endhighlight %}
+```
 
 因为此项目运用了es6的一些特性，需要使用`--harmony`来开启支持。
 
