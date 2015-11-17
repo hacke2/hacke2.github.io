@@ -317,9 +317,9 @@ utils.getIndexData().then(data => {
 
 想让这个命令不是用Node xxx.js来运行，直接是用xxx来运行，需要在bin目录下创建一个文件，将commande这个入口js拷进去，然后在开头输入
 
-
->#!/usr/bin/env node --harmony
-
+{% highlight HTML %}
+#!/usr/bin/env node --harmony
+{% endhighlight %}
 
 因为此项目运用了es6的一些特性，需要使用`--harmony`来开启支持。
 
