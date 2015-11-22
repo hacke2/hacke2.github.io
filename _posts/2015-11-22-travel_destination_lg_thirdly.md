@@ -41,15 +41,15 @@ share: true
 
 1.正常relative布局，点击展开时将页面定位到当前视口的下方，计算公式如下;
 
-```
-bodyHeight - windowHeight - scrollTop
-```
+
+>bodyHeight - windowHeight - scrollTop
+
 
 2.当中间页渲染完毕后，进入到中间状态，中间状态计算的位置如下：
 
-```
-curViewBottomY + windowHeight - MARGIN_TOP;
-```
+
+>curViewBottomY + windowHeight - MARGIN_TOP;
+
 
 其中，curViewBottomY就是上一步计算的当前视口的下方
 
