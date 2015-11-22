@@ -11,6 +11,8 @@ share: true
 
 >我github star最多的是我的博客,是用Ruby写的Jekyll搭建的，运行在支持它的gthub上。Jekyll很方便的一点是可以用markdown来编写你的博客，有一种极客的感觉。但是用Node.js怎么实现一个静态博客系统呢？
 
+<!--more-->
+
 ![github](http://ww2.sinaimg.cn/large/8ae515a4jw1ey4ctqpvhaj20sc02m0sz.jpg)
 
 ## 生成模板
