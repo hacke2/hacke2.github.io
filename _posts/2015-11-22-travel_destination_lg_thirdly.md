@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 使用Node.js生成一个静态博客
-description: "静态博客wooden编写记录"
-tags: [Node,Javascript, ES6]
+title: 旅游蓝光第三版总结
+description: "旅游蓝光第三版浮层页面解决思路"
+tags: [项目总结]
 image:
   background: witewall_3.png
 comments: true
