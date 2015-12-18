@@ -125,5 +125,18 @@ preventUCDefault.init(scope.find('.slide-image ul'));
 
 对于一个问题一个人思考思维会很局限，和大家一起讨论完成学到了很多解决的办法，能将任务完成最优而且增进团队的融合性。
 
+---
+
+更新 2015年12月14日
+
+隐藏滚动条还有更好地方法
+
+{% highlight CSS %}
+ul::-webkit-scrollbar {
+        display: none;
+    }
+{% endhighlight %}
+
+主要解决背景非纯色而是虚化这样的需求，uc下有效，但是safari下还是会出现滚动条，有点小遗憾。
 
 **文章来自 [{{ site.url }}]({{ site.url }})**
