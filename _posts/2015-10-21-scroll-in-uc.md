@@ -17,11 +17,11 @@ share: true
 
 先使用overflow-x:auto;给UL加上一下css，做出横向滑动的效果：
 
-```css
+{% highlight CSS %}
 overflow-x: auto;
 white-space: nowrap;
 -webkit-overflow-scrolling: touch;
-```
+{% endhighlight %}
 
 这样，一个简单地滚动效果就实现了。如图
 
