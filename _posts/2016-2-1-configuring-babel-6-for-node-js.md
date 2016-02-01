@@ -51,15 +51,15 @@ console.log(jsRocks.next());
 
 我们将在下一个命令下安装**babel-cli**。他会在当前项目安装最后一个稳定版本的babel-cli并且也会追加在package.json的devDependencies里。
 
-```
-npm install --save-dev babel-cli
-```
+
+	npm install --save-dev babel-cli
+
 
 现在如果你运行
 
-```
-babel code/index.js -d build/
-```
+
+	babel code/index.js -d build/
+
 
 你将会看见你写的相同代码出现在build/index.js文件夹里，所以Babel的 **插件** 和 **预设** 来临了。
 
@@ -74,23 +74,20 @@ babel本身并没有做很多事情，但是通过插件和预设可以实现很
 
 运行下面的命令安装预设文件：
 
-```
-npm install --save-dev babel-preset-es2015 babel-preset-stage-0
-```
+
+	npm install --save-dev babel-preset-es2015 babel-preset-stage-0
+
 babel拥有广泛的插件在[这边获得](https://babeljs.io/docs/plugins/)
 
 现在你需要在执行命令的时候包含这两个预设。
 
+	babel --presets es2015,stage-0 code/index.js -o build/app.js
 
-```
-babel --presets es2015,stage-0 code/index.js -o build/app.js
-```
 
 现在你会看到正常的ES5代码已经出现在 `app.js`了，它也叫 `编译后的代码` (这是js世界里的一个术语)。你可以使用以下命令运行这些代码：
 
-```
-node build/app.js
-```
+
+	node build/app.js
 
 ### 使用Babel来配置一个合适的编译环境
 
@@ -113,9 +110,7 @@ node build/app.js
 
 现在，如果你运行：
 
-```
-babel -w code/ -d build/
-```
+	babel -w code/ -d build/
 
 他会从 `.babelrc` 读取 **预设** 去编译在 `code/` 里的代码并且生成编译好的JavaScript文件在 `build/` 文件夹并且不会结束此命令。注意这个 `-w` 标志：如果你对 `code` 文件夹修改，它会 **监听** 和重新编译这个文件夹下的代码，酷！我现在所说的是不是非常神奇。
 
@@ -139,28 +134,28 @@ errorGen.next();
 
 我们使用如下命令去给 **编译后的文件** 生成 **source maps**。*注意使用`--source-maps` 标签*:
 
-```
-babel code/ -d build/ --source-maps
-```
+
+	babel code/ -d build/ --source-maps
+
 
 现在当我们遇到错误的时候我们会获得有用的调试信息，如下：
 
-```
-errorGen.next()
-         ^
 
-Error: source maps are awesome
-    at errorFulGenerator (/home/programreneur/Programming/githubRepos/babeljs-short-tutorial/code/error.js:3:9)
-    at next (native)
-    at Object.<anonymous> (/home/programreneur/Programming/githubRepos/babeljs-short-tutorial/code/error.js:10:10)
-    at Module._compile (module.js:425:26)
-    at Object.Module._extensions..js (module.js:432:10)
-    at Module.load (module.js:356:32)
-    at Function.Module._load (module.js:313:12)
-    at Function.Module.runMain (module.js:457:10)
-    at startup (node.js:138:18)
-    at node.js:974:3
-```
+	errorGen.next()
+	         ^
+	
+	Error: source maps are awesome
+	    at errorFulGenerator (/home/programreneur/Programming/githubRepos/babeljs-short-tutorial/code/error.js:3:9)
+	    at next (native)
+	    at Object.<anonymous> (/home/programreneur/Programming/githubRepos/babeljs-short-tutorial/code/error.js:10:10)
+	    at Module._compile (module.js:425:26)
+	    at Object.Module._extensions..js (module.js:432:10)
+	    at Module.load (module.js:356:32)
+	    at Function.Module._load (module.js:313:12)
+	    at Function.Module.runMain (module.js:457:10)
+	    at startup (node.js:138:18)
+	    at node.js:974:3
+
 
 这个就是使用 source maps 的方法。
 
@@ -177,9 +172,9 @@ Error: source maps are awesome
 
 现在，我们运行：
 
-```
-npm run build
-```
+
+	npm run build
+
 
 从今天开始就应该全面享受 ES2015/ES2016 带来的好处了！
 
