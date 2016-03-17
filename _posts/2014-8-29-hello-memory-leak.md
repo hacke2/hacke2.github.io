@@ -94,10 +94,11 @@ function closures() {
 	}
 }
 var b = closures()();
-{% endhighlight %}
+```
 
 在此例中，closures函数下有个闭包，返回了该函数的局部变量a，外部有一个变量b引用了a，则如果b不释放a，a会一直存在于内存中，解决方法就是在在b使用完后，主动的释放b：
-{% highlight JavaScript %}
+
+```
 function closures() {
 	var a = 10;
 	return function () {
