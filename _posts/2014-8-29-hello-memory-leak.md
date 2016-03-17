@@ -65,11 +65,11 @@ var element = document.getElementById(“some-element”);
 var myobject = {}; 
 myobject.element = element;
 element.someElement = myobject;
-{% endhighlight %}
+```
 
 在此例中DOM元素与一个原生javascript对象形成循环引用，其中myobject.element指向element元素，element.someElement指向element对象，由于存在这个循环引用，即使将该DOM从页面中移除，它也永远不会被回收。为了避免该问题，最好在使用完毕后手动将其移除:
 
-{% highlight JavaScript %}
+```js
 var element = document.getElementById(“some-element”);
 var myobject = {}; 
 myobject.element = element;
