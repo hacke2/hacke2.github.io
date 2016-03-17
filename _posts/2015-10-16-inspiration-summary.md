@@ -57,7 +57,7 @@ share: true
 
 路由层主要是处理不同的路由，我们路由层依赖控制层的代码。同事也放了一些自定义的中间件。
 
-{% highlight JavaScript %}
+```js
 
 module.exports = function(app) {
 
@@ -71,7 +71,7 @@ module.exports = function(app) {
     // 编辑组件页面
 	//...
 	
-{% endhighlight %}
+```
 
 我们将文件上传到静态目录`public`下的`upload`里，测试的时候发现打开图片、txt文件浏览器直接想解析了，后来解决方案是响应的时候得加个头部内容，告诉浏览器访问这个路由以文件的方式下载而非在浏览器直接打开。
 
@@ -83,7 +83,7 @@ module.exports = function(app) {
 
 下面试新增组件方法：
 
-{% highlight JavaScript %}
+```js
 
 //创建组件、组件项
 function createComponent(data, files) {
@@ -98,7 +98,7 @@ function createComponent(data, files) {
 
 }
 
-{% endhighlight %}
+```
 
 所有异步操作完成后，我们会将数据传给view层来渲染，这样就完成了
 
@@ -106,7 +106,7 @@ function createComponent(data, files) {
 
 这样一个MVC处理思想。下面数渲染的逻辑
 
-{% highlight JavaScript %}
+```js
 
  renderCreationPage: function(req, res) {
     var productLineID = req.cookies.productLineID;
@@ -121,29 +121,29 @@ function createComponent(data, files) {
     });
 },
 
-{% endhighlight %}
+```
 
 ## 数据处理层
 
 我们使用ORM数据库来建表，但是我感觉如果想在数据库大量优化则第一次使用ORM来建表，优化那些不必在是ORM负责。
 
-{% highlight JavaScript %}
+```js
 
 var ComponentTable = db.define('component', Component.getType(),{
     cache   : false
 });
 
-{% endhighlight %}
+```
 
 这边遇到了一个坑，他默认有对缓冲，这样如果是调用他的get方法的话，修改数据库并不能实时的展示，必须重启Node应用才可以，直接执行SQL无影响。索性将其cache关闭。
 
 框架支持自动建表，剩下了不少麻烦
 
-{% highlight JavaScript %}
+```js
 //同步表
 ComponentTable.sync();
 
-{% endhighlight %}
+```
 
 当然这个方法是异步方法，但不可能项目刚启动就有对数据库的操作，搜易偷了个懒这样写。其实是有问题的，但不知如何解。
 
@@ -151,7 +151,7 @@ ComponentTable.sync();
 
 对于复杂sql我们只能手写。比较复杂的SQL,框架也是支持直接调用，但这样使用Mysql驱动来写，也是不能跨数据库，这也是一个弱点。
 
-{% highlight JavaScript %}
+```js
 
 db.driver.execQuery(getComponentHistoryByComponentHistoryIDSQL,  [componentHistoryID], function(err, data) {
     if(err) {
@@ -162,7 +162,7 @@ db.driver.execQuery(getComponentHistoryByComponentHistoryIDSQL,  [componentHisto
     }
 });
 
-{% endhighlight %}
+```
 
 查询出得数据库是一维数据，还需要我们组装才能给前端，我们减少了一层业务逻辑层，组装还是写在了数据处理层中。
 
@@ -170,7 +170,7 @@ db.driver.execQuery(getComponentHistoryByComponentHistoryIDSQL,  [componentHisto
 
 模型层为类的定义，因为orm建表需要知道每一个类的类型，所以还需为其提供：
 
-{% highlight JavaScript %}
+```js
 
 var Component = function(name, categoryID, userID, remarks, productLineID) {
     var now = new Date();
@@ -191,11 +191,11 @@ Component.getType = function() {
 };
 
 
-{% endhighlight %}
+```
 
 当然，框架支持建立索引、默认值等:
 
-{% highlight JavaScript %}
+```js
 
 var Person = db.define('person', {
     id: {type: 'serial', key: true},
@@ -205,7 +205,8 @@ var Person = db.define('person', {
     age: {type: 'number', defaultValue: 1}
   });
   
-{% endhighlight %}
+```
+
 ## 展望与不足
 
 这个项目马上就要完成了，我觉得我们接下来要准备的又以下几点：

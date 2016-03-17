@@ -41,7 +41,7 @@ Javascript最常用的垃圾回收方式是“标记清除”(mark-and-sweep)。
 引用计数的含义是跟踪记录每个值被引用的次数，如当声明一个变量并将一个引用类型赋给该变量时，这个值的引用次数就是1，如果这个引用类型赋给另一个变量，它的引用类型加1,。相反，如果第一个变量又引用了其他引用类型时，之前的引用类型的引用次数就减1，直到减成0。当垃圾回收下一次运行的时候，就会释放掉引用次数为0的引用类型的内存。
 该方式有一个严重的问题，请看下面例子：
 
-{% highlight JavaScript %}
+```js
 function problem(){
 	var objA = {};
 	var objB = {}; 
@@ -49,7 +49,7 @@ function problem(){
 	objA.someOtherObject = objB;
 	objB.anotherObject = objA;
 }
-{% endhighlight %}
+```
 
 objA、objB通过各自的属性相互引用，如果采用引用计数，objA和objB会一直存在。假使这个函数多次被调用，大量内存不能回收，直接导致内存泄漏。
 
@@ -60,7 +60,7 @@ objA、objB通过各自的属性相互引用，如果采用引用计数，objA�
 IE浏览器的COM组件产生的对象实例和网页脚本引擎产生的对象实例相互引用，就会造成内存泄漏。这也是Web页面中我们遇到的最常见和主要的泄漏方式；
 <br />例:
 
-{% highlight JavaScript %}
+```js
 var element = document.getElementById(“some-element”);
 var myobject = {}; 
 myobject.element = element;
@@ -77,7 +77,7 @@ element.someElement = myobject;
 //当使用完后
 myobject.element = null;
 element.someElement = null;
-{% endhighlight %}
+```
 
 为了解决上述问题，IE9以后将所有的BOM和DOM都转换成了javascript对象，这样，就避免了两种垃圾回收机制都存在的问题，也就消除了常见的内存泄漏的问题。
 
@@ -86,7 +86,7 @@ element.someElement = null;
 Closures也就是闭包，外部变量可以应用内部函数的局部变量，当外部变量一直引用，那么该局部变量会在内存中一直存在，如果有大量这样的情况，则可能会出现内存泄漏；
 <br />例:
 
-{% highlight JavaScript %}
+```js
 function closures() {
 	var a = 10;
 	return function () {
@@ -107,7 +107,7 @@ function closures() {
 var b = closures()();
 //b使用完后
 b = null;
-{% endhighlight %}
+```
 
 >原文摘自《Web前端案例教材》 ---重庆理工大学创新实验室
 

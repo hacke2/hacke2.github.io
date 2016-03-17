@@ -21,32 +21,36 @@ share: true
 	1.使用tomcat环境
 	2.使用selvet
 
-{% highlight Java %}
+```js
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	resp.getOutputStream().write("{status:'ok',value:'11'}".getBytes("UTF-8"));
 	resp.setContentType("text/json; charset=UTF-8");
 }
-{% endhighlight %}
+```
 
 ### 若php
 
 1.使用wamp 环境   
 2.后端PHP构造json数据
-{% highlight Php %}
+
+```php
 echo "{status:'ok',value:'11'}";
 //或者
 echo json_encode($result);//$result 是数组
-{% endhighlight %}
+```
 
 
 ### 若对数据没有动态提取的要求，则直接放大xxx.json里面
 
 json格式为
+
+```json
 {'status':'ok','value':'11'}
+```
 
 * 前台使用AJAX请求
 
-{% highlight JavaScript %}
+```js
 function ajax(url, success, fail){
     // 1. 创建连接
     var xhr = null;
@@ -75,7 +79,7 @@ var url =  'json.php'...其他地址
 ajax(url, function(data) {
     data.status
 })
-{% endhighlight %}
+```
 
 后来自己又想了一下，其实这道题就看你平时前端开发的环境是怎样的，因为我是JAVA出生，所以一想就想到了启动一个tomcat来启动一个服务器，上面开启一个sevlet来输出json数据。
 总感觉这样太“重量级”了，在网上查了一查，才知道了阿里真实的意图--。

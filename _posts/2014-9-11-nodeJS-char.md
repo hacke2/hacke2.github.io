@@ -32,7 +32,7 @@ node.js提供了高效的服务端运行环境，但是由于浏览器端对HTML
 
 创建app.js 源码如下
 
-{% highlight JavaScript %}
+```js
 var fs = require('fs')	//文件操作
     , http = require('http')	//http服务器
     , socketio = require('socket.io');	//socket.io，用来和前台进行交互
@@ -53,11 +53,11 @@ socketio.listen(server).on('connection', function (socket) {
         socket.broadcast.emit('message', msg);
     });
 });
-{% endhighlight %}
+```
 
 创建index.html
 
-{% highlight HTML %}
+```html
 <html>
 <head>
 	<meta charset="utf-8">
@@ -96,7 +96,7 @@ socketio.listen(server).on('connection', function (socket) {
 </body>
 </html>
 
-{% endhighlight %}
+```
 
 # 运行&结果
 

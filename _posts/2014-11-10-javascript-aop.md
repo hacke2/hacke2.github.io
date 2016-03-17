@@ -40,7 +40,7 @@ function sleep(maxtime) {
 
 <!--more-->
 
-{% highlight JavaScript %}
+```js
 function complexFunc() {
 	var now = +new Date();
 	sleep(1000);
@@ -50,7 +50,7 @@ function complexFunc() {
 
 //运行结果：
 1014
-{% endhighlight %}
+```
 
 代码开开心心写完了，然后需求又来了。
 
@@ -58,7 +58,7 @@ function complexFunc() {
 
 >前端程序员：嗯，行。
 
-{% highlight JavaScript %}
+```js
 function complexFunc() {
 	var now = +new Date();
 	sleep(1000);
@@ -76,7 +76,7 @@ function otherComplexFunc() {
 
 //其它要加统计时间代码的函数
 //....
-{% endhighlight %}
+```
 
 后台也做了统计完成后：
 
@@ -99,7 +99,7 @@ AOP这个概念是来源于后台开发，指面向切面编程。在我们的�
 
 我们知道，我们可以给JavaScript原生对象扩展其属性、方法。JavaScript对于`功能的封装`就是在函数里，我们在函数里面扩展一个before方法。
 
-{% highlight JavaScript %}
+```js
 //前置通知
 Function.prototype.before = function(func) {
 	var that = this;
@@ -148,7 +148,7 @@ Function.prototype.throwing = function(throwingFunc) {
 	}
 }
 
-{% endhighlight %}
+```
 
 这里先只提供四个API：
 
@@ -161,15 +161,15 @@ Function.prototype.throwing = function(throwingFunc) {
 
 因为是直接扩展在`Function`上的，可以进行`链式操作`。如：
 
-{% highlight JavaScript %}
+```js
 func.before(func1).before(func2).after(func2)(arg1)
-{% endhighlight %}
+```
 
 ## 重构上面的代码
 
 下面，我们来重构一下
 
-{% highlight JavaScript %}
+```js
 //将时间记录函数封装一下
 function logTime (func) {
 	return func = (function() {
@@ -190,7 +190,7 @@ logTime(otherComplexFunc)();
 //运行结果：
 1014
 2024
-{% endhighlight %}
+```
 
 <figure>
 	<a href="/images/article/2014-11-10/1.jpg">
@@ -215,9 +215,9 @@ logTime(otherComplexFunc)();
 
 在Spring提供的AOP，我们有一个非常强大的功能：`切入点表达式`,比如一下代码：
 
-{% highlight JavaScript %}
+```js
 execution(* com.spring.service.*.*(String,..)) and args(msg,..)
-{% endhighlight %}
+```
 
 我们可以写一个表达式来动态的给函数来绑定一些前置通知，后置通知等。在JavaScript中，我们可以使用正则来完成定义表达式的策略。扫描当前JS的函数后包装函数，要修改功能只需动态的修改配置就可以实现功能的插拔，真正意义上实现JavaScript的AOP！
 

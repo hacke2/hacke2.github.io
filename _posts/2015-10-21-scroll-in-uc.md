@@ -17,11 +17,11 @@ share: true
 
 先使用overflow-x:auto;给UL加上一下css，做出横向滑动的效果：
 
-{% highlight CSS %}
+```css
 overflow-x: auto;
 white-space: nowrap;
 -webkit-overflow-scrolling: touch;
-{% endhighlight %}
+```
 
 这样，一个简单地滚动效果就实现了。如图
 
@@ -41,7 +41,7 @@ white-space: nowrap;
 具体参考代码如下：
 
 
-{% highlight JavaScript %}
+```js
 var preventUCDefault = (function() {
     var ua = window.navigator.userAgent,
         startX = 0,
@@ -87,7 +87,7 @@ var preventUCDefault = (function() {
 
 preventUCDefault.init(scope.find('.slide-image ul'));
 
-{% endhighlight %}
+```
 
 
 经过QA测试，低版本UC下滑动效果也很不错呢！
@@ -97,9 +97,9 @@ preventUCDefault.init(scope.find('.slide-image ul'));
 
 当然，想开启gpu加速可以加上下句话：
 
-{% highlight CSS %}
+```css
 -webkit-transform:translateZ(0);
-{% endhighlight %}
+```
 
 另外，使用原生滑动会出现滚动条，如果想达到极致体验的话，@靳磊给了两个思路：
 
@@ -108,7 +108,7 @@ preventUCDefault.init(scope.find('.slide-image ul'));
 
 使用伪元素代码如下
 
-{% highlight CSS %}
+```css
  ul::after {
     display: block;
     content: "";
@@ -119,7 +119,7 @@ preventUCDefault.init(scope.find('.slide-image ul'));
     height: 10px;
     margin-top : -11px;
 }
-{% endhighlight %}
+```
 
 ## 总结
 
@@ -131,11 +131,11 @@ preventUCDefault.init(scope.find('.slide-image ul'));
 
 隐藏滚动条还有更好地方法
 
-{% highlight CSS %}
+```css
 ul::-webkit-scrollbar {
         display: none;
     }
-{% endhighlight %}
+```
 
 主要解决背景非纯色而是虚化这样的需求，uc下有效，但是safari下还是会出现滚动条，有点小遗憾。
 

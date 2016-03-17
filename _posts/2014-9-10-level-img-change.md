@@ -33,7 +33,7 @@ share: true
 
 因为首尾切换，我想到的就是自己封装一个循环队列
 
-{% highlight JavaScript %}
+```js
 //封装一个循环队列
 function CircularQueue(arr) {
 	this.arr = arr || [];
@@ -53,11 +53,11 @@ CircularQueue.prototype.unshift = function() {
 CircularQueue.prototype.add = function(obj) {
 	this.arr.push(obj);
 }
-{% endhighlight %}
+```
 
 现在一个数组里缓存下初始位置的大小，
 
-{% highlight JavaScript %}
+```js
 //初始化ARR数组
 var queue = new CircularQueue();
 for (var i = 0; i < li.length; i++) {
@@ -70,11 +70,11 @@ for (var i = 0; i < li.length; i++) {
 		zIndex: getStyle(li[i], 'z-index')
 	});
 }
-{% endhighlight %}
+```
 
 然后在每一个选择项加上mouseover事件，来切换以上图片。
 
-{% highlight JavaScript %}
+```js
 //绑定事件
 for (var j = 0; j < links.length; j++) {
 	links[j].onmouseover = (function(j, len) {
@@ -93,12 +93,12 @@ for (var j = 0; j < links.length; j++) {
 		}
 	})(j, links.length);
 }
-{% endhighlight %}
+```
 
 然后通过传入一个数值，得到以改数组为中心的新数组。
 因为不能打乱以前的数组，所以我用了深克隆
 
-{% highlight JavaScript %}
+```js
 //深克隆
 Object.prototype.clones = function() {
 	var o = {};
@@ -117,7 +117,7 @@ Array.prototype.clones = function() {
 		}
 	return arr;
 };
-{% endhighlight %}
+```
 
 
 
@@ -125,7 +125,7 @@ Array.prototype.clones = function() {
 
 还是用的智联社的运动库，最后将页面元素的样式更新
 
-{% highlight JavaScript %}
+```js
 //调用动作函数绘制
 function updateStyle(arr) {
 	for (var i = 0; i < li.length; i++) {
@@ -134,7 +134,7 @@ function updateStyle(arr) {
 
 	}
 }
-{% endhighlight %}
+```
 
 
 # 代码
