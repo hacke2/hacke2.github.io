@@ -15,7 +15,7 @@ share: true
 
 我们写了一段计算比较密集的代码：
 
-{% highlight JavaScript %}
+```js
 function complexFunc() {
 	sleep(1000)
 }
@@ -28,7 +28,7 @@ function sleep(maxtime) {
 		}
 	}
 }
-{% endhighlight %}
+```
 
 我们在这边定义一个复杂函数，用一个伪睡眠函数模拟。突然需求来了：
 
