@@ -45,7 +45,7 @@ function complexFunc() {
 	var now = +new Date();
 	sleep(1000);
 	//$.get('xxx/log.do?time' + +new Date() - now > maxtime + '&funcName' + arguments.callee.name)	发送给后台
-	console.log(+new Date() - d, funcName);	//模拟运行
+	console.log(+new Date() - now, funcName);	//模拟运行
 }
 
 //运行结果：
@@ -63,7 +63,7 @@ function complexFunc() {
 	var now = +new Date();
 	sleep(1000);
 	//$.get('xxx/log.do?time' + +new Date() - now > maxtime + '&funcName' + arguments.callee.name)	发送给后台
-	console.log(+new Date() - d, funcName);	//模拟运行
+	console.log(+new Date() - now, funcName);	//模拟运行
 }
 
 
@@ -71,7 +71,7 @@ function otherComplexFunc() {
 	var now = +new Date();	//和上面完全重复，复制过来俗称COPY 改
 	sleep(1500);
 	//$.get('xxx/log.do?time' + +new Date() - now > maxtime + '&funcName' + arguments.callee.name)	完全重复
-	console.log(+new Date() - d, funcName);	//模拟运行
+	console.log(+new Date() - now, funcName);	//模拟运行
 }
 
 //其它要加统计时间代码的函数
