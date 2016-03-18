@@ -33,7 +33,7 @@ share: true
 将page传到后台去取数据，一页显示多少条也在后台弄吧，用a数组存a标签，比字符串拼接快很多，StringBuffer也是按照这个原理实现的。
 
 
-{% highlight JavaScript %}
+```js
 	function iPage(obj,count,curPage){  
 		var href = 'article.do?page=';
 		var obj=obj;
@@ -97,7 +97,7 @@ share: true
 			}
 		}
 	}
-{% endhighlight %}
+```
 
 
 ## <a style="color:red" href="/demo/cqut-paging/demo.html" >查看完整DEMO</a>

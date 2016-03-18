@@ -35,7 +35,7 @@ share: true
 
 在`code` **文件夹** 下创建一个简单的包含ES2015代码的Index.js文件：
 
-{% highlight JavaScript %}
+```js
 function* jsRocksIsAwesome() {
   yield "JS Rocks is Awesome";
   yield "JS Rocks says JavaScript Rocks";
@@ -47,7 +47,7 @@ var jsRocks = jsRocksIsAwesome();
 console.log(jsRocks.next());
 console.log(jsRocks.next());
 console.log(jsRocks.next());
-{% endhighlight %}
+```
 
 我们将在下一个命令下安装**babel-cli**。他会在当前项目安装最后一个稳定版本的babel-cli并且也会追加在package.json的devDependencies里。
 
@@ -98,11 +98,11 @@ babel拥有广泛的插件在[这边获得](https://babeljs.io/docs/plugins/)
 
 `.babelrc` 是一个非常简洁的JSON文件，它可以分离出你的Babel相关的配置。它也是非常易于上手的。以下是本教程的`.babelrc` 文件。
 
-{% highlight JavaScript %}
+```
 {
   "plugins": ["es2015", "stage-0"]
 }
-{% endhighlight %}
+```
 
 你可以配置其他[`.babelrc` 选项](http://babeljs.io/docs/usage/options/)，确保它和你一样强大。
 
@@ -120,7 +120,7 @@ babel拥有广泛的插件在[这边获得](https://babeljs.io/docs/plugins/)
 
 这边有一个 `code/error.js` 文件会抛出一个异常在生成器的第二次 `yield`后。编译后的代码完全和源文件是不同的。
 
-{% highlight JavaScript %}
+```js
 function* errorFulGenerator() {
   yield "yo";
   throw new Error("source maps are awesome");
@@ -130,7 +130,7 @@ function* errorFulGenerator() {
 var errorGen = errorFulGenerator();
 errorGen.next();
 errorGen.next();
-{% endhighlight %}
+```
 
 我们使用如下命令去给 **编译后的文件** 生成 **source maps**。*注意使用`--source-maps` 标签*:
 
@@ -164,11 +164,11 @@ errorGen.next();
 为了能每一次都非常简单的使用编译命令，你可以更新你的 `package.json` 文件去为Babel加一个构建命令。在 `package.json` 的 `script` 对象你可以如下添加构建命令。
 
 
-{% highlight JavaScript %}
+```js
 "scripts": {
   "build": "babel -w code/ -d build -s"
 }
-{% endhighlight %}
+```
 
 现在，我们运行：
 

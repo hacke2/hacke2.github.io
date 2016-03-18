@@ -23,7 +23,7 @@ ECMAScript 2015 (ES6) 介绍了两个新的概念，它们密切相关: **iterab
 
 请看下面的demo：
 
-{% highlight JavaScript %}
+```js
 //推荐google浏览器，执行报错的话，说明你的浏览器不支持这两个新的特征，我用的是google chrome v45.0,顺利执行
 let iterable = [1, 2, 3];
 for (let item of iterable) {
@@ -44,7 +44,7 @@ let notIterable = {name:'alibaba'};
 for(let item of notIterable){
 	console.log(item) // 执行报错！原因很简单，普通Oject并不是可遍历对象
 }
-{% endhighlight %}
+```
 
 [for-of](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/for...of) 语法支持可遍历对象, 因此我们可以这种规范的遍历语法去遍历实现了Iterable接口的对象。
 
@@ -58,7 +58,7 @@ for(let item of notIterable){
 
 Iterable接口允许自定义遍历行为，请看下面的例子，我们讲对象的遍历行为设置为数组的遍历行为，让对象能像数组那样遍历：
 
-{% highlight JavaScript %}
+```js
 let iterable = {
 	0: 'a',
 	1: 'b',
@@ -70,7 +70,7 @@ for (let item of iterable) {
 	console.log(item); // 'a', 'b', 'c'
 }
 //这个还是比较实用的，毕竟在es5中Oject遍历用for in不是很简洁。
-{% endhighlight %}
+```
 
 现在你可能会问：**"怎样才能自定义遍历行为？"**<br>
 我们已经知道：添加一个`[Symbol.iterator]`可以让一个对象变为可遍历的，但是需要注意一点的是：`[Symbol.iterator]`方法必须返回一个 *iterator object* ，就是这个iterator object负责完成遍历逻辑。不要急，在下一个部分我们介绍它的。
@@ -87,7 +87,7 @@ for (let item of iterable) {
 
 下面例子介绍如何使用遍历器去遍历数组：
 
-{% highlight JavaScript %}
+```js
 let iterable = ['a', 'b', 'c'];
 
 
@@ -100,11 +100,11 @@ iterator.next(); // { value: 'b', done: false }
 iterator.next(); // { value: 'c', done: false }
 iterator.next(); // { value: undefined, done: true }
 
-{% endhighlight %}
+```
 
 最开始的例子我们不是使用for-of的语法么！现在我们来看一下for-of语法的内部实现方式：
 
-{% highlight JavaScript %}
+```js
 let iterable = ['a', 'b', 'c'];
 
 
@@ -117,10 +117,11 @@ for (let item of iterable) {
 for (let _iterator = iterable[Symbol.iterator](), _result, item; _result = _iterator.next(), item = _result.value, !_result.done;) {
 	console.log(item); // 'a', 'b', 'c'
 }
-{% endhighlight %}
+```
+
 现在我们知道了iterables和iterators后，现在我们可以创建自定义遍历行为的可遍历对象了。首先，我们先来自己实现一个类似数组遍历行为的遍历器：
 
-{% highlight JavaScript %}
+```js
 let iterable = {
 	0: 'a',
 	1: 'b',
@@ -143,7 +144,8 @@ let iterable = {
 for (let item of iterable) {
 	console.log(item); // 'a', 'b', 'c'
 }
-{% endhighlight %}
+```
+
 额，这个看起来是有点复杂，不清晰，但是不要慌，让我们仔细的分析下它。
 
 我们一开始用JavaScript本文化特征语法创建了一个对象。并且用 [computed properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) 和 [shorthand methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) ES2015 本文化扩展语法给这个对象定义了一个`[Symbol.iterator]`方法，这个对象有了`[Symbol.iterator]`方法，因此他也成了一个可遍历对象。
@@ -163,7 +165,7 @@ next方法返回了一个由value和done属性组成的对象，语法很简洁�
 
 原因是：如果直接是一个遍历器，当你同时想多次遍历时，就不能实现了，同时多次遍历这个可能有点难理解，请看下面的代码：
 
-{% highlight JavaScript %}
+```js
 let iterable = [1, 2, 3, 4];
 let iterator1 = iterable[Symbol.iterator]();
 let iterator2 = iterable[Symbol.iterator]();
@@ -177,7 +179,7 @@ iterator2.next(); // { value: 3, done: false }
 iterator1.next(); // { value: 2, done: false }
 
 //可以看到iterator1和iterator2是互不影响的
-{% endhighlight %}
+```
 
 这个例子很勉强，重复遍历相同的数据事时上不太常见。但是异步处理迭代之间的每个值，这在[Koa](http://koajs.com/)和[co](https://github.com/tj/co)中就很好地表现了这一点。尽管它们是利用生成器函数返回的遍历器。
 
@@ -189,7 +191,7 @@ iterator1.next(); // { value: 2, done: false }
 
 请看下面的代码：
 
-{% highlight JavaScript %}
+```js
 let iterable = [1, 2];
 
 let it = iterable[Symbol.iterator]();
@@ -201,7 +203,7 @@ it.next() // { value: "b", done: false }
 //明明只有2个元素，为毛非要遍历三次，才算遍历完成，蛋疼？？？？！！！！
 it.next() // { value: undefined, done: true }
 
-{% endhighlight %}
+```
 
 当`next`方法返回的结果`done`属性为`true`时，遍历才算完成，并且`value`属性的值为`undefined`。遍历器让value和`down:true`的对象为返回值，是为了让这个`down:true`的对象作为一个遍历完成的标志，并不是一个遍历的元素。例如在`for-of`,`Array.from`的内部实现里，它们都会忽略掉这个返回值。
 
@@ -209,7 +211,7 @@ it.next() // { value: undefined, done: true }
 
 是的，这样是可以的。请看下面的例子：
 
-{% highlight JavaScript %}
+```js
 let echoIterator = {
 	next(value) {
 		return { value, done: false };
@@ -217,7 +219,7 @@ let echoIterator = {
 };
 
 echoIterator.next(42); // { value: 42, done: false }
-{% endhighlight %}
+```
 
 正如上面的例子一样，你在自定义的遍历器里，是可以给next方法配置参数的！但是这种遍历器如果使用`for-of`或`Array.from`这些语法时，就会发生异常，因为`for-of`在调用你的next方法时并不会传递参数给next方法。所以请慎用这种方式。
 
@@ -239,7 +241,7 @@ echoIterator.next(42); // { value: 42, done: false }
 
 请看下面的例子：
 
-{% highlight JavaScript %}
+```js
 let iterable = [1, 2];
 let iterator = iterable[Symbol.iterator]();
 
@@ -254,11 +256,11 @@ var iterator4 = iterator[Symbol.iterator]();
 iterator == iterator3 == iterator4 // true
 //iterator3和iterator4都是指向的是iterator,iterator和iterator3和iterator4其实是一个对象所以它们是相等的。
 
-{% endhighlight %}
+```
 
 这是一个简单的可遍历的遍历器：
 
-{% highlight JavaScript %}
+```js
 let iterableIterator = {
 
 	next() {/*...*/},
@@ -267,7 +269,7 @@ let iterableIterator = {
 		return this;
 	}
 };
-{% endhighlight %}
+```
 
 现在你可能会问：**这样有什么用啊? 然并卵？**
 
@@ -281,7 +283,7 @@ let iterableIterator = {
 假设现在有一个方法A,方法A接收的参数是一个Iterable Object(方法A是干啥的你先不要关心),但是你现在传递了一个iterator对象给方法A,试想一下如果iterotor对象里没有`[Symbol.iterator]`方法，那方法A肯定不能顺利执行了。所以当给iterator对象添加`[Symbol.iterator]`方法后，任何需要参数为Iterable object的函数，你传给这个函数一个iterator对象，这个函数还是能正常work。希望我这样解释`通用`大家能明白。
 
 
-{% highlight JavaScript %}
+```js
 let arr = ['a', 'b'];
 let keysIterator = arr.keys(); // 获取遍历器
 
@@ -293,7 +295,7 @@ for (let key of keysIterator) {
 	console.log(key); // 0, 1 (the array indexes)
 }
 
-{% endhighlight %}
+```
 
 ## 可能会中枪的小细节
 
@@ -301,7 +303,7 @@ for (let key of keysIterator) {
 
 请看下面的例子：
 
-{% highlight JavaScript %}
+```js
 let iterable = [1, 2, 3, 4];
 
 let iterator = iterable[Symbol.iterator]();
@@ -320,7 +322,7 @@ for (let item of iterator) {
 for (let item of iterable[Symbol.iterator]()) {
 	console.log(item); // 1, 2, 3, 4
 }
-{% endhighlight %}
+```
 
 原因就不在多说了，相信大家都懂的。
 

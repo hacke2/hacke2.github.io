@@ -79,7 +79,7 @@ flexbox布局我估计是仿照**flex***布局方式。由于主流移动端都�
 
 1.设置`target-densitydpi=device-dpi`，采用按照真实比例来展示，然后进行媒体查询技术如下面代码：
 
-{% highlight css %}
+```css
 #header {
 background:url (medium-density-image.png);
 }
@@ -91,7 +91,7 @@ background:url (medium-density-image.png);
 /* CSS for low-density screens */
 #header { background:url (low-density-image.png);}
 }
-{% endhighlight %}
+```
 
 这样有一个弊端就是：需要为每一种分辨率书写单独的代码。
 
@@ -123,16 +123,16 @@ rem单位
 
 在了解了px,em,rem的区别后，我们可以进行如下设置：
 
-{% highlight css %}
+```css
 html { font-size: 62.5%; } 
 body { font-size: 14px; font-size: 1.4rem; }
-{% endhighlight %}
+```
 
 我们在写大小的时候通过一些简单的计算就可以了，比如的拿到的设计稿有一一部分为18px的文字，那我们在写代码的时候就可以写：
 
-{% highlight css %}
+```css
 p : {font-size:18px；font-size:1.8rem}/*(1.8 x 10=18)*/
-{% endhighlight %}
+```
 
 ## 动画
 

@@ -20,18 +20,18 @@ share: true
 首先要解决的问题是怎么用命令行来做一些操作。我打算用命令行生成模板，有一个模块`commander`实现很方便。
 定义一个帮助命令
 
-{% highlight JavaScript %}
+```js
 program
 	.command('help')
 	.description('show help')
 	.action(() => {
 		program.outputHelp();
 	});
-{% endhighlight %}
+```
 
 在定义其他命令
 
-{% highlight JavaScript %}
+```js
 
 program
 	.command('create [dir]')
@@ -51,7 +51,7 @@ program
 
 program.parse(process.argv);
 
-{% endhighlight %}
+```
 
 我们定义了三条命令:
 
@@ -63,7 +63,7 @@ program.parse(process.argv);
 
 在创建的时候会把之前的一些模板文章生成到用户文件下，因为本模块是安装在全局的，运行该命名会把一些静态资源文件、模板、配置文件等输出出来供用户修改。
 
-{% highlight JavaScript %}
+```js
 
 try {
 	  	//create template dir
@@ -82,13 +82,13 @@ try {
 		console.error(e);
 	}
 	
-{% endhighlight %}
+```
 
 ## 预览
 
 预览就是用express启动一个web项目。开启一个Node.js web项目最简单无异于是用express框架了。我是用jade当做模板引擎，因为其提供的block和include实在是太强大了。
 
-{% highlight JavaScript %}
+```js
 
 	let app = express();
 
@@ -100,7 +100,7 @@ try {
 	app.set('views', path.join(__dirname, '../_layout/pages'));
 	app.set('view engine','jade')
 	
-{% endhighlight %}
+```
 
 我们设置好静态目录和模板引擎，就可以编写重要的路由了。在一个简单的博客系统，无外乎有两个重要的路由：
 
@@ -109,7 +109,7 @@ try {
 
 对应路由如下：
 
-{% highlight JavaScript %}
+```js
 //render index
 	app.get('/', (req, res, next) => {
 		//...
@@ -119,11 +119,11 @@ try {
 app.get('/posts/:articleName', (req, res, next) => {
 	//...
 });
-{% endhighlight %}
+```
 
 最后，我们想启动的时候就能打开默认浏览器，这里，我参考了一下[新杰的代码](https://github.com/freeyiyi1993/mobile-test/blob/master/server.js#L25)：
 
-{% highlight JavaScript %}
+```js
 // open browers
 	app.listen(app.get('port'), () => {
 
@@ -138,28 +138,28 @@ app.get('/posts/:articleName', (req, res, next) => {
 	        }
 	    })
 	})
-{% endhighlight %}
+```
 
 ### 解析markdown
 
 解析markdown Node.js已经提供了封装好得模块`markdown-it`，我们设置参数调用就可以直接调用。
 
-{% highlight JavaScript %}
+```js
 let md = new MarkdownIt({
     html: true,
     langPrefix: 'code-',
 });
-{% endhighlight %}
+```
 
 一篇文章应该有他的一些特征，比如像Jekyll一样：标题、标签、背景图等。
 
 我在markdown下有如下设置：
 
-{% highlight HTML %}
+```html
 ---
 title : 我是标题
 ---
-{% endhighlight %}
+```
 
 然后需要有一个[函数来解析](https://github.com/hacke2/wooden/blob/master/lib%2Futils.js#L55)
 
@@ -167,7 +167,7 @@ title : 我是标题
 
 也需要解析一下
 
-{% highlight JavaScript %}
+```js
 let getArticleDate = title =>{
     let arr = title.split('-'),
     result = [];
@@ -177,7 +177,7 @@ let getArticleDate = title =>{
     }
     return result.join('-');
 }
-{% endhighlight %}
+```
 
 ### 异步调用
 
@@ -185,7 +185,7 @@ let getArticleDate = title =>{
 
 下面是的获取首页
 
-{% highlight JavaScript %}
+```js
 let getArticle = name => {
     return new Promise((resolve, reject) => {
         
@@ -209,11 +209,11 @@ let getArticle = name => {
         
     })
 }
-{% endhighlight %}
+```
 
 下面是的获取某一篇文章
 
-{% highlight JavaScript %}
+```js
 let getArticle = name => {
     return new Promise((resolve, reject) => {
         
@@ -237,13 +237,13 @@ let getArticle = name => {
         
     })
 }
-{% endhighlight %}
+```
 
 ### 渲染jade
 
 jade提供个强大的include 和 block。我们创建一个框架，其他页面继承它。
 
-{% highlight HTML %}
+```jade
 doctype
 html
 	head
@@ -257,17 +257,17 @@ html
 		block content
 		include ./includes/js
 		block page_js
-{% endhighlight %}
+```
 
 它包含css模板和js模板，页面放在content里
 
-{% highlight HTML %}
+```jade
 block content
-{% endhighlight %}
+```
 
 首页来继承它
 
-{% highlight HTML %}
+```jade
 extends ../layout
 
 block page_css
@@ -282,7 +282,7 @@ block content
 				li(class="article")
 					a(href="#{article.href}#{isBuild ? '.html' : ''}", class="article-title") #{article.title}
 					div.abstract #{article.abstract}
-{% endhighlight %}
+```
 
 文章列表也也是如此，在此不展开了。
 
@@ -292,7 +292,7 @@ block content
 
 我们在创建新的md文件后，需要将它编译成html，也是调用之前预览的方法来生成html。
 
-{% highlight JavaScript %}
+```js
 utils.getIndexData().then(data => {
 
 		data.isBuild = true;
@@ -313,15 +313,15 @@ utils.getIndexData().then(data => {
 			});
 		
 	});
-{% endhighlight %}
+```
 
 ## 发布
 
 想让这个命令不是用Node xxx.js来运行，直接是用xxx来运行，需要在bin目录下创建一个文件，将commande这个入口js拷进去，然后在开头输入
 
-{% highlight HTML %}
+```shell
 #!/usr/bin/env node --harmony
-{% endhighlight %}
+```
 
 因为此项目运用了es6的一些特性，需要使用`--harmony`来开启支持。
 

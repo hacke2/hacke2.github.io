@@ -37,7 +37,7 @@ share: true
 
 数据封装在data.js里
 
-{% highlight JavaScript %}
+```js
 var data = [];
 
 data.push({
@@ -65,14 +65,14 @@ data.push({
 });
 
 //...
-{% endhighlight %}
+```
 
 
 我们讲以前的HTML写成一个模板
 
 展示区模板
 
-{% highlight HTML %}
+```html
 <div id="temp_li" style="display: none;">
 	<li data-id="{i}" class="transform">
 		<div>
@@ -83,11 +83,11 @@ data.push({
 		<img src="{pic}">
 	</li>
 </div>
-{% endhighlight %}
+```
 
 弹出层模板
 
-{% highlight HTML %}
+```html
 <div id="dialog"  class="box_ovo ">
 	<span id="close" class="close"><i></i></span>
 	<span class="prev"><i></i></span>
@@ -106,11 +106,12 @@ data.push({
 		</div>
 	</div>
 </div>
-{% endhighlight %}
+```
 
 
 然后用一下代码弄到HTML里面
-{% highlight JavaScript %}
+
+```js
 //获取LI模板HTML
 var tempLi = document.getElementById('temp_li').innerHTML;
 //HTML + 数据最后放到这个数组里
@@ -141,11 +142,12 @@ function openDialog(dataIndex) {
 	bg.className += ' current';
     dialog.className += ' current';
 }
-{% endhighlight %}
+```
+
 
 因为HTML是动态生成的，直接不能加绑定事件，所以使用事件委托
 
-{% highlight JavaScript %}
+```js
 //给每一个li加事件
 ul.onclick = function(event) {
 	var e = event || window.event;
@@ -196,7 +198,7 @@ dialog.onclick = function(){
 	}
     
 }
-{% endhighlight %}
+```
 
 其中，弹出层里有三个动作；
 
@@ -209,7 +211,7 @@ dialog.onclick = function(){
 因为我们点击的时候有可能点到SPAN，有可能点到DIV(原因看展示区模板)，所以要有个函数来
 找到顶层的LI,因为关闭有一个动画效果，我看了CSS是0.3s，所以我们加一个定时器做一个回调
 
-{% highlight JavaScript %}
+```js
 //找到最顶层LI
 function getLiByChild(element) {
 	var li = element;
@@ -229,7 +231,7 @@ function closeDialog(func) {
     	}
     },300);
 }
-{% endhighlight %}
+```
 
 # <a target="_blank"  href="https://github.com/hacke2/">获取代码</a><br/>
 

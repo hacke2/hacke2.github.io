@@ -31,13 +31,13 @@ cn node说的很清楚，在这里就不细表
 
 <!--more-->
 
-{% highlight JavaScript %}
+```js
 {
 	//这里加了一句关闭
 	"cmd": ["taskkill /F /IM node.exe", ""],
 	"cmd": ["node", "$file"]
 }
-{% endhighlight %}
+```
 
 
 <figure>
@@ -52,7 +52,7 @@ cn node说的很清楚，在这里就不细表
 
 完整Nodejs.sublime-build
 
-{% highlight JavaScript %}
+```js
 {
   "cmd": ["node", "$file"],
   "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
@@ -69,7 +69,7 @@ cn node说的很清楚，在这里就不细表
         "cmd": ["killall node; node", "$file"]
     }
 }
-{% endhighlight %}
+```
     
     
 

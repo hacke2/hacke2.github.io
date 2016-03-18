@@ -9,7 +9,7 @@ comments: true
 share: true
 ---
 
-{% highlight JavaScript %}
+```js
 {
   "name": "hacke2",
   "description": "",
@@ -23,7 +23,7 @@ share: true
   "location": "北京",
   "workAt": "Alibaba Inc."
 }
-{% endhighlight %}
+```
 
 
 

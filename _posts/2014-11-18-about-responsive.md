@@ -158,18 +158,18 @@ share: true
 
 下面一个简单的示例：
 
-{% highlight CSS %}
+```css
 @media sreen and (min-width: 320px) {
 	
 }
-{% endhighlight %}
+```
 
 
 另外，媒体查询也可以使用在外部样式上，如：
 
-{% highlight html %}
+```html
 <link media="only sceen and (min-width:1300px)" type="text/css" href="style.css">
-{% endhighlight %}
+```
 
 ### 关于断点
 
@@ -192,11 +192,11 @@ share: true
 
 一般的，在IE9一下，加载下列CSS
 
-{% highlight html %}
+```html
 <!--[if lt IE 9]>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
-{% endhighlight %}
+```
 
 ## 图片和视频
 
@@ -214,11 +214,11 @@ JS提供了一个方法：`window.matchMedia`，可以把CSS媒体查询作为�
 
 使用方法：
 
-{% highlight JavaScript %}
+```js
 if(window.matchMedia('(min-width:320px)').matches) {
 	//其他代码
 }
-{% endhighlight %}
+```
 
 我们可以利用他来加载合适的图片。
 
@@ -245,11 +245,11 @@ if(window.matchMedia('(min-width:320px)').matches) {
 
 视频的方式与上面类似，可以使用`媒体查询`和`js matchMedia`，当然，用设备看视频的一般是WIFI下，所以直接使用`max-width:100%;height:auto;`也是可以的。如果是连接站外资源，如`优酷`难么，一般解决方法是放到一个iframe里面，详情请看[站外引用的优酷视频，怎样让视频高度自适应？](http://bbs.csdn.net/topics/390600207)
 
-{% highlight JavaScript %}
+```js
 <div style="width:320px;height:180px" >
      <iframe height="100%" width="100%" src="http://player.youku.com/embed/XNjA3NjQ0MzE2" frameborder=0 allowfullscreen></iframe>
 </div>
-{% endhighlight %}
+```
 
 ## 总结
 

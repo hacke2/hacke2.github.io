@@ -17,31 +17,31 @@ share: true
 
 让`let`和`const`创造块级作用域，他仅仅存在于包裹他们的最内层的块。下面代码演示了使用`let`修饰的`tmp变量`仅仅存在于最里层的`if`申明里。
 
-{% highlight JavaScript %}
+```js
 function func() {
     if (true) {
         let tmp = 123;
     }
     console.log(tmp); // tmp未定义
 }
-{% endhighlight %}
+```
 
 相比之下，用var申明的变量在函数级作用域
 
 <!--more-->
 
-{% highlight JavaScript %}
+```js
 function func() {
     if (true) {
         var tmp = 123;
     }
     console.log(tmp); // 123
 }
-{% endhighlight %}
+```
 
 块级作用域意味着你在函数里只要是两个不同的块，那么变量名称可以重复。（原文为**影子变量**）
 
-{% highlight JavaScript %}
+```js
 function func() {
     let foo = 5;
     if (···) {
@@ -50,47 +50,47 @@ function func() {
     }
     console.log(foo); // 5
 }
-{% endhighlight %}
+```
 
 ## 2.`const`创建不可变的变量
 
 由`let`创建的变量是可变的
 
-{% highlight JavaScript %}
+```js
 let foo = 'abc';
 foo = 'def';
 console.log(foo); // def
-{% endhighlight %}
+```
 
 `const`创建变量是不可变的
 
-{% highlight JavaScript %}
+```js
 const foo = 'abc';
 foo = 'def'; // TypeError
-{% endhighlight %}
+```
 
 注意，`const`并不影响所赋的值是否可变，如果所赋的值是一个对象，那么并不能保证该对象不变。他只是保存一个对象的引用。
 
-{% highlight JavaScript %}
+```js
 const obj = {};
 obj.prop = 123;
 console.log(obj.prop); // 123
 
 obj = {}; // TypeError
-{% endhighlight %}
+```
 
 如果你想改变量是真正不可变的，那么直接[冻结他的值](http://speakingjs.com/es5/ch17.html#freezing_objects)
 
-{% highlight JavaScript %}
+```js
 const obj = Object.freeze({});
 obj.prop = 123; // TypeError
-{% endhighlight %}
+```
 
 ### 2.1 循环体内的const
 
 一旦`const`变量创建，那么他就不能改变。但这并不意味着你不能重新声明一个新值，比如在循环体内。
 
-{% highlight JavaScript %}
+```js
 function logArgs(...args) {
     for (let [index, elem] of args.entries()) {
         const message = index + '. ' + elem;
@@ -102,29 +102,29 @@ logArgs('Hello', 'everyone');
 // Output:
 // 0. Hello
 // 1. everyone
-{% endhighlight %}
+```
 
 ### 2.2 什么时候我该使用let，什么时候该使用const？
 
-{% highlight JavaScript %}
+```js
 const foo = 1;
 foo++; // TypeError
-{% endhighlight %}
+```
 
 如果你想创建的可变变量为基本类型，则，不能使用const。
 
 不过你可以使用`const`修饰引用类型的变量。
 
-{% highlight JavaScript %}
+```js
 const bar = [];
 bar.push('abc'); // array是可变的
-{% endhighlight %}
+```
 
 按照最佳实践，一般会把常量(真正不变的)使用大写来表示。
 
-{% highlight JavaScript %}
+```js
 const EMPTY_ARRAY = Object.freeze([]);
-{% endhighlight %}
+```
 
 ## 3.临时禁区(TDZ)
 
@@ -145,7 +145,7 @@ const EMPTY_ARRAY = Object.freeze([]);
 
 在TDZ中，如果获取或者设置一个未初始化会抛出异常。
 
-{% highlight JavaScript %}
+```js
 if (true) { // 一个新的作用域, TDZ 开始
     //tmp未初始化
     tmp = 'abc'; // ReferenceError
@@ -157,11 +157,11 @@ if (true) { // 一个新的作用域, TDZ 开始
     tmp = 123;
     console.log(tmp); // 123
 }
-{% endhighlight %}
+```
 
 下面例子演示了TDZ是临时的(基于时间)的而不是基于位置的：
 
-{% highlight JavaScript %}
+```
 if (true) { // 一个新的作用域, TDZ 开始
     const func = function () {
         console.log(myVar); // OK!
@@ -172,33 +172,33 @@ if (true) { // 一个新的作用域, TDZ 开始
     let myVar = 3; TDZ 结束
     func(); // called outside TDZ
 }
-{% endhighlight %}
+```
 
 ### 3.1TDZ的类型检查
 
 一个变量不能再TDZ里访问意味着你也不能在该变量使用`typeof`
 
-{% highlight JavaScript %}
+```js
 if (true) {
     console.log(typeof tmp); // ReferenceError
     let tmp;
 }
-{% endhighlight %}
+```
 
 我不认为这将在实践中是一个问题。因为你不能有条件的给某一个作用域加上`let`修饰符。事实上你仍然可以使用`var`修饰符创建全局变量
 
-{% highlight JavaScript %}
+```js
 if (typeof myVarVariable === 'undefined') {
     // `myVarVariable`不存在，则创建它
     window.myVarVariable = 'abc';
 }
-{% endhighlight %}
+```
 
 ## 4.在循环体的头部中使用`let`修饰符
 
 在循环体中，你每次迭代重新绑定用`let`修饰的变量。允许你这样做的循环:`for`, `for-in`和`for-of` 。
 
-{% highlight JavaScript %}
+```js
 if (typeof myVarVariable === 'undefined') {
     let arr = [];
     for (let i=0; i < 3; i++) {
@@ -206,11 +206,11 @@ if (typeof myVarVariable === 'undefined') {
     }
     console.log(arr.map(x => x())); // [0,1,2]
 }
-{% endhighlight %}
+```
 
 相比之下，用var声明的循环体中，，每次迭代室友一个单一的值
 
-{% highlight JavaScript %}
+```js
 if (typeof myVarVariable === 'undefined') {
     let arr = [];
     for (var i=0; i < 3; i++) {
@@ -218,7 +218,7 @@ if (typeof myVarVariable === 'undefined') {
     }
     console.log(arr.map(x => x())); // [3,3,3]
 }
-{% endhighlight %}
+```
 
 为每次迭代得到一个新的绑定似乎有些奇怪,但当你使用循环创建函数(例如回调事件处理)它是非常有用。
 
@@ -228,43 +228,43 @@ if (typeof myVarVariable === 'undefined') {
 
 如果你声明的变量名正好与形参一致，那么会爆出一个静态错误
 
-{% highlight JavaScript %}
+```js
 function func(arg) {
     let arg; // static error: duplicate declaration of `arg`
 }
-{% endhighlight %}
+```
 
 在函数里面再嵌套一个块则会避免这个问题
 
-{% highlight JavaScript %}
+```js
 function func(arg) {
     {
         let arg; // 影子参数 `arg`
     }
 }
-{% endhighlight %}
+```
 
 相比之下,用`var`修饰的与形参同名的变量不会出现错误，表现的形式是覆盖了形参。
 
-{% highlight JavaScript %}
+```js
 function func(arg) {
     var arg; // does nothing
 }
-{% endhighlight %}
+```
 
-{% highlight JavaScript %}
+```js
 function func(arg) {
     {
         var arg; // does nothing
     }
 }
-{% endhighlight %}
+```
 
 ### 5.2 默认形参与TDZ
 
 如果形参有默认值,他们被当做一个序列
 
-{% highlight JavaScript %}
+```js
 // OK: 声明之后访问x
 function foo(x=1, y=x) {
     return [x, y];
@@ -276,13 +276,13 @@ function bar(x=y, y=2) {
     return [x, y];
 }
 bar(); // ReferenceError
-{% endhighlight %}
+```
 
 ### 5.3 默认形参与TDZ
 
 形参默认值的范围是独立于body的作用域(前者围绕后者)。这意味着“inside”定义的方法或函数参数的默认值不知道body的局部变量。
 
-{% highlight JavaScript %}
+```js
 // OK: 在x已经声明后y访问x
 function foo(x=1, y=x) {
     return [x, y];
@@ -294,7 +294,7 @@ function bar(x=y, y=2) {
     return [x, y];
 }
 bar(); // ReferenceError
-{% endhighlight %}
+```
 
 ## 6.全局对象
 
@@ -313,7 +313,7 @@ JS中的全局对象(浏览器是`windows`，Node.js是global)的bug比特性还
 
 下面代码解释了声明提升
 
-{% highlight JavaScript %}
+```js
 { // Enter a new scope
 
     console.log(foo()); // OK, due to hoisting
@@ -321,7 +321,7 @@ JS中的全局对象(浏览器是`windows`，Node.js是global)的bug比特性还
         return 'hello';
     }
 }
-{% endhighlight %}
+```
 
 类的声明：
 
@@ -331,7 +331,7 @@ JS中的全局对象(浏览器是`windows`，Node.js是global)的bug比特性还
 
 类不升起可能令人惊讶,因为他们创建函数。这种行为的理由是,他们继承条款定义的值通过表达式,表达式必须在适当的时间执行。
 
-{% highlight JavaScript %}
+```js
 { // 进入新的作用域
     
     const identity = x => x;
@@ -343,7 +343,7 @@ JS中的全局对象(浏览器是`windows`，Node.js是global)的bug比特性还
     class MyClass extends identity(Object) {
     }
 }
-{% endhighlight %}
+```
 
 ## 8.扩展阅读
 

@@ -19,7 +19,7 @@ JavaScript也很相似，看以下例子：
 
 <!--more-->
 
-{% highlight Python%}
+```python
 # Python
 x = 1 # 全局变量
 y = 3
@@ -27,10 +27,10 @@ y = 3
 def sum(a, b):
     s = a + b # 局部变量
     return s
-{% endhighlight %}
+```
 
 
-{% highlight JavaScript%}
+```js
 // JavaScript
 var x = 1;  // 全局变量
 var y = 3;
@@ -39,19 +39,19 @@ function sum(a, b) {
     var s = a + b;  // 局部变量
     return s;
 }
-{% endhighlight %}
+```
 
 以C语言为基础而衍生出来的语言(JavaScript, PHP)一般是块级作用域，但JavaScript却不是，当你在一个函数体内声明一个变量，他会在父级或者全局来寻找这个变量，这种行为叫做`变量提升`，与其他语言不同，JavaScript会在`for循环`外面使用这些变量。
 
 看下面这个例子
 
-{% highlight JavaScript%}
+```js
 // JavaScript
 for (var i = 0; i <= 2; i += 1) {
     console.log(i); // current i
 }
 console.log(i); // last i
-{% endhighlight %}
+```
 
 在这个例子中，i竟然可以在循环外面被访问到！这在其他语言是不可思议的！这是很常见的问题，但JS程序员不见得都会关注它。
 
@@ -63,7 +63,7 @@ let在ES6中出现是为了`代替`var。是的，我们的想法是在未来停
 
 例子：
 
-{% highlight JavaScript%}
+```js
 let foo = true;
 if  (foo) {
     let bar = 'baz';
@@ -75,7 +75,7 @@ try {
 } catch (e) {
     console.log("bar doesn't exist");
 }
-{% endhighlight %}
+```
 
 正如你想看到的,`let`会解决在for循环变量的问题。
 

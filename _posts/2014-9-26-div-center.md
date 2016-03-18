@@ -18,21 +18,21 @@ share: true
 
 把行内元素嵌套在一个DIV中，并且在DIV中设置以下样式
 
-{% highlight CSS %}
+```css
 	a{
 		text-align: center;
 	}
-{% endhighlight %}
+```
 
 ## 块级元素
 
 对于定宽的块级元素，我们要设置起margin-top,margin-right 为auto
 
-{% highlight CSS %}
+```css
 	.center{
 		margin: 0 auto;
 	}
-{% endhighlight %}
+```
 
 ## 多个块级元素(inline-block)
 
@@ -40,22 +40,22 @@ share: true
 
 <!--more-->
 
-{% highlight CSS %}
+```css
 	div{
 		text-align: center;
 	}
-{% endhighlight %}
+```
 
 ## 多个块级元素(flex)
 
 设置需要水平居中的块状元素的父元素display为flex ，并且justify-content属性为center即可
 
-{% highlight CSS %}
+```css
 	body{
 	  display: flex;
 	  justify-content: center;
 	}
-{% endhighlight %}
+```
 
 # 垂直居中
 
@@ -63,31 +63,31 @@ share: true
 
 将行内元素的height和line-height设置为一致即可
 
-{% highlight CSS %}
+```css
 	a{
 	  height: 200px;
 	  line-height:200px;  
 	}
-{% endhighlight %}
+```
 
 ## 多行 行内元素
 
 如果行内元素文字过多产生多行，则在父级元素设置display: table-cell;vertical-align:middle;
 
-{% highlight CSS %}
+```css
 	.container{
 		width: 300px;
 		height: 300px;
 		display: table-cell;
 		vertical-align:middle;
 	}
-{% endhighlight %}
+```
 
 ## 已知高度的块级元素
 
 将块级元素设置绝对定位，top为50%，margin-top:-height/2
 
-{% highlight CSS %}
+```css
 	div{
 	  height: 100px;
 	  position: absolute;
@@ -95,13 +95,13 @@ share: true
 	  margin-top: -50px;
 	  padding:0; 
 	}
-{% endhighlight %}
+```
 
 ## 未知高度的块级元素
 
 使用CSS translate,将块级元素设置绝对定位，top为50%，transform: translateY(-50%);
 
-{% highlight CSS %}
+```css
 	div{
 	  position: absolute;
 	  top: 50%;
@@ -110,7 +110,7 @@ share: true
 	  transform: translateY(-50%);
 	  padding:0; 
 	}
-{% endhighlight %}
+```
 
 # 水平垂直居中
 
@@ -118,7 +118,7 @@ share: true
 
 将块级元素设置绝对定位，top为50%，left:50%;margin-top:-height/2;margin-left:-width/2
 
-{% highlight CSS %}
+```css
 	div{
 		width: 150px;
 		height: 150px;
@@ -128,25 +128,25 @@ share: true
 		margin-top: -75px;
 		margin-left: -75px;
 	}
-{% endhighlight %}
+```
 
 ## 已知高度、宽度的元素(flex)
 
 给父级使用flex布局
 
-{% highlight CSS %}
+```css
 	div{
 		display: flex;
 		justify-content:center;
 		align-items: center;
 	}
-{% endhighlight %}
+```
 
 ## 未知高度、宽度的元素
 
 使用CSS translate
 
-{% highlight CSS %}
+```css
 	div{
 	    position:absolute;
 		top:50%;
@@ -155,7 +155,7 @@ share: true
 		-moz-transform:translate(-50%,-50%);
 		transform:translate(-50%,-50%);
 	}
-{% endhighlight %}
+```
 
 
 

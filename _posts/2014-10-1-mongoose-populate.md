@@ -22,7 +22,7 @@ share: true
 
 ClazzSchema ： 
 
-{% highlight JavaScript %}
+```js
 var mongoose = require('mongoose')
 
 var ClazzSchema = new mongoose.Schema({
@@ -33,11 +33,11 @@ var ClazzSchema = new mongoose.Schema({
 
 module.exports = ClazzSchema
 
-{% endhighlight %}
+```
     
 StudentSchema ： 
 
-{% highlight JavaScript %}
+```js
 var mongoose = require('mongoose')
 
 var StudentSchema = new mongoose.Schema({
@@ -59,33 +59,33 @@ StudentSchema.statics = {
 
 module.exports = StudentSchema
 
-{% endhighlight %}
+```
 
 可以看到，主需要将ClazzID设为ref到Clazz,依赖为你建立Model时的名称就可以了,要查询Clzz使用populate
 
 下面是Model
 
-{% highlight JavaScript %}
+```js
 var mongoose = require('mongoose')
 var ClazzSchema = require('../schemas/clazzSchema')
 var Clazz = mongoose.model('Clazz',ClazzSchema)
 
 
 module.exports  = Clazz 
-{% endhighlight %}
+```
 
-{% highlight JavaScript %}
+```js
 var mongoose = require('mongoose')
 var StudentSchema = require('../schemas/studentSchema')
 var Student = mongoose.model('Student',StudentSchema)
 
 
 module.exports  = Student 
-{% endhighlight %}
+```
 
 大同小异，着重看test.js
 
-{% highlight JavaScript %}
+```js
 var mongoose = require('mongoose')
 var Clazz = require('./models/clazzModel')
 var Student = require('./models/studentModel')
@@ -114,17 +114,17 @@ Student.findClazzNameByStudentId('542b600a683d59a80d4ee632', function (err, stud
 	if(err) console.log(err);
 	console.log(student.clazzID.clazzName);
 })
-{% endhighlight %}
+```
 
 之前添加了两班级：软件一班和软件二班
 
 我们在新增hacke2时将classID设为软件2班的，查新hacke2时自动就会把关键的
 Class查询到
 
-{% highlight JavaScript %}
+```js
 { _id: 542b600a683d59a80d4ee632,
     name: 'hacke2',
     clazzID: { _id: 542b5fcc49df6e741d8d15f5, clazzName: '软件2班', __v: 0 },
     __v: 0 }
-{% endhighlight %}
+```
 <strong>end from <a href="{{ site.url }}"> {{ site.url }}</a></strong>

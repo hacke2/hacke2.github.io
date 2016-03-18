@@ -24,7 +24,7 @@ JS就是调用定时器，这边有一个小技巧：直接改变一个经测试
 
 每次改变位置，效率不高。简单封装了一段JS插件
 
-{% highlight JavaScript %}
+```js
 ;(function($) {
     'use strict';
     $.extend($.fn, {
@@ -111,11 +111,11 @@ JS就是调用定时器，这边有一个小技巧：直接改变一个经测试
 
         
 })(Zepto);
-{% endhighlight %}
+```
 
 调用的时候这样调用:
 
-{% highlight JavaScript %}
+```js
 var ra = scope.find('#divParent').requestAnimFrame({
         step : 80,
         url : 'img/1-slow.png',
@@ -123,13 +123,13 @@ var ra = scope.find('#divParent').requestAnimFrame({
         time : 12
     });
 ra.run();
-{% endhighlight %}
+```
 
 自己完成两个DOM的COPY，html结果如下：
 
-{% highlight JavaScript %}
+```html
 <div id="divParent"></div>
-{% endhighlight %}
+```
 
 提供了几个接口：run、stop、isRunning
 

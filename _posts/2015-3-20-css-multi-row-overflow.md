@@ -11,11 +11,11 @@ share: true
 
 >以前做项目，对文字溢出只能进行单行溢出的控制：
 
-{% highlight CSS %}
+```css
 white-space: nowrap;  
 overflow: hidden;  
 text-overflow: ellipsis;  
-{% endhighlight %}
+```
 
 对于多行则无能为力，只能用渲染端来控制，这样有一个很大的问题：**无法达到响应式**
 
@@ -23,7 +23,7 @@ text-overflow: ellipsis;
 
 <!--more-->
 
-{% highlight CSS %}
+```css
 @media all and (-webkit-transform-3d){
     .3-line{
        white-space:normal;  
@@ -34,11 +34,11 @@ text-overflow: ellipsis;
        -webkit-box-orient: vertical; 
     }
 }
-{% endhighlight %}
+```
 
 对应SCSS代码如下：
 
-{% highlight SCSS %}
+```scss
 /**
   * multi lines overflow
   * @param {Number} $lineCount - count to display
@@ -55,7 +55,7 @@ text-overflow: ellipsis;
         }
     }
 }
-{% endhighlight %}
+```
 
 
 加这段媒体查询的原因是考虑只在webkit下用。直接引用这个代码片段传入参数即可。

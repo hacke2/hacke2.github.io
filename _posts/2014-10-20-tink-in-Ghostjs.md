@@ -13,7 +13,7 @@ share: true
 
 先贴一下整理的整体结构，前面的为行数。
 
-{% highlight JavaScript %}
+```js
 /**
 名称 Ghostjs
 版本 0.0.3
@@ -56,7 +56,7 @@ share: true
 2256 其他内部方法
 2411 Tween动画算法
 **/
-{% endhighlight %}
+```
 
 <!--more-->
 
@@ -67,7 +67,7 @@ share: true
 
 还有各种部分ECMAScript 5、ECMAScript 6兼容方法
 
-{% highlight JavaScript %}
+```js
 G.AryFilter = function(ary, func) {
     if (nativeFilter) {
         //ECMAScript 5 filter
@@ -87,11 +87,11 @@ G.AryFilter = function(ary, func) {
     }
     return G.AryFilter(ary, func)
 };
-{% endhighlight %}
+```
 
 还有一些函数的处理技巧，如下时间绑定，在第一次判断兼容性，将函数覆盖，之后就不用判断了
 
-{% highlight JavaScript %}
+```js
  function OneBind(e, event, callback) {
     if (doc.addEventListener) {
         OneBind = function(el, eve, call) {
@@ -110,7 +110,7 @@ G.AryFilter = function(ary, func) {
     }
     return OneBind(e, event, callback);
 }
-{% endhighlight %}
+```
 
 
 DEMON一个乐于分享自己的一些经验的同学，知识只从外国网站获取，是一位很有潜力的牛人，以后混的好可别忘了我啊：D

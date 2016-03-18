@@ -96,11 +96,11 @@ SEO（Search Engine Optimization）汉译为搜索引擎优化.seo优化是专�
 
 下面是本站的相关描述，右键查看源代码即可看到
 
-{% highlight HTML %}
+```html
 <title>hacke2's blog | WEB前端,一路前行 &#8211; hacke2's blog</title>
 <meta name="description" content="hacke2的前端技术博客,分享自己的技术心得,积累前段技能,汇聚前端之路的点点滴滴。">
 <meta name="keywords" content="hacke2, blog, hacke2 blog, 前端技术, javascript">
-{% endhighlight %}
+```
 
 ### 语义化
 
