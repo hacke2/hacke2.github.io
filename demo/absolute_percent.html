@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+    .wrapper {
+        display: -webkit-box;
+    }
+    .left{
+        -webkit-box-flex: 1;
+        position: relative;
+        background: red;
+    }
+
+    .center {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        background: black;
+        color: white;
+    }
+
+    .right {
+        background: green;
+    }
+
+    .right img {
+        display: block;
+        height: 87px;
+        width: 70px;
+    }
+
+    label {
+        display: block;
+    }
+
+    .looks-center {
+        position: absolute;
+        top: 14px;
+        /*-webkit-transform: translateY(-50%);*/
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <br/><br/><br/>
+    <div class="wrapper">
+        <div class="left">
+            <div class="center">
+                <label>作者：渡边淳一</label>
+                <label>来源：www.abc.com</label>
+                <label>字数：123万字</label>
+            </div>
+        </div>
+        <div class="right">
+            <img src="">
+        </div>
+    </div>
+    <br/>
+    <div class="wrapper">
+        <div class="left">
+            <div class="looks-center">
+                <label>作者：渡边淳一</label>
+                <label>来源：www.abc.com</label>
+                <label>字数：123万字</label>
+            </div>
+        </div>
+        <div class="right">
+            <img src="">
+        </div>
+    </div>
+</body>
