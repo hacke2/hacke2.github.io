@@ -1,21 +1,21 @@
-title:            hacke2's blog
+title:            pengbo's blog
 description:      hacke2的前端技术博客,分享自己的技术心得,积累前段技能,汇聚前端之路的点点滴滴。
-disqus_shortname: hacke2
+disqus_shortname: pengbo
 reading_time:     true
 words_per_minute: 200
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://www.hacke2.cn
+url:              http://www.pengbo.cn
 
 # Owner/author information
 owner:
-  name:           hacke2
-  avatar:         wxl-photo2.jpg
+  name:           pengbo
+  avatar:         huoyin.jpg
   bio:            "梦想还是要有的，万一实现了呢？"
-  email:          hacke2@qq.com
+  email:          sunshine_pb@qq.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
-  github: hacke2         
+  github: sunshine_pb@qq.com         
   stackexchange:  
   linkedin:       
   instagram:      
